@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Security Basics}{2}{section.1}
+\contentsline {section}{\numberline {2}NAT}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}NAT statico}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}NAT Dinamico}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}NAPT: Network Address and Port Translation}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Basi}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}NAT binding}{6}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{7}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{8}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{8}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.4}Port Restricted Cone NAT}{8}{subsubsection.2.6.4}
+\contentsline {subsubsection}{\numberline {2.6.5}NAT - STUN}{8}{subsubsection.2.6.5}
+\contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{9}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{9}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}In base al Port Binding}{9}{subsubsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{10}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{10}{subsubsection.2.7.4}
+\contentsline {subsection}{\numberline {2.8}Considerazioni}{10}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{11}{subsubsection.2.8.1}

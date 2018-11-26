@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Security Basics}{}% 1
+\BOOKMARK [1][-]{section.2}{NAT}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{NAT statico}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{NAT Dinamico}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{NAPT: Network Address and Port Translation}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Basi}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{NAT RFC 1631 e RFC 2776 }{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{NAT binding}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Symmetric NAT}{subsection.2.6}% 9
+\BOOKMARK [3][-]{subsubsection.2.6.2}{Full Cone NAT}{subsection.2.6}% 10
+\BOOKMARK [3][-]{subsubsection.2.6.3}{Restricted Cone NAT}{subsection.2.6}% 11
+\BOOKMARK [3][-]{subsubsection.2.6.4}{Port Restricted Cone NAT}{subsection.2.6}% 12
+\BOOKMARK [3][-]{subsubsection.2.6.5}{NAT - STUN}{subsection.2.6}% 13
+\BOOKMARK [2][-]{subsection.2.7}{NAT: ulteriori classificazioni}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.7.1}{In base al Binding}{subsection.2.7}% 15
+\BOOKMARK [3][-]{subsubsection.2.7.2}{In base al Port Binding}{subsection.2.7}% 16
+\BOOKMARK [3][-]{subsubsection.2.7.3}{In base al Timer Refresh}{subsection.2.7}% 17
+\BOOKMARK [3][-]{subsubsection.2.7.4}{In base all'External Filtering }{subsection.2.7}% 18
+\BOOKMARK [2][-]{subsection.2.8}{Considerazioni}{section.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.8.1}{NAT: UPnP e IGD}{subsection.2.8}% 20
