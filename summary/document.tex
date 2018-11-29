@@ -195,7 +195,352 @@
 				Per quanto riguarda le \textbf{applicazioni p2p} esse tendono ad aggirare il NAT ma così facendo creano spesso problemi di sicurezza. Per quanto riguarda ICMP rischia di fallire per lo stesso motivo di IPSEC (nel payload sono spesso contenute info su IP e porta originante). Rispetto all'\textbf{IP fragmentation} il problema è quello di ricostruire i pacchetti (o almeno mantenute informazioni sul primo pacchetto), perchè nei frammenti successivi \textbf{manca header UDP/TCP}, ma \textbf{potrebbe essere un attacco a frammentazione}. Inoltre il primo pacchetto può arrivare fuori sequenza. Una soluzione è quella di provare a configurare il nat in modo che esso stesso modifichi il contenuto del payload.
 			\subsubsection{NAT: UPnP e IGD}
 				\textbf{Universal Plug n Play}: Set di protocolli per la definizione  e l'annuncio di device e servizi. Un dispositivo compatibile UPnP può unirsi dinamicamente ad una rete, ottenendo un indirizzo IP, annunciare il suo nome, trasmettere le proprie capacità su richiesta e venire a conoscenza della presenza e delle capacità degli altri device della rete.\\
-				L'\textbf{Internet Gateway Device (IGD) } permete ad un device UPnP di scoprire l'indirizzo esterno di un NAT e di creare filters e bindings per i suoi servizi in modo automatico. In questo modo le porte sono aperte in modo incontrollato  e potrebbero sovrascrivere i binding esistenti... come per la porta 80 (implementato in Windows).
+				L'\textbf{Internet Gateway Device (IGD) } permete ad un device UPnP di scoprire l'indirizzo esterno di un NAT e di creare filters e bindings per i suoi servizi in modo automatico. In questo modo le porte sono aperte in modo incontrollato  e potrebbero sovrascrivere i binding esistenti... come per la porta 80 (implementato in Windows). \newpage
+	
+	
+	\section{Crittografia}
+		\textit{La crittografia è la scienza di mantenere segrete le informazioni.}\\
+		Oggi la criptografia è utilizzata, oltre che per la segretezza, per tutti gli altri servizi di sicurezza che abbiamo visto, \textbf{esclusa la disponibilità del servizio}. Infatti un uso diffuso delle tecniche di cifratura aumenta le possibilità di incorrere in attacchi \textbf{DoS}.
+		\begin{itemize}
+			\item Protezione documenti:
+			\begin{itemize}
+				\item \textbf{Integrità}
+				\item \textbf{Segretezza}
+				\item \textbf{Autenticazione}
+				\item \textbf{Non ripudiabilità}
+			\end{itemize}
+			\item Verifica identità dei corrispondenti: \textbf{controllo degli accessi}. 
+		\end{itemize}
+		Vediamo le principali funzioni crittografiche.
+		\subsection{Funzioni Hash}
+			Risolvono il problema della \textbf{garanzia di integrità} di un documento trasmesso. \\
+			\textit{Una funzione hash è una funzione unidirezionale che si applica ad un'informazione, generando un'impronta (\textbf{digest}) di dimensione fissa che è funzione dei dati in ingresso}. Generalmente sono sequenze di operazioni elementari quali \textbf{shift} e \textbf{XOR} sui dati, quindi \textbf{molto veloci da computare}.\\
+			
+			INSERIRE sha\\
+			
+			\textbf{Esempio}:
+			\begin{itemize}
+				\item A invia a B un messaggio M, calcola \textbf{H(M) = D} ed invia anche D.
+				\item B riceve M e D, calcola H(M)= D'.\textbf{ Se D=D'} si ha la garanzia che il messaggio non è stato modificato.
+				\item E potrebbe intercettare solo M e modificarlo, ma quando B riceverà anche D, l'hash sarà diverso e quindi B si accorgerà che M è stato modificato. Per riuscire a modificare M in M' E deve intercettare anche D e cambiarlo in H(M').
+			\end{itemize}
+			Un'applicazione tipica è quella della distribuzione di file eseguibili: quando scaricate un eseguibile il file deve essere identico a quello che il produttore ha generato, anche un bit puà provocare un malfunzionamento. Con le ISO degli OS viene fornito il codice \textbf{md5} del file che è il digest creato con l'hash. \\
+			Una funzione hash deve avere i seguenti \textbf{requisiti minimi}:
+			\begin{itemize}
+				\item \textbf{Compressione:} H mappa un input di lunghezza finita e arbitraria in un output H(x) di lunghezza fissata n.
+				\item \textbf{Facilità di computazione:} dato H e un input x, H(x) è facile da computare 
+			\end{itemize}
+			In aggiunta abbiamo:
+			\begin{itemize}
+				\item \textbf{preimage resistance:} per ogni output è computazionalmente infattibile trovare un qualsiasi input che tramite hash genera quell'output. Dato un output y è impossibile trovare x tale che H(x)=y.
+				\item \textbf{2nd preimage resistance:} è computazionalmente infattibile trovare un qualsiasi secondo input che ha lo stesso output di uno specifico primo input. Infattibile trovare x!=x' tale che H(x')=H(x).
+				\item \textbf{Resistenza alla collisione:} impossibile trovare qualsiasi coppia di input x e x' che producono lo stesso digest ( H(x')=H(x)).
+			\end{itemize}
+			Uno dei \textbf{limiti} delle funzioni hash risiede nel fatto che se l'attaccante intercetta il digest può modificarlo, facendo passare inosservata la modifica al contenuto del file (si possono usare più funzioni hash). Per questo motivo le hash si accompagnano ad altri metodi di autenticazione.
+			\subsubsection{HMAC}
+				Keyed-hash-message authentication code \textbf{accoppia l'utilizzo di una chiave simmetrica ad una funzione hash} per garantire, oltre all'integrità, \textbf{l'autenticazione} dei dati. Per \textbf{chiave simmetrica} intendiamo una stringa opportunamente lunga scelta in modo meno predicibile possibile. Spesso si utilizzano delle funzioni hash per generare una chiave simmetrica a partire da una data \textbf{password}:
+				$$ K = md5(password) = 0x12ab5893092ba4183f3a345872b34f233$$
+				Se si dispone di una buona funzione hash si può generare un HMAC componendo la funzione hash con la chiave.
+				$$HMACK (M) = H((K \oplus opad) _ H((K \oplus ipad) \vee M)) $$
+				\textbf{In questo modo il digest può essere calcolato solo se si conosce la chiave K.}\\
+				Passiamo ora a descriverne il \textbf{funzionamento:}
+				\begin{itemize}
+					\item A e B si mettono d'accordo su una password utilizzando un canale sicuro.
+					\item A per inviare un messaggio a B :
+					\begin{enumerate}
+						\item calcola K = md5(password)
+						\item calcola $HMACK_{K}(M)$
+						\item invia a B la coppia M, $HMACK_{K}(M)$
+					\end{enumerate}
+					\item M e $HMACK_{K}(M)$ possono essere inviate accoppiate nello stesso pacchetto.
+				\end{itemize} 
+			
+				INSERIRE hmac\\
+				
+				I \textbf{vantaggi rispetto ad una semplice funzione hash} sono:
+				\begin{itemize}
+					\item Se E intercetta sia M che $HMACK_{K}(M)$ per cambiare M dovrebbe:
+					\begin{itemize}
+						\item Modificare M in M'
+						\item ricalcolare $HMACK_{K}(M)$
+					\end{itemize}
+				\item tuttavia E non è in possesso di M (K no?????) quindi non può calcolare l'HMAC.
+				\end{itemize}
+				Schemi di questo tipo sono utilizzati per garantire integrità e implicitamente anche l'autenticazione di pacchetti livello MAC in molte tipologie di reti. \\
+				Di seguito una lista delle principali problematiche:
+				\begin{itemize}
+					\item \textbf{Problema di gestione}: A e B hanno bisogno  di una canale sicuro per scambiare la chiave, non utile per comunicazioni via internet.
+					\item \textbf{Attacchi di forza bruta}: E potrebbe intercettare una pacchetto e cercare di indovinare la chiave K: \begin{itemize}
+						\item dato M, e K = 0x00000000000000000000000000000000
+						\item D = HMACK (M) ? se è vero allora K è la chiave giusta, altrimenti
+						\item K = 0x00000000000000000000000000000001, riprova. . .
+					\end{itemize}
+					Un attacco di questo tipo è \textbf{computazionalmente impegnativo} per calcolare tutte le chiavi possibili ($2^{128}$) ci vogliono migliaia di anni. Tuttavia se la chaive è generata da una password l'attacco \textbf{diventa possibile} utilizzando un \textbf{dizionario}:
+					\begin{itemize}
+						\item dato M e K = md5(abaco), D = HMACK (M)
+						\item se è falso, K = md5(abate). . .
+					\end{itemize}
+					Le parole di un dizionario possono essere decine di migliaia, per generarle tutte ci vogliono pochi minuti.\textit{\textbf{ Per questo le password non devono essere scelte come parole esistenti!}}
+				\end{itemize}
+		\subsection{Cifratura a chiave simmetrica}
+			\textbf{Principio di Kerchoff}:
+			\begin{itemize}
+				\item Gli algoritmi crittografici devono essere \textbf{noti a priori}.
+				\item Un prodotto che garantisce cifratura con \textbf{algoritmo segreto}, non è un buon prodotto.
+			\end{itemize}
+			Spieghiamo il \textbf{funzionamento	}:
+			\begin{itemize}
+				\item A e B si accordano su una chiave K o una password da cui generare K (come in HMAC).
+				\item I messaggi possono essere decifrati solo con una chiave K.
+				\item Stesso algoritmo per cifrare e decifrare.					
+			\end{itemize}
+				
+			INSERIRE des e des2\\
+				
+			Tra i \textbf{problemi} che si riscontrano si ha la \textbf{poca flessibilità} dovuta alla necessità per A e B di scambiarsi le chiavi in anticipo. Inoltre ci espone ad \textbf{attacchi di forza bruta} anche se più difficili del caso HMAC (per E sarà più difficile ad ogni tentativo stabili se il messaggio ottenuto è corretto)\\
+			\textbf{Possiamo combinare HMAC e cifratura a chiave simmetrica per ovviare a questi problemi}:
+			\begin{enumerate}
+				\item Si genera HMAC con chiave K
+				\item Si cifra tutto il pacchetto compreso l'HMAC con una seconda chiave K'.
+			\end{enumerate}
+			In questo modo abbiamo segretezza e \textbf{integrità} dei dati oltre che ad una forma di \textbf{autenticazione} in relazione a come vengono scambiate le chiavi. Questo approccio viene utilizzato per le reti LAN nelle quale si può impostare a mano sulle macchine.
+			
+		\subsection{Cifratura a chiave pubblica/privata}
+			\begin{itemize}
+				\item A e B possiedono due chiavi ciascuno (possono essere generate insieme da programmi appositi)
+				\begin{itemize}
+					\item Una chiave pubblica $Pub_{A}$ e $Pub_{B}$
+					\item Una chiave privata $Priv_{A}$ e $Priv_{B}$
+				\end{itemize}
+				\item Le chiavi private si devono tenere segrete (vitale che A sia unico possessore di $Pub_{A}$ così per B)
+				\item La chiave pubblica può essere pubblicata.
+			\end{itemize}
+			\textbf{Caratteristiche}:
+			\begin{itemize}
+				\item Ciò che è cifrato con chiave pubblica può essere decifrato solo con la rispettiva chiave privata.
+				\item Computazionalmente impossibile risalire ad una chiave privata da una pubblica.
+				\item Se A cifra un messaggio utilizzando la chiave pubblica di B solo B potrà decifrarlo con la sua chiave privata. \textbf{Si ottiene segretezza}.
+			\end{itemize}
+			\textbf{Non è necessario concordare preventivamente una chiave di cifratura comune.}
+		
+			INSERIRE pubpriv\\
+		
+		\subsection{Firma digitale}
+			\textbf{Le chiavi pubbliche e private sono invertibili}: A può utilizzare la sua chiave privata per criptare un messaggio che può essere decriptato utilizzando la relativa chiave pubblica. Il messaggio risulta dunque \textbf{decifrabile da chiunque} (la chiave è appunto pubblica) dunque \textbf{non garantisce la segretezza}. Si puà tuttavia \textbf{garantire l'autenticazione e la non ripudiabilità dei dati}: visto che A è l'unico in possesso di $Priv_{A}$ chiunque decifra il messaggio con la sua chiave pubblica \textbf{è sicuro che il messaggio proviene da quest'ultimo: FIRMA DIGITALE.}\\
+			\newline
+			\subsubsection{Problemi}
+				Un attacco che possiamo compiere contro questo tipo di cifratura è il \textbf{Man in the middle}:
+				\begin{itemize}
+					\item A invia a B $Pub_{A}$
+					\item E intercetta il messaggio e scambia $Pub_{A}$ con $Pub_{E}$
+					\item B riceve la chiave $Pub_{E}$ convinto che sia quella di A e cifra il suo messaggio con $Pub_{E}$.
+					\item E intercetta il messaggio, lo decifra, e lo cifra nuovamente stavolta utilizzando $Pub_{A}$ e lo invia ad A che non si accorge di niente.
+					\item A riceve il messaggio che però può essere letto e/o modificato da E
+				\end{itemize}
+				Questo tipo di attacco è sempre possibile quando A e B non conoscono le rispettive chiavi, che dunque dovranno essere scambiate tramite canale sicuro. Si presenta lo \textbf{stesso problema di HMAC e chiave simmetrica}: \textbf{l'unica differenza è che per sicuro non intendiamo segreto ma semplicemente autenticato}.
+			\subsubsection{Soluzioni: Fingerprint}
+			???????
+			\subsubsection{Soluzioni: Keyserver}
+				Sono \textbf{server nei quali è possibile effettuare l'upload delle chiavi pubbliche}. Tuttavia il server non assicura la corrispondenza della chiave pubblica all'identità dichiarata. Si possono inserire info come nome e email, dunque è facile tramite motore di ricerca trovare la chiave che vogliamo (BUSH)
+			\subsubsection{Soluzioni: Web of Trust}
+				\textbf{Rete di contatti attraverso la quale i partecipanti certificano l'identità altrui.} Il principio di fondo è il seguente: se A conosce personalmente B può certificare che $Pub_{B}$ ovvero garantire che una certa chiave appartenga effettivamente a B. C, conoscendo A, ha una garanzia maggiore sulla corrispondenza effettiva tra $Pub_{B}$ e B stesso. Ogni utente ha interesse che la propria chiave pubblica sia certificata dal più alto numero di persone possibile all'interno della rete. \textbf{Le certificazioni sono realizzate utilizzando la propria chiave privata per firmare la chiave pubblica altrui}. Esempio: 
+				\begin{itemize}
+					\item A genera una sua coppia di chiavi PubA e PrivA . Nella c’e’ scritto che la chiave appartiene ad A. chiave pubblica
+					\item A va da B, gli mostra un documento e gli consegna la fingerprint della chiave.
+					\item B scarica la chiave da un keyserver, controlla la fingerprint.
+					\item B a quel punto può firmare con la propria PrivB la chiave pubblica PubA .
+					\item B carica la chiave firmata sul keyserver.
+				\end{itemize}
+			\subsubsection{In pratica: PGP}
+				\textbf{Pretty Good Privacy} è stato il primo programma che permetteva di scambiarsi chiavi pubbliche/private e inviarsi messaggi privati. Il governo americano osteggiava la sua distribuzione al pari di tutto ciò che utilizzava la crittografia. Nasce come codice sorgente poi chiuso e fatto divenire prodotto commerciale.\\
+				Per ovviare a questo, nasce GPG GNU su licenza aperta (GNU GPL).
+				\begin{itemize}
+					\item c\textbf{ome creare chiavi}: gpg –gen-key
+					\item \textbf{come esportare chiavi}: gpg –export –armor C93F299D
+					\item \textbf{come usare un keyserver:}
+					gpg –keyserver pgp.mit.edu –send-key C93F299D
+					\item \textbf{come cifrare messaggi}: gpg –encrypt -r C93F299D file
+				\end{itemize}
+		\subsection{Certificati}
+			Le \textbf{WOT} sono comode (si basano sul numero di partecipanti, e sulla fiducia reciproca) ma in contesti formali abbiamo bisogno di garanzie aggiuntive, affinchè una chiave pubblica sia associata ad una persona. Abbiamo bisogno di \textbf{terze parti riconosciute}: \textbf{Enti certificatori}.\\
+			Questi enti \textbf{garantiscono l'associazione tra chiave pubblica e persona fisica}. L'ente ha una sua coppia di chiavi pubblica/privata, gli utenti conoscono quella pubblica. La certificazione avviene come per le chiavi GPG (?????) ma si utilizza un formato diverso (\textbf{X.509}). \\
+			\textbf{Come funziona?}
+			\begin{itemize}
+				\item L'utente A genera coppia di chiavi pubblica/privata
+				\item A invia all'ente la chiave pubblica e un documento
+				\item L'ente restituisce la chiave pubblica ad A firmata con la propria chiave privata. \textbf{Il contenitore in cui si sposta tale chiave è un certificato}.
+				\item La procedura si fa una sola volta, alla creazione della chiave
+				\item L'ente dunque non conosce la chiave privata, \textbf{dando così maggiore garanzia all'utente}. In casi più semplici la CA fornisce coppia di chiavi e certificato direttamente ad A.
+				\item Quando un utente B deve parlare con A gli chiede il suo certificato.
+				\item Dal certificato estrae la chiave pubblica di A e verifica che la firma digitale dell'ente sia corretta (\textbf{utilizzando la chiave pubblica dell'ente certificatore.}) B è sicuro dell'identità di A.
+			\end{itemize}
+			La firma digitale ha lo stesso valore probatorio della firma su carta.\\
+			Attraverso i certificati otteniamo un accurato controllo degli accessi.\\
+			
+			INSERIRE CERTIFICATI\\
+			\subsubsection{Certificati per tutto}
+				Lo stesso modello può essere applicato in \textbf{qualsiasi contesto} anche senza il bisogno di contattare una CA ufficiale.\\
+				Introduciamo l'esempio di un'azienda che ha i seguenti servizi:
+				\begin{itemize}
+					\item posta elettronica
+					\item sito web
+					\item rete interna a cui collegare pc
+				\end{itemize}
+				Si può creare una \textbf{CA dedicata} con la sua coppia di 
+				chiavi pubblica/privata ed un certificato che è \textbf{autofirmato} (la CA dunque si \textbf{autocertifica}). In questo modo si possono rilasciare certificati a tutti gli utenti in modo tale che essi inviino solo posta firmata digitalmente. Ogni volta che un utente riceve (invia ????) una mail questa verrà autenticata e cifrata. Inoltre possiamo fornire i browser di certificati così che i server accetteranno le connessioni solo da macchine autorizzate. Quando un portatile si connette alla rete, prima di essere abilitato a ricevere e inviare traffico, dovrà autenticarsi con un server utilizzando un certificato valido.\\
+				Un CA autocertificata aumenta il livello di sicurezza, ma dobbiamo sottolineare che se per qualche motivo il server su cui risiedono le chiavi pubbliche e private della CA, \textbf{verrà compromessa la sicurezza di tutta la rete}.
+			\subsubsection{Certificate Revocation List: CRL}
+				Un utente ha perso un portatile con un certificato valido ? Uno dei server con certificato viene compromesso? Un utente si comporta male ? \textbf{Dobbiamo riuscire ad invalidare i certificati già rilasciati} di fatto revocandoli.\\
+				La CRL è \textbf{una lista di certificati revocati} dall'ente certificatore. Per fare ciò la CA tiene una lista di certificati non più validi, distribuita \textbf{firmata con la propria chiave privata}. Un utente deve essere in grado di \textbf{scaricare la CRL più aggiornata} tramite servizio offerto dall'infrastruttura di rete. Le CRL sono proprio il motivo per il quale abbiamo bisogno di un'autorità di terzi, poichè introducono un elemento di complicazione in più.
+			\subsubsection{WOT di Thawte (tybyca)}
+			 	COMPLETARE
+			\subsubsection{Confornti e sistema misto}
+				 INSERIRE confronto\\
+				 Le due tecniche vengono utilizzate insieme per garantire performance e sicurezza:
+				 \begin{itemize}
+				 	\item $A \rightarrow B$: certificato A, $C_{A}$
+				 	\item $A \leftarrow B$: certificato A, $C_{B}$
+				 	\item $A \rightarrow B$: A genera un numero casuale R e invia tale numero cifrato con il certificato ci $C_{B}$
+				 	\item $A \leftarrow B$: B genera un numero casuale P  e trasmette tale numero cifrato con il certificato di $C_{A}$
+				 	\item si genera una chiave segreta  $K = hash(P\oplus R) $
+				 \end{itemize}
+			 	Una volta generato K possiamo utilizzare quella chiave per cifrare, decifrare e autenticare tutti i messaggi tra A e B. In questo modo abbiamo vantaggi dal punto di vista computazionale.
+		\subsection{Teoria: principi di crittografia}
+			\subsubsection{RSA}
+			\begin{itemize}
+				\item Dati p,q primi con $n = pq$
+				\item Dato $m<n$
+				\item se e,d sono inversi moltiplicativi mod $\phi(n)$ ovvero $ed = 1mod\phi(n)$ allora:
+			\end{itemize}
+		
+			INSERIRE FORMULA EULERO\\
+			
+			\begin{itemize}
+				\item Dato $m^{e}=c$ è computazionalmente oneroso ricavare m, per numeri grandi impossibile. \textbf{Si può cifrare esponenziando per e e decifrare esponenziando ancora per d}
+				\item dunque la coppia e,n è la chiave pubblica mentre la coppia d,n è la chiave privata.
+				\item per valori di e,n non piccoli (maggiori di 1kbit) non esistono algoritmi che permettano:
+				\begin{itemize}
+					\item dati e,n ricavare d
+					\item dato $m^{e} $ ricavare m
+				\end{itemize}
+			\end{itemize}	
+		
+			La sicurezza di RSA si basa tutta sull'impossibilità di derivare $\phi(n)$ o d da e,n. Entrambi questi problemi hanno complessità equivalente a quella di fattorizzare n nei suoi fattori primi. Si è riuscito a fattorizzare numeri da 332 a 663 bit (con un costo in tempo di mesi), pertanto si ritiene sufficiente una grandezza di 1024 bit per le chiavi. \\
+			\textbf{La sicurezza di RSA dipende tutta dallo stato dell'arte nel campo degli algoritmi di fattorizzazione e nel campo della potenza computazionale.}\\
+			Un attacco possibile è \textbf{timing attack} che viene portato in atto nella fase di esponenziazione, ovvero nella fase di decriptazione eseguita tramite la chiave privata. Si basano sul fatto che le operazioni in hardware hanno costi differenti se il bit usato per l'esponenziazione è 0 o 1. \textbf{Possiamo dunque risalire alle chaive privata solo osservando i tempi di esecuzione della CPU per le operazioni di decodifica}. L'attacco è laborioso ma proveniente da una direzione inattesa. Per ovviare a ciò le implementazioni di RSA introducono dei ritardi casuali nell'esponenziazione per rendere impredicibili i tempi di esecuzione.
+			Altri algoritmi che utilizzano problemi computazionalmente intrattabili:
+			\begin{itemize}
+				\item Diffie-Hellman genera una chiave segreta condivisa a partire da due chiavi pubbliche senza bisogno di scambiare alcun segreto
+				\item ElGamal schema basato su logaritmi discreti
+				\item DSA schema a firma digitale basato su logaritmi discreti.
+			\end{itemize}
+		\subsubsection{Diffie Hellman}
+			Si basa sull'intrattabilità del logaritmo discreto.\\
+			Dato un numero primo p si definisce radice primitiva di p un numero $\alpha$ per cui vale:
+			$$\alpha modp \neq \alpha^{2} modp \neq \alpha^{3} modp \neq ... \neq \alpha^{i} modp  $$
+			$$i<p $$
+			Nello scambio entrambi A e B posseggono due parametri noti p,$\alpha$ ciascuno genera un numero casuale $X_{a}$ e $A_{b}$
+			\begin{enumerate}
+				\item A invia a B $Y_{a}= \alpha^{X_{a}} modp$
+				\item B riceve $Y_{a}$ ed invia ad A $Y_{b}=\alpha^{X_{b}}modp$
+				\item A calcola $K_{a} = Y_{b}^{X_{a}}modp = (\alpha^{X_{b}})X^{a}modp= \alpha^{X_{b}*X{a}}$
+				\item B calcola $K_{b} = Y_{a}^{X_{b}}modp = (\alpha^{X_{a}})X^{b}modp= \alpha^{X_{a}*X{b}}$
+				\item Risulta $K_{b} = K_{a}$ dunque A e B si sono scambiati una chiave segreta \textbf{senza avere nessuna credenziale comune}
+ 			\end{enumerate}	
+ 			\textbf{Un attaccante che vede passare solo $Y_{a}$ e $Y_{b}$ non è in grado di calcolare il logaritmo discreto quindi non può ricavare la chiave}\\
+ 			Diffie Hellman non è sicuro contro attacchi \textbf{man in the middle}:
+ 			\begin{itemize}
+ 				\item D genera $X{d1}$ e $X{d2}$ e le chiavi pubbliche corrispondenti $Y{d1}$ $Y{d2}$
+ 				\item A invia $Y{a}$ a B
+ 				\item D intercetta il messaggio e trasmette invece $Y{d1}$ a B
+ 				\item B riceve $Y{d1}$ e calcola $K_{b}= Y_{d1}^{X_{b}}modp$
+ 				\item B invia $Y{b}$ ad A
+ 				\item D intercetta $Y{b}$ e invia invece $Y{d2}$ ad A
+ 				\item A calcola $K_{a}= Y_{d2}^{X_{a}}modp$
+ 			\end{itemize}
+ 			
+ 			INSERIRE diffie\\
+ 			
+ 		\subsubsection{Algoritmi a chiave simmetrica: One time pad}
+ 			\begin{enumerate}
+ 				\item Dato un testo in chiaro m di n bit si scegli una chiave k generata attraverso un generatore perfetto di numeri casuali
+ 				\item La cifratura è $c=m\oplus k$
+ 				\item ad ogni trasmissione si deve cambiare k
+ 			\end{enumerate}
+ 			Con questo algoritmo si scorrela completamente c da m, con il risultato che è \textbf{impossibile effettuare crittanalisi}. Di contro abbiamo che dobbiamo trasportare una chiave k su canale sicuro (della stessa lunghezza di n). In linea teorica questo algoritmo garantisce la \textbf{sicurezza più elevata}, ma nella pratica è \textbf{difficile da utilizzare}
+ 			
+ 		\subsubsection{Algoritmi a chiave simmetrica: Cifratura di Feitsel}
+ 			La cifratura di Feitsel è un algoritmo di sostituzione ideale che mappa un messaggio in chiaro di 2 bit in un messaggio cifrato di 2 bit \textbf{utilizzando una mappa statica}.\\
+ 			
+ 			INSERIRE static\\
+ 			
+ 			Se il messaggio è lungo 2 bit e la mappa $2^{2}$ righe, \textbf{l'attaccante può tentare solo attacchi di forza bruta}, non esiste correlazione statica tra testo in chiaro e testo cifrato. Quando il messaggio è più lungo si cifrano blocchi di 2 bit per volta.\\
+ 			Per risultare sicuro i blocchi devono essere di grandi dimensioni, ma in tal caso \textbf{la mappa diventa molto grande} ($n=64 \rightarrow$ $64x2^{64} = 2^{70} bit$). Procedimento:
+ 			\begin{enumerate}
+ 				\item Dalla chiave K si generano una serie di sottochiavi $K_{i}$ con una funzione generatrice
+ 				\item Si eseguono una serie di fasi di cifratura che hanno come parametro $K_{i}$ e il risultato della fase precedente.
+ 				\item Tutti gli algoritmi a blocchi come AES utilizzano questo schema di cifratura
+ 			\end{enumerate}
+			
+			INSERIRE feit\\
+			
+		\subsubsection{Altri algoritmi : DA FINIRE}
+	\subsection{Esempio: organizzazione rete certificati}
+		La rete è composta da:
+		\begin{itemize}
+			\item La vostra rete è composta da
+			\item Una rete di computer fissi per i vostri utenti
+			\item Un server per applicativi web necessari ai vostri utenti
+			\item Un server per la posta elettronica
+			\item Dei possibili utenti remoti, roadwarrior.
+		\end{itemize}
+	
+		INSERIRE rete\\
+		
+		I \textbf{servizi} che la rete offre sono:
+		\begin{itemize}
+			\item non sia possibile collegarsi alla rete interna se non utilizzando i client fissi
+			della rete,
+			\item che ad ogni client della rete possa effetturare l’accesso solo personale
+			autorizzato
+			\item che i servizi del vostro webserver siano accessibili solo dai terminali della
+			rete
+			\item che la posta elettronica sia certificata
+			\item che gli utenti possano inviare e ricevere posta elettronica in modo sicuro
+			\item che tutto quello che può fare un utente dal proprio terminale interno lo
+			possa fare anche un utente roadwarrior
+		\end{itemize} 
+		
+				
+			
+			 
+						
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+		
+			
+			
+			
+				
+				
+				
+				
+				
+			
+			
+		
+		
+		
 				
 				
 				
