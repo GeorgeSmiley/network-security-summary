@@ -1,43 +1,59 @@
-\contentsline {section}{\numberline {1}Security Basics}{2}{section.1}
-\contentsline {section}{\numberline {2}NAT}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}NAT statico}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}NAT Dinamico}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}NAPT: Network Address and Port Translation}{5}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Basi}{6}{subsection.2.4}
+\contentsline {section}{\numberline {1}Security Basics}{3}{section.1}
+\contentsline {section}{\numberline {2}NAT}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}NAT statico}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}NAT Dinamico}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}NAPT: Network Address and Port Translation}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Basi}{7}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{7}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}NAT binding}{7}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{8}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{8}{subsubsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6}NAT binding}{8}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{9}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{9}{subsubsection.2.6.2}
 \contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{9}{subsubsection.2.6.3}
 \contentsline {subsubsection}{\numberline {2.6.4}Port Restricted Cone NAT}{9}{subsubsection.2.6.4}
-\contentsline {subsubsection}{\numberline {2.6.5}NAT - STUN}{9}{subsubsection.2.6.5}
-\contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{9}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.6.5}NAT - STUN}{10}{subsubsection.2.6.5}
+\contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{10}{subsection.2.7}
 \contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{10}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}In base al Port Binding}{10}{subsubsection.2.7.2}
-\contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{10}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.2}In base al Port Binding}{11}{subsubsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{11}{subsubsection.2.7.3}
 \contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{11}{subsubsection.2.7.4}
-\contentsline {subsection}{\numberline {2.8}Considerazioni}{11}{subsection.2.8}
-\contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{11}{subsubsection.2.8.1}
-\contentsline {section}{\numberline {3}Crittografia}{12}{section.3}
-\contentsline {subsection}{\numberline {3.1}Funzioni Hash}{12}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}HMAC}{13}{subsubsection.3.1.1}
-\contentsline {subsection}{\numberline {3.2}Cifratura a chiave simmetrica}{15}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Cifratura a chiave pubblica/privata}{16}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Firma digitale}{17}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Problemi}{17}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Soluzioni: Fingerprint}{17}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Soluzioni: Keyserver}{18}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Soluzioni: Web of Trust}{18}{subsubsection.3.4.4}
-\contentsline {subsubsection}{\numberline {3.4.5}In pratica: PGP}{18}{subsubsection.3.4.5}
-\contentsline {subsection}{\numberline {3.5}Certificati}{19}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Certificati per tutto}{20}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Certificate Revocation List: CRL}{20}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}WOT di Thawte (tybyca)}{21}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Confornti e sistema misto}{21}{subsubsection.3.5.4}
-\contentsline {subsection}{\numberline {3.6}Teoria: principi di crittografia}{21}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}RSA}{21}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Diffie Hellman}{23}{subsubsection.3.6.2}
-\contentsline {subsubsection}{\numberline {3.6.3}Algoritmi a chiave simmetrica: One time pad}{24}{subsubsection.3.6.3}
-\contentsline {subsubsection}{\numberline {3.6.4}Algoritmi a chiave simmetrica: Cifratura di Feitsel}{24}{subsubsection.3.6.4}
-\contentsline {subsubsection}{\numberline {3.6.5}Altri algoritmi : DA FINIRE}{25}{subsubsection.3.6.5}
-\contentsline {subsection}{\numberline {3.7}Esempio: organizzazione rete certificati}{25}{subsection.3.7}
+\contentsline {subsection}{\numberline {2.8}Considerazioni}{12}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{12}{subsubsection.2.8.1}
+\contentsline {section}{\numberline {3}Crittografia}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Funzioni Hash}{13}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}HMAC}{14}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {3.2}Cifratura a chiave simmetrica}{16}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Cifratura a chiave pubblica/privata}{17}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Firma digitale}{18}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Problemi}{18}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Soluzioni: Fingerprint}{18}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Soluzioni: Keyserver}{19}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Soluzioni: Web of Trust}{19}{subsubsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.5}In pratica: PGP}{19}{subsubsection.3.4.5}
+\contentsline {subsection}{\numberline {3.5}Certificati}{20}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Certificati per tutto}{21}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Certificate Revocation List: CRL}{21}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}WOT di Thawte (tybyca)}{22}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}Confornti e sistema misto}{22}{subsubsection.3.5.4}
+\contentsline {subsection}{\numberline {3.6}Teoria: principi di crittografia}{22}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}RSA}{22}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Diffie Hellman}{24}{subsubsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.3}Algoritmi a chiave simmetrica: One time pad}{25}{subsubsection.3.6.3}
+\contentsline {subsubsection}{\numberline {3.6.4}Algoritmi a chiave simmetrica: Cifratura di Feitsel}{25}{subsubsection.3.6.4}
+\contentsline {subsubsection}{\numberline {3.6.5}Altri algoritmi : DA FINIRE}{26}{subsubsection.3.6.5}
+\contentsline {subsection}{\numberline {3.7}Esempio: organizzazione rete certificati}{26}{subsection.3.7}
+\contentsline {section}{\numberline {4}Attacchi}{27}{section.4}
+\contentsline {subsection}{\numberline {4.1}Attacchi al mezzo fisico}{27}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Jamming}{27}{subsubsection.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Attacchi a livello di collegamento}{27}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Dos al livello di collegamento}{27}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}ARP-Spoofing}{28}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Attacchi al livello di rete}{28}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Fragmentation attack}{29}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Attacchi al DNS}{30}{subsubsection.4.3.2}
+\contentsline {subsection}{\numberline {4.4}Attacchi al livello di trasporto o superiori}{33}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Attacchi livello IV: Syn flood}{33}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Attacchi livello IV: TCP reset Guess}{34}{subsubsection.4.4.2}
+\contentsline {subsection}{\numberline {4.5}Attacchi al middleware}{34}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}SQL Injection}{35}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Cross-site-scripting (XSS) stored }{37}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.3}Cross-site-scripting (XSS) reflected: AJAX}{38}{subsubsection.4.5.3}

