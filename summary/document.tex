@@ -771,13 +771,113 @@
 				cookie=’+document.cookie)</script>\\
 				Una possibile \textbf{applicazione} potrebbe riguardare siti nei quali è possibile inserire commenti, se la validazione degli input non è fatta in modo oculato un attaccante può aggiungere codice javascript alla pagina.  \textbf{Tutte le persone che successivamente caricheranno quella pagina eseguiranno il codice lasciato nel commento.} Se il sito gestisce dei cookie è questi ultimi sono \textbf{reindirizzati verso l'attaccante, che li può utilizzare per accedere ai servizi con l'identità di un utente del sito di partenza}.
 			\subsubsection{Cross-site-scripting (XSS) reflected: AJAX}
-				Si posso fare attacchi simili sfruttando:
+				Si posso fare attacchi simili (codice eseguito a seguito di un messaggio di errore) sfruttando:
 				\begin{itemize}
 					\item Link HTML all'interno delle mail
-					\item errori prodotti da web server mal configurati (404)
-				\end{itemize}	
+					\item errori prodotti da web server mail configurati (404)
+				\end{itemize}
+				Vediamo attacchi relativi alla tecnologia \textbf{AJAX} (Asynchronous JavaScript and XML). Si tratta di un \textbf{paradigma per la programmazione online} che lega un qualsiasi linguaggio di backend con lo scopo di realizzare un'interazione \textbf{asincrona} tra client e server. In questo modo la pagina reagisce in tempo reale alle azioni dell'utente (gmail, facebook). \textbf{Ajax non è una nuova tecnologia ma una composizione di tecnologie esistenti, con gli stessi problemi di quest'ultime, ma con una piu complessa gestione della sicurezza}. \\ 
 				
+				INSERIRE web, ajax \\
 				
+				I principali \textbf{pericoli} di AJAX sono:
+				\begin{itemize}
+					\item \textbf{Controlli client-side:} i controlli di sicurezza non devono essere implementati client-side (manipolabili da un'attaccante), ma server side ( esempio comntrollo di una password.) Il paradigma porta a demandare azioni all'applicazione client, ma deve essere utilizzato in modo cauto.
+					\item \textbf{Cache client-side}: AJAX salva in locale molti dati relativi alla sessione, attenzione ai programmi che possono manipolare questi dati.
+					\item \textbf{Mashups}: il web è fatto da integrazioni di prodotti dagli utenti e da terze parti, aggregate in un'unica pagina. Si aggregano dunque servizi che provengono da indirizzi IP differenti. \textbf{Diviene molto difficile tracciare tutte le sorgenti che contribuiscono ad una stessa pagina e filtrarle in modo da non avere applicazioni non previste. (XSS)}  
+				\end{itemize}
+		\subsection{Attacchi livello applicazione}
+			\begin{itemize}
+				\item \textbf{Attacchi da remoto}:
+				\begin{itemize}
+					\item \textbf{Buffer overflow}
+					\item \textbf{format bug}				
+				\end{itemize}
+				\item \textbf{Attacco locale di privilege escalation}:
+				\begin{itemize}
+					\item \textbf{race condition}
+					\item \textbf{problemi delle system call (system())}
+				\end{itemize}
+			\end{itemize}
+			\subsubsection{Buffer overflow}
+				I buffer overflow sono vulnerabilità causate da errori di programmazione nei linguaggi a basso livello e sono la causa maggiore di intrusione. Lo scopo è quello di sfruttare questa vulnerabilità in modo tale che l'attaccante possa eseguire del codice, comandi, che altrimenti non protrebbe eseguire sulla macchina remota.\\
+				
+				INSERIRE c\\
+				
+				La funzione \textbf{stampa()} viene allocata in uno spazio di indirizzi diverso dalla funzione \textbf{main()}. Quando stampa() è conclusa bisogna di nuovo fare una jump alla locazione di memoria dove si trova la funzione main().\\
+				
+				INSERIRE stack\\
+				
+				I passaggi di parametri avvengono mettendo le variabili in una zona comune, lo stack. In questo caso nello stack abbiamo:
+				\begin{itemize}
+					\item L'indirizzo di ritorno a cui stampa deve saltare per tornare a main()
+					\item la variabile parola 
+					\item la variabile testo della funzione stampa.
+				\end{itemize}
+				Si ha in questo caso un problema derivante dal mancato controllo sulla lunghezza del testo contenuto nella variabile parola (dovrebbe essere lunga meno di 10 char). Se il contenuto di tale variabile fosse maggiore dello spazio assegnato essa andrebbe a sovrascrivere zone adiacenti dello stack, provocando un \textbf{segmentation fault}.
+				\begin{itemize}
+					\item le variabili dello stack vengono scritte dal basso verso l'alto, ma all'interno della variabile dall'alto verso il basso.
+					\item Si può sovrascrivere anche \textbf{l'indirizzo di ritorno.}
+				\end{itemize}
+			
+				INSERIRE stack2\\
+				
+				L'attaccante può dunque:
+				\begin{itemize}
+					\item scrivere del codice eseguibile all'interno della variabile testo 
+					\item far puntare l'indirizzo di ritorno a quel codice
+					\item In questo modo quando stampa() finisce viene fatto un jump verso l'indirizzo di ritorno modificato.
+					\item Come risultato si esegue del codice deciso dall'attaccante prima del crash del programma.
+				\end{itemize}
+				\textbf{Come proteggersi da buffer overflow ?}:
+				\begin{itemize}
+					\item Controllare sempre l'input che arriva dall'esterno (utente,file, variabili d'ambiente) 
+					\item Utilizzare funzioni che limitano la lunghezza della scrittura (strncpy(),strcpy()).
+					\item  Linux permette di rendere lo stack non eseguibile
+					\item Esistono compilatori e debugger appositi per evitare BO.
+				\end{itemize}
+			
+				MANCA BUONE PRATICHE (SPIEGATA A LEZIONE???)\\
+				
+			\subsubsection{Format Bug}
+				Si basa su un errore di programmazione molto comune che ha sempre a che vedere con la formattazione delle stringhe.
+				
+				COMPLETARE
+	\section{Firewall}
+		Un firewall è un apparato software o hardware configurato per \textbf{ammettere, abbattere o veicolare (proxy firewall)} connessioni tra due aree di rete con differenti livelli di fiducia. Come \textbf{esempio} si può citare un \textbf{firewall perimetrale } posto su un getway per separare la rete locale(alto livello di fiduci) da internet (basso livello di fiducia).\\
+		\textit{Possiamo dire che un firewall è un interfaccia configurabile tra due segmenti di rete con diversi livelli di fiducia}. Tale interfaccia deve essere configurata seguendo due principali \textbf{security poilicy}:
+		\begin{itemize}
+			\item \textbf{Least privilege}
+			\item \textbf{Separation of Duties}
+		\end{itemize}
+		La configurazione di un firewall richiede profonda conoscenza dei protocolli di rete e di network security, un errore di configurazione \textbf{può renderne inutile l'utilizzo.}\\
+		I firewall hanno avuto la seguente evoluzione nel tempo:
+		\begin{enumerate}
+			\item \textbf{Packet filter:} ogni pacchetto passa dentro il firewall e per ognuno di essi \textbf{si prende una decisione separata}. La scelta presa all'instante t non è condizionata dalla scelta presa all'istante precedente.
+			\item \textbf{Stateful firewall}: si implementano nel firewall delle macchine a stati utilizzate per \textbf{prendere decisioni più articolate}. Ad esempio non accettare pacchetti TCP ACK se prima non si è ricevuto un pacchetto di SYN.
+			\item \textbf{Application layer firewall}: Generalmente i firewall operano a livello di rete o, in casi specifici, di collegamento \textbf{poichè il formato dei pacchetti è già definito e non può essere modificato}. Gli application firewall \textbf{leggono le informazioni del payload del pacchetto} per decidere quali applicazioni possono passare. Hanno una maggiore complessità e dunque un maggiori requisiti in termini di risorse computazionali.
+		\end{enumerate}
+		\subsection{Posizionamento}
+			Esistono due configurazioni tipiche per il posizionamento di un firewall.\\
+			\textbf{La prima è quella che vede il firewall separare due segmenti di rete}:
+			\begin{itemize}
+				\item Rete interna: vi risiedono postazioni degli utenti, i server e i database. Deve essere protetto perchè contiene informazioni importanti per un'azienda (attività in genere).
+				\item Rete esterna: una rete che è accessibile dall'esterno, su cui risiedono server we, di posta e di DNS, \textbf{a diretto contatto con internet} e dunque a maggiore rischio. Tuttavia nell'ottica di chi vede la rete da fuori questa rete esterna contiene dati accessibili dall'esterno e dunque di minore valore e con minori restrizioni di accesso (\textbf{DeMilitarized Zone})
+			\end{itemize}
+			
+			INSERIRE fire\\
+			
+			\textbf{La seconda configurazione prevede di aggiungere un ulteriore firewall in modo da avere due elementi di difesa prima di arrivare alla rete corporate.} La configurazione risulta più robusta perchè:
+			\begin{itemize}
+				\item Un attaccante deve bucare due firewall prima di arrivare alla rete corporate ( i firewall utilizzeranno software e hardware diversi per offrire ridondanza ?????????????)
+				\item la DMZ è separata anche dall'interno verso l'esterno con lo stesso principio
+				\item è più facile separare il traffico, quindi tipi di connessione considerati meno sicuri si possono inserire nella DMZ
+			\end{itemize}
+			
+			INSERIRE fire2\\
+			
+		\subsection{Funzionamento}
+			Per spiegare il funzionamento di un firewall introduciamo prima due strumenti per la gestione e il filtraggio di pacchetti in UNIX: \textbf{Netfliers} e \textbf{Iptable}.
 								
 			
 				
@@ -828,4 +928,5 @@
 			
 		
 				 
+
 \end{document}

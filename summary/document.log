@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.9.21)  1 DEC 2018 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.9.21)  3 DEC 2018 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,11 +240,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write4
 \openout4 = `document.toc'.
 
- [2] (./document.lot)
+ (./document.lot)
 \tf@lot=\write5
 \openout5 = `document.lot'.
 
@@ -294,24 +294,27 @@ Overfull \hbox (35.55681pt too wide) in paragraph at lines 41--44
 
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
-<img/class.PNG, id=324, 318.43968pt x 82.80937pt>
+<img/class.PNG, id=360, 318.43968pt x 82.80937pt>
 File: img/class.PNG Graphic file (type png)
 <use img/class.PNG>
 Package pdftex.def Info: img/class.PNG  used on input line 53.
 (pdftex.def)             Requested size: 127.37361pt x 33.12315pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ² in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no   in font cmr12!
-[4 <./img/class.PNG (PNG copy)>]
-<img/static.PNG, id=331, 511.15968pt x 380.92313pt>
+<img/static.PNG, id=367, 511.15968pt x 380.92313pt>
 File: img/static.PNG Graphic file (type png)
 <use img/static.PNG>
 Package pdftex.def Info: img/static.PNG  used on input line 68.
 (pdftex.def)             Requested size: 204.46024pt x 152.36655pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no   in font cmr12!
-<img/dinamic.PNG, id=333, 337.26pt x 231.86626pt>
+<img/dinamic.PNG, id=369, 337.26pt x 231.86626pt>
 File: img/dinamic.PNG Graphic file (type png)
 <use img/dinamic.PNG>
 Package pdftex.def Info: img/dinamic.PNG  used on input line 81.
@@ -326,12 +329,12 @@ Overfull \hbox (8.14847pt too wide) in paragraph at lines 87--88
 1/cmr/bx/n/12 con porte di-namiche\OT1/cmr/m/n/12 . 
  []
 
+[5 <./img/class.PNG (PNG copy)> <./img/static.PNG (PNG copy)>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no   in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¹ in font cmr12!
-[5 <./img/static.PNG (PNG copy)>]
-<img/natp.PNG, id=340, 343.2825pt x 292.09125pt>
+<img/natp.PNG, id=375, 343.2825pt x 292.09125pt>
 File: img/natp.PNG Graphic file (type png)
 <use img/natp.PNG>
 Package pdftex.def Info: img/natp.PNG  used on input line 95.
@@ -1277,31 +1280,153 @@ Missing character: There is no ² in font cmbx12!
 Missing character: There is no Ã in font cmbx12!
 Missing character: There is no   in font cmbx12!
  [37]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 831.
- [38]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 831.
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ¨ in font cmbx12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--782
+
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+[38]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 803--804
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
+
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--810
+
+ []
+
+
+Overfull \hbox (8.7778pt too wide) in paragraph at lines 819--820
+[]\OT1/cmr/m/n/12 le vari-abili dello stack ven-gono scritte dal basso verso l'
+alto, ma all'interno
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ² in font cmr12!
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
+
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ² in font cmr12!
+
+Overfull \hbox (40.04137pt too wide) in paragraph at lines 835--836
+[]\OT1/cmr/m/n/12 Utilizzare fun-zioni che lim-i-tano la lunghezza della scrit-
+tura (strncpy(),strcpy()). 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ² in font cmr12!
+Missing character: There is no Ã in font cmti12!
+Missing character: There is no ¨ in font cmti12!
+[40]
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ² in font cmbx12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ¹ in font cmbx12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ¨ in font cmbx12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ¨ in font cmbx12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no   in font cmbx12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ² in font cmbx12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+Missing character: There is no Ã in font cmbx12!
+Missing character: There is no ¨ in font cmbx12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no   in font cmr12!
+
+Overfull \hbox (16.968pt too wide) in paragraph at lines 864--865
+\OT1/cmr/m/n/12 Deve es-sere pro-tetto perch con-tiene in-for-mazioni im-por-ta
+nti per un'azienda
+ []
+
+[41]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
+
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¹ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¹ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 877--878
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 932.
+[42]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 932.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 831.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 831.
-
-
-Package rerunfilecheck Warning: File `document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `document.out':
-(rerunfilecheck)             Before: F8DF73BD0859A4EC0F27C9105DA4D1FF;4400
-(rerunfilecheck)             After:  B95E2664B91F418FAE17ACE240A90F57;4511.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 831.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 932.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 932.
+Package rerunfilecheck Info: File `document.out' has not changed.
+(rerunfilecheck)             Checksum: 7D07CE0DB97F8CE494BC4096E9353BCD;4906.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 932.
  ) 
 Here is how much of TeX's memory you used:
- 5265 strings out of 492982
- 77995 string characters out of 6134896
+ 5285 strings out of 492982
+ 78255 string characters out of 6134896
  162436 words of memory out of 5000000
- 8670 multiletter control sequences out of 15000+600000
+ 8677 multiletter control sequences out of 15000+600000
  9514 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,28p,747b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,7n,28p,747b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
@@ -1313,10 +1438,10 @@ s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1
 amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti12.pfb>
-Output written on document.pdf (38 pages, 342387 bytes).
+Output written on document.pdf (42 pages, 351762 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 526 compressed objects within 6 object streams
- 135 named destinations out of 1000 (max. 500000)
- 485 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 578 compressed objects within 6 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 541 words of extra memory for PDF output out of 10000 (max. 10000000)
 
