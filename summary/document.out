@@ -63,3 +63,12 @@
 \BOOKMARK [1][-]{section.5}{Firewall}{}% 63
 \BOOKMARK [2][-]{subsection.5.1}{Posizionamento}{section.5}% 64
 \BOOKMARK [2][-]{subsection.5.2}{Funzionamento}{section.5}% 65
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Tabella di NAT}{subsection.5.2}% 66
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Tabella di Filter}{subsection.5.2}% 67
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Il connection tracking}{subsection.5.2}% 68
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Fault tolerance and Load Balancing }{subsection.5.2}% 69
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Primary-Backup configuration }{subsection.5.2}% 70
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Multi-Primary multy path firewall cluster}{subsection.5.2}% 71
+\BOOKMARK [3][-]{subsubsection.5.2.7}{Multi-primary hash-based stateful firewall cluster}{subsection.5.2}% 72
+\BOOKMARK [3][-]{subsubsection.5.2.8}{State replication}{subsection.5.2}% 73
+\BOOKMARK [2][-]{subsection.5.3}{L7 Filtering}{section.5}% 74

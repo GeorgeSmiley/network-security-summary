@@ -4,18 +4,18 @@
 \contentsline {subsection}{\numberline {2.2}NAT Dinamico}{5}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}NAPT: Network Address and Port Translation}{6}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Basi}{7}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{7}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{8}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}NAT binding}{8}{subsection.2.6}
 \contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{9}{subsubsection.2.6.1}
 \contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{9}{subsubsection.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{9}{subsubsection.2.6.3}
-\contentsline {subsubsection}{\numberline {2.6.4}Port Restricted Cone NAT}{9}{subsubsection.2.6.4}
+\contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{10}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.4}Port Restricted Cone NAT}{10}{subsubsection.2.6.4}
 \contentsline {subsubsection}{\numberline {2.6.5}NAT - STUN}{10}{subsubsection.2.6.5}
 \contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{10}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{10}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{11}{subsubsection.2.7.1}
 \contentsline {subsubsection}{\numberline {2.7.2}In base al Port Binding}{11}{subsubsection.2.7.2}
 \contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{11}{subsubsection.2.7.3}
-\contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{11}{subsubsection.2.7.4}
+\contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{12}{subsubsection.2.7.4}
 \contentsline {subsection}{\numberline {2.8}Considerazioni}{12}{subsection.2.8}
 \contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{12}{subsubsection.2.8.1}
 \contentsline {section}{\numberline {3}Crittografia}{13}{section.3}
@@ -63,3 +63,12 @@
 \contentsline {section}{\numberline {5}Firewall}{41}{section.5}
 \contentsline {subsection}{\numberline {5.1}Posizionamento}{41}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Funzionamento}{42}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Tabella di NAT}{44}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Tabella di Filter}{44}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Il connection tracking}{45}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Fault tolerance and Load Balancing }{46}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Primary-Backup configuration }{46}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}Multi-Primary multy path firewall cluster}{46}{subsubsection.5.2.6}
+\contentsline {subsubsection}{\numberline {5.2.7}Multi-primary hash-based stateful firewall cluster}{47}{subsubsection.5.2.7}
+\contentsline {subsubsection}{\numberline {5.2.8}State replication}{47}{subsubsection.5.2.8}
+\contentsline {subsection}{\numberline {5.3}L7 Filtering}{48}{subsection.5.3}

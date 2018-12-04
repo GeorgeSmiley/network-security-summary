@@ -878,13 +878,153 @@
 			
 		\subsection{Funzionamento}
 			Per spiegare il funzionamento di un firewall introduciamo prima due strumenti per la gestione e il filtraggio di pacchetti in UNIX: \textbf{Netfliers} e \textbf{Iptable}.
-								
+			\begin{itemize}
+				\item \textbf{Netfilters}: è il framework inserito in GNU/LINUX \textbf{che permette di effettuare il filtraggio dei pacchetti su un firewall software}. Lavora al livello del nucleo del sistema operativo (\textit{kernel space}). Mette a disposizione degli \textbf{hook} ovvero dei punti di aggancio che permettono di filtrare i pacchetti durante il loro percorso all'interno del firewall.
+				\item \textbf{Iptables}: è uno strumento che permette di \textbf{configurare le regole di scarto.}
+			\end{itemize}
 			
-				
+			INSERIRE rule\\
 			
-			 
-						
+			\textbf{Le regole} sono organizzate in:
+			\begin{itemize}
+				\item \textbf{Catena:} identifica un punto all'interno del percorso nel kernel in cui avviene il filtraggio.
+				\item \textbf{Tabella:} associa una funzione alla regola.
+			\end{itemize}
+			Descriviamo con più dettaglio cosa significa filtrare i pacchetti.\\
+			Un firewall è un host a tutti gli effetti che possiede \textbf{almeno 2 schede} di rete, i pacchetti possono arrivare su entrambe le schede, essere filtrati e poi inviati sull'altra (\textbf{forwarding}). Ovviamente se un pacchetto arriva alla scheda uno con IP 1 non si effettuerà il forwarding. Si possono anche \textbf{generare pacchetti} da inviare all'\textbf{esterno}.\\
+			
+			INSERIRE logic\\
+			
+			INSERIRE logic2\\
+			
+			Il filtraggio dei pacchetti è composto da un insieme di regole che svolgono diverse funzioni in diversi punti di una catena. 
+			\begin{itemize}
+				\item drop (scartare)
+				\item accept (lasciar passare)
+				\item mangle (modificare)
+				\item ...
+				\item lasciar passare e riportare un messaggio nel log
+			\end{itemize}
+			Importante sottolineare che Netfilter è \textbf{stateful} quindi deve esistere un modulo che \textbf{ricostruisce il flusso di pacchetti correlati} (es stesso ip): questo modulo è \textbf{Conntrack}.\\
+			Le regole vengono raggruppate in insiemi di azioni simili che svolgono le stesse funzioni:
+			\begin{itemize}
+				\item conntrack
+				\item mangle
+				\item NAT
+				\item fitler
+			\end{itemize}
+			\textbf{All'interno di ogni catena si richiamano regole appartenenti a tabelle differenti}.
+			
+			\subsubsection{Tabella di NAT}
+				Una tabella di NAT \textbf{serve a modificare i campi di indirizzo IP all'interno degli header del pacchetto}.
+					\begin{itemize}
+						\item \textbf{DNAT}: destination address translation, \textbf{si cambia indirizzo di destinazione}. Viene utilizzato dai firewall di frontiera per distribuire il carico su una \textbf{rete con più server.}\\
+						iptables -t nat -I POSTROUTING -s 192.168.1.12 -j SNAT –to-source
+						150.217.5.123
+						\item \textbf{SNAT:} source address modification, si \textbf{cambia l'indirizzo IP sorgente}. Viene utilizzato per mascherare una rete privata, della quale si vuole mantenere gli indirizzi \textbf{non routabili} dietro ad un indirizzo pubblico.\\
+						iptables -t nat -I PREROUTING -d 150.217.5.123 -j DNAT –to-destination
+						192.168.1.12
+					\end{itemize}
+			\subsubsection{Tabella di Filter}
+				Serve per operare il vero filtraggio dei pacchetti, decide quali passano e quali vengono bloccati. I target possibili sono:
+				\begin{itemize}
+					\item \textbf{Drop}: il pacchetto viene scartato senza dare risposta al mittente
+					\item \textbf{Reject}: il pacchetto è scartato inviando al mittente una risposta di reset
+					\item \textbf{Accept}: il pacchetto continua il suo percorso all'interno del kernel
+					\item \textbf{Log}: il pacchetto genera un log	
+				\end{itemize}
+			\subsubsection{Il connection tracking}
+				\textbf{Ha lo scopo di mettere in relazione pacchetti diversi, utilizzando una macchina a stati che individua:}
+				\begin{itemize}
+					\item Frammenti che costituiscono lo stesso pacchetto IP
+					\item Pacchetti che fanno parte della stessa connessione
+					\item Pacchetti che fanno parte di connessioni distinte ma relazionate tra loro (FTP)
+				\end{itemize}
+				Queste funzionalità non devono essere utilizzate con attenzione o si rischia di saturare le risorse della macchina.\\
 				
+				INSERIRE conntrack\\
+				
+				Come posso distinguere i pacchetti 1 e 2??\\
+				Non possiamo usare il SYN poichè non è conveniente, il problema si riproporrebbe con pacchetti di altri protocolli (UDP). \textbf{Esiste una differenza fondamentale}
+				\begin{itemize}
+					\item Il pacchetto 1 viene ricevuto dopo aver inviato un pacchetto in uscita
+					\item Il pacchetto 2 inizia la connessione
+				\end{itemize}
+				Il conntrack tiene traccia di queste associazioni ogni pacchetto di (qualsiasi tipo) viene associato ad una \textit{connessione} che può trovarsi in 4 stati:
+				\begin{itemize}
+					\item NEW: il kernel ha visto passare i pacchetti in una sola direzione
+					\item ESTABLISHED: Il kernel ha visto il traffico in entrambe le direzioni
+					\item INVALID: nessuna delle precedenti, si è verificato un errore
+					\item RELATED: il pacchetto appartiene ad una connessione in qualche modo relazionata a una già ESTABLISHED (FTP)
+				\end{itemize}
+			
+				INSERIRE state \\
+				
+			\subsubsection{Fault tolerance and Load Balancing  }
+				Il firewall solitamente è un punto di uscita ingresso nella rete dunque \textbf{rappresenta un collo di bottiglia}.\\
+				In reti che devono gestire volumi elevati di traffico è importante condividere il carico tra più firewall per avere prestazioni migliori e procedure di backup:
+				\begin{itemize}
+					\item \textbf{Backup cold swap}: 2 firewall uno acceso l'altro spento. Il secondo si accende dopo la rottura del primo
+					\item \textbf{Backup hot swap}: 2 firewall entrambi accesi. Il secondo entra in funzione immediatamente dopo la rottura del primo.
+				\end{itemize}
+			\subsubsection{Primary-Backup configuration }
+				In questo tipo di configurazione si ha un getway che smista il traffico verso i due firewall. Il primary possiede un indirizzo virtuale (\textbf{VIP}) che è quello che vedono le applicazioni dall'esterno. Il \textbf{backup è solitamente inattivo}. Viene utilizzato un protocollo \textit{heartbeat} per controllare lo stato del primary: quando quest'ultimo subisce un guasto l'indirizzo \textbf{VIP viene assegnato al server di backup.} In questo caso:
+				\begin{itemize}
+					\item Non c'è load balancing
+					\item Al momento del guasto cadono tutte le connessioni
+					\item C'è spreco di risorse perchè una macchina non fa niente.
+				\end{itemize}
+			\subsubsection{Multi-Primary multy path firewall cluster}
+				La configurazione è similare al caso precedente con la differenza che prima della coppia di firewall si ha un \textbf{load balancer} che distribuisce i flussi di traffico su entrambi i firewall. In questo caso:
+				\begin{itemize}
+					\item se un firewall si guasta cadono tutte le connessioni,
+					\item \textbf{il problema della ridondanza si sposta sul load balancer}.
+				\end{itemize}  
+			\subsubsection{Multi-primary hash-based stateful firewall cluster}
+				In questo caso:
+				\begin{itemize}
+					\item non abbiamo il load balancer
+					\item ogni firewall ha un ID numerico e valuta una connessione secondo la tupla $$T = IP_{s}, IP_{d}, Port_{s}, Port_{s}, Prorocol  $$
+					\item per ogni tupla se $$Hash(T)mod 2 == ID $$ allora filtra, altrimenti ignora
+					\item in questo modo i firewall si distribuiscono il traffico autonomamente
+					\item c'è bisogno comunque di un \textit{heartbeat} per reagire alle situazioni di guasto.
+				\end{itemize} 
+				
+				INSERIRE multipriha\\
+				
+			\subsubsection{State replication}
+				In tutte queste situazioni \textbf{quando un firewall si guasta si perdono le connessioni attive in quel momento}. Per evitare questa conseguenza è fondamentale che quando una connessione cambia stato, il cambio sia notificato al server di backup. Si può fare secondo due politiche:
+				\begin{itemize}
+					\item \textbf{su base evento} (ad ogni cambio di stato)
+					\item \textbf{update periodici}
+				\end{itemize}
+				Si ottengono, in relazione alle politiche performance diverse in termini di affidabilità, ma anche costi computazionali differenti.\\
+				
+				INSERIRE staterep\\
+				
+		\subsection{L7 Filtering}
+			Il filtraggio al livello 7 viene fatto se non è sufficiente utilizzare il numero di porta sorgente e destinazione per capire che tipo di traffico si sta analizzando. Un amministratore di rete può voler filtrare a livello 7 per \textbf{i seguenti motivi}
+			\begin{itemize}
+				\item Log e analisi del traffico: si vuole sapere che tipo di traffico passa per la vostra rete, in modo tale da poter dimensionare i link e gli apparati
+				\item Traffic shaping: si vuole dare priorità ad alcuni flussi piuttosto che ad altri
+				\item \textbf{Blocco di alcuni protocolli}: vogliamo evitare che alcuni tipi di traffico passino per la rete
+			\end{itemize}
+			Filtrare a livello 7è molto difficile, esistono meccanismi interni ai protocolli che rendono difficile collegare connessioni diverse alla stessa connessione, protocolli che intenzionalmente offuscano il proprio tipo o protocolli cifrati. \textbf{Ogni filtro deve essere modellato sull'applicazione specifica e può avere una macchina a stati molto complessa}. \\
+			Elenchiamo le principali difficoltà che si incontrano nel filtering L7:
+			\begin{itemize}
+				\item Implementare macchine a stati complicate per filtrare gigabit di traffico è computazionalmente molto pesante. E’ necessario avere macchine
+				dedicate con potenza sufficiente.
+				\item I protocolli. E’ possibile che da un giorno al successivo un filtro smetta di
+				funzionare causando perdita di performance (falsi negativi) o blocco di
+				connessioni legittime (falsi positivi).
+				\item Un algoritmo di pattern matching implementato in software ha gli stessi
+				problemi di sicurezza di altri applicativi di livello 7. Cosa che
+				generalmente è più difficile per firewall di livello più basso.
+			\end{itemize} 
+			
+			COMPLETARE CON vulnerabilità note \\
+			
+			
 				
 				
 				
