@@ -72,3 +72,13 @@
 \BOOKMARK [3][-]{subsubsection.5.2.7}{Multi-primary hash-based stateful firewall cluster}{subsection.5.2}% 72
 \BOOKMARK [3][-]{subsubsection.5.2.8}{State replication}{subsection.5.2}% 73
 \BOOKMARK [2][-]{subsection.5.3}{L7 Filtering}{section.5}% 74
+\BOOKMARK [1][-]{section.6}{Wireless security}{}% 75
+\BOOKMARK [2][-]{subsection.6.1}{Panoramica}{section.6}% 76
+\BOOKMARK [3][-]{subsubsection.6.1.1}{WiMax: 802.16}{subsection.6.1}% 77
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Bluetooth}{subsection.6.1}% 78
+\BOOKMARK [2][-]{subsection.6.2}{802.11: Wifi}{section.6}% 79
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Introduzione}{subsection.6.2}% 80
+\BOOKMARK [3][-]{subsubsection.6.2.2}{WEP: Web Equivalent Privacy}{subsection.6.2}% 81
+\BOOKMARK [3][-]{subsubsection.6.2.3}{WEP: Autenticazione Shared Key}{subsection.6.2}% 82
+\BOOKMARK [3][-]{subsubsection.6.2.4}{WEP: Uscita dalla rete}{subsection.6.2}% 83
+\BOOKMARK [3][-]{subsubsection.6.2.5}{802.11: Accesso al canale, Hidden node problem }{subsection.6.2}% 84
