@@ -82,3 +82,18 @@
 \BOOKMARK [3][-]{subsubsection.6.2.3}{WEP: Autenticazione Shared Key}{subsection.6.2}% 82
 \BOOKMARK [3][-]{subsubsection.6.2.4}{WEP: Uscita dalla rete}{subsection.6.2}% 83
 \BOOKMARK [3][-]{subsubsection.6.2.5}{802.11: Accesso al canale, Hidden node problem }{subsection.6.2}% 84
+\BOOKMARK [2][-]{subsection.6.3}{Insicurezze di 802.11}{section.6}% 85
+\BOOKMARK [3][-]{subsubsection.6.3.1}{DoS: autenticazione/associazione}{subsection.6.3}% 86
+\BOOKMARK [3][-]{subsubsection.6.3.2}{DoS: sull'accesso al canale}{subsection.6.3}% 87
+\BOOKMARK [3][-]{subsubsection.6.3.3}{DoS: modalità powersave}{subsection.6.3}% 88
+\BOOKMARK [3][-]{subsubsection.6.3.4}{DoS: saturazione della banda}{subsection.6.3}% 89
+\BOOKMARK [3][-]{subsubsection.6.3.5}{DoS: stato fisico \(jamming\)}{subsection.6.3}% 90
+\BOOKMARK [3][-]{subsubsection.6.3.6}{Attacchi sui software dell'AP}{subsection.6.3}% 91
+\BOOKMARK [3][-]{subsubsection.6.3.7}{Shared Key e Oracle attack}{subsection.6.3}% 92
+\BOOKMARK [3][-]{subsubsection.6.3.8}{Attacchi Man in the middle}{subsection.6.3}% 93
+\BOOKMARK [3][-]{subsubsection.6.3.9}{Vulnerabilità di RC4}{subsection.6.3}% 94
+\BOOKMARK [3][-]{subsubsection.6.3.10}{Attacchi sul CRC}{subsection.6.3}% 95
+\BOOKMARK [3][-]{subsubsection.6.3.11}{HTTP Authentication}{subsection.6.3}% 96
+\BOOKMARK [2][-]{subsection.6.4}{Il protocollo 802.11i}{section.6}% 97
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Storia di 802.11i}{subsection.6.4}% 98
+\BOOKMARK [2][-]{subsection.6.5}{Novità di 802.11i}{section.6}% 99

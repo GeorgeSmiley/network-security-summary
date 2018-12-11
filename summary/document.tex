@@ -1173,9 +1173,231 @@
 				
 				TERMINARE UNA VOLTA CAPITO\\
 				
+		\subsection{Insicurezze di 802.11}
+			Le insicurezze che vedremo riguardano alle versioni \textbf{a, b, g}, alcune di queste non riguardano algoritmi crittografici utilizzati quindi vengono ritrovati anche nella versione \textbf{i}. 
+			\subsubsection{DoS: autenticazione/associazione}
+				Se li servizio di cui l'attaccante vuole interrompere l'erogazione è l'accesso stesso ad internet, il danno in termini economici è rilevante. In casi specifici \textbf{mission critical} non ci si può permettere di non avere connettività (sistemi real time, scadenze produttive ecc). In generale l'interruzione del servizio rende un'idea di inaffidabilità che allontana l'utente.\\
+				Passiamo ora a descrivere il primo DoS che riguarda autenticazione/associazione alla rete. Ricordiamo che tale processo svolge i seguenti passi:
+				\begin{enumerate}
+					\item Il client chiede di autenticarsi
+					\item L'AP invia un challenge text
+					\item il client invia il challenge text cifrato con la chiave WEP
+				\end{enumerate}
+				L\textbf{a maggiore criticità risiede nel fatto che i pacchetti di autenticazione non sono autenticati, rendendo facile per un attaccante falsificarli.}
+				\begin{enumerate}
+					\item Durante la fase di ingresso l'attaccante attende l'autenticazione e risponde al posto dell'AP con un pacchetto di deautenticazione
+					\item In questo modo evita che la macchina bersaglio non entri nella rete
+					\item L'invio di un pacchetto di deautenticazione può essere inviato in qualsiasi momento da un'attaccante.
+				\end{enumerate}
+				\textbf{Lo scopo} di questo attacco potrebbe essere mirato al negare l'entrata di un particolare client all'interno della rete, o più semplicemente tenere fuori dalla rete altri client\textbf{ per avere più banda a disposizione.} L'attaccante dovrà stare sempre in ascolto di nuove autenticazioni se vuole compiere l'attacco in modo continuativo.\\
+				\textbf{Si può fare un attacco specifico per l'associazione}, la differenza sta nel fatto che quest'ultimo non richiede una riautenticazione e quindi di minor impatto (può servire per far rivelare l ssdi quando l'AP non lo rivela.)\\
+				Questo tipo di attacchi sono ancora più pericolosi se l'attaccante oltre a cambiare (\textbf{spoofare}), utilizza \textbf{l'indirizzo di destinazione di broadcast}, di fatto inviando pacchetti di deautenticazione a tutti i client della rete. Si possono configurare i client per non accettare richieste di autenticazione/deautenticazione in broadcast,\textbf{ non rispettando lo standard.} 
+			\subsubsection{DoS: sull'accesso al canale}
 				
+				INSERIRE duration\\
+				
+				Un attacco che sfrutta il campo \textbf{duration} dell'header in un pacchetto MAC. Questo campo specifica quanto il canale sarà occupato dal mittente del pacchetto. \textbf{Ogni client che riceve un pacchetto MAC, anche se non rivolto al suo indirizzo MAC, deve leggerlo e rispettare il campo duration}.\\
+				Il campo duration è espresso in \textit{microsecondi}, ma l'attaccante può inviare un nuovo pacchetto prima che scada il timeout, riprenotando il canale.\\
+				Il risultato è che \textbf{nessuna macchina può trasmettere a parte l'attaccante.}
+			\subsubsection{DoS: modalità powersave}
 			
+				INSERIRE power\\
+				
+				Questo attacco utilizza pacchetti con il \textbf{bit di Power Save} settato a 1. Normalmente il client invia pacchetti con bit Power save a 1 quando non vuole ricevere più traffico da parte dell'AP, che salverà i pacchetti a lui indirizzati in un \textbf{buffer}, in attesa che lo stesso client li richieda.\\
+				Se l'attaccante invia pacchetti \textbf{spoofati} (dunque con un indirizzo sorgente relativo ad un particolare client della rete) \textbf{con una certa frequenza}, potrà \textbf{isolare} il client con uno sforzo relativamente basso.
 			
+			\subsubsection{DoS: saturazione della banda}
+				Si utilizzano i messaggi di \textbf{probe}. In una situazione normale i messaggi di probe a livello II vengono inviati in broadcast \textbf{per trovare le macchine circostanti}. 
+				\begin{itemize}
+					\item la macchina richiedente invia un pacchetto di tipo \textbf{management} e di tipo \textbf{probe} in broadcast.
+					\item Tutte le macchine che ricevono tale pacchetto devono rispondono con un \textbf{probe reply} diretto al richiedente.
+				\end{itemize}
+				Essendo messaggi di management i messaggi probe \textbf{non vengono cifrati}, esponendoli a possibili falsificazioni da parte di un attaccante, con lo scopo di provocare le risposte dagli altri host della rete. \textbf{Ripetendo tali richieste in continuazione egli può occupare tutta la banda disponibile sfruttando l'effetto di riflessione degli altri host}.\\
+				A differenza del DoS sulla deautenticazione non si può evitare che un client risponda a questo tipo di pacchetti in broadcast, poichè si invaliderebbe l'utilità stessa del meccanismo di probing.
+				
+			\subsubsection{DoS: stato fisico (jamming)}
+				Entrando nel merito del livello fisico del protocollo 802.11 utilizza una codifica \textbf{spread spectrum} attraverso la quale il segnale viene trasmesso utilizzando una \textbf{banda più larga} di quanto sia necessario, \textbf{aggiungendo ridondanza}. A destinazione il segnale \textbf{viene ricostruito in gamma più stretta.}\\
+				Il risultato è che un segnale molto potente ma concentrato su una gamma di frequenza molto stretta, viene ricevuto a destinazione, dopo la ricostruzione, \textbf{come un rumore diffuso su tutta la frequenza}.	 \textbf{Risulta molto difficile disturbare la ricezione di tutti i dati}. \\
+				Un attacco di questo genere ha dunque l'obiettivo di invalidare il \textbf{codice di controllo errori} presente nei pacchetti di rete. Per farlo è sufficiente disturbare la ricezione di \textbf{un solo bit}. Il pacchetto non passerà il controllo di errore e sarà \textbf{scartato} e quindi ritrasmesso.
+			\subsubsection{Attacchi sui software dell'AP}		
+				Molto spesso le AP presentano delle interfacce WEB di gestione, utilizzate dalle macchine collegate alla rete per accedere \textbf{all'interfaccia di gestione} attraverso la quale possono configurare l'AP. Questi SW hanno spesso dimostrato di avere vulnerabilità come \textbf{buffer overflow} e \textbf{password attive di default.} In alcuni casi \textbf{il reset improvviso} dell'AP può provocare il riavvio di una modalità provvisoria che offre a utenti senza credenziali la possibilità di autenticarsi.\\
+				\textbf{Altri attacchi} riguardano le liste SW gestite dall'AP.  Gli AP devono \textbf{mantenere una lista} delle macchine
+				autenticate nella rete, delle macchine associate e delle
+				macchine che hanno richiesto l’autenticazione ma non
+				hanno ancora completato le procedure. Quando una lista
+				si riempie, altre richieste vengono scartate.\\
+				Si devono dunque utilizzare politiche di gestione delle liste efficienti. Ecco alcuni esempi di inefficienza.
+				\begin{itemize}
+					\item Le liste sono \textbf{code a scorrimento}, dunque se la lista è piena e arriva un'ulteriore macchina la più vecchia viene tolta dalla lista. \textbf{Forgiando richieste di autenticazione false si riempie la lista e si impediscono anche le autenticazioni in corso}.
+					\item \textbf{Se le tre liste sono unite in un'unica lista}: lo scenario precedente si manifesta in modo ancor più grave.
+					\item \textbf{Cattiva gestione della memoria}: si può causare buffer overrun e il riavvio dell'AP.
+				\end{itemize}
+				
+			\subsubsection{Shared Key e Oracle attack}
+				Come abbiamo già detto la chiave WEP è statica, in questo modo non esiste nessuna segretezza e quindi autenticazione tra le macchine della rete. Una macchina autenticata può addirittura spostare la chiave su altre macchine e lasciare che esse entrino. Inoltre, anche le \textbf{access list } dell'AP sono statiche rendendo il problema della gestione molto importante. Si possono anche cambiare gli indirizzi MAC delle schede wireless. Il risultato è che t\textbf{utta la fiducia sia riposta nella certezza che l'algoritmo di autenticazione e cifratura sia robusto.} Per tale motivo l'AP non si autentica con le macchine.\\
+				\textbf{Tuttavia, l'autenticazione shared key è tragicamente insicura}
+				\begin{itemize}
+					\item Nel giro di pochi secondi passo lo stesso testo (128byte) in chiaro e poi cifrato.
+					\item un attaccante può potenzialmente recuperare un frammento del \textbf{keystream} che può utilizzare per inviare pacchetti nella rete anche senza possedere una chiave WEP.
+					\item un attaccante può effettuare un attacco di tipo \textbf{reply} anche senza conoscere la chiave, \textbf{spacciandosi per l'AP}.
+					\item si può effettuare l'attacco \textbf{dell'oracolo}.
+				\end{itemize}
+			L'attacco dell'oracolo dunque vede un attaccante che ha la volontà di inviare messaggi nella rete senza conoscere la chiave segreta:
+			\begin{enumerate}
+				\item In primo luogo \textbf{deautentica un client}
+				\item forgia un pacchetto con un \textit{challenge text} \textbf{contenente i dati che vuole inviare}.
+				\item Il client risponde con un challenge text cifrato con un certo IV. Di fatto questo pacchetto è valido per essere inviato lungo massimo 128byte.
+			\end{enumerate}	
+			L'attacco non ha un utilizzo concreto molto comune, ma dimostra la goffaggine con cui sono stati progettati i meccanismi di sicurezza.
+			Questi problemi hanno spinto i produttori di AP e i gestori delle reti a preferire l'autenticazione \textbf{opend system.} Per evitare che chiunque entri nella rete si preferisce mascherare nei beacon l'ESSID dell'AP, parametro necessario per richiedere autenticazione. 
+			Si crea però un'altra divergenza dallo standard.
+			
+			\subsubsection{Attacchi Man in the middle}
+				L'attacco man in the middle prevede di dirigere tutto il traffico tra due host attraverso la propria macchina con i seguenti scopi:
+				\begin{itemize}
+					\item Assicurarsi che il traffico da intercettare passi per la propria macchina 
+					\item convincere una macchina che la forma di autenticazione è cambiata e che non si utilizza più lachiave WEP.
+					\item Poter influenzare le procedure di autenticazione e crittografia degli strati superiori (attacco MINTM sui certificati SSL).
+				\end{itemize}
+				Di seguito le possibili modalità di attacco:
+				\begin{itemize}
+					\item Qualsiasi macchina della rete che possiede la chiave WEP \textbf{può spacciarsi per l'AP}.
+					\item Se un attaccante deautentica l'host, l'host cercherà di ripetere l'autenticazione. Ne scaturisce una \textbf{race condition} per cui l'attaccante cerca di rispondere prima dell'AP. Quest'ultimo si può aiutare con una seconda scheda di rete per \textbf{produrre un DoS sul vero AP} in modo da favorirsi nella corsa.
+					\item Spesso dopo un certo numero di disconnessioni un host cercherà di ripetere l'autenticazione su un canale diverso, facendo \textbf{channel hopping}. L'attaccante si può mettere in ascolto su un altro canale così è sicuro che la vittima si collegherà con lui.
+					\item I finti AP si chiamano \textbf{Rogue AP o Fake AP}.
+				\end{itemize}	
+				
+				\textbf{La non ripetizione di IV è fondamentale} per non rischiare di esporre il materiale cifrato, \textbf{riutilizzare un IV significa utilizzare due volte lo stesso keystream}. Come abbiamo visto il protocollo permette di accedere al contenuto in chiaro e successivamente (in pochi secondi) a quello cifrato, dunque se si cifrasse con lo stesso keystream si potrebbe risalire al contenuto di tutti questi pacchetti cifrati con lo stesso IV.\\
+				\textbf{Risulta possibile costruire un dizionario di tutti i keystream?}.
+				\begin{itemize}
+					\item Il campo IV è lungo 24 bit dunque si possono ottenere 16.777.216 keystream diversi.
+					\item essendo i pacchetti lunghi 1500 byte si devono 25GB di traffico, che su una rete con 30Mbit/s si ottengono in 2 ore.
+				\end{itemize}
+				Questo ci permette in linea teorica di \textbf{poter costruire un dizionario} di tutti i keystream.
+				\begin{itemize}
+					\item  Per ricavare un keystream l’attaccante deve conoscere il
+					contenuto del pacchetto che vede passare cifrato.
+					\item Esistono dei pacchetti di cui il contenuto è predicibile, e
+					che sono riconoscibili dalla lunghezza (es: DHCP
+					request).
+					\item Quando l’attaccante vede passare un pacchetto della
+					lunghezza corrispondente conosce il contenuto, quindi
+					automaticamente ricava il keystream.
+				\end{itemize}
+					
+				INSERIRE keystream \\
+				
+				Un'eventualità durante questo tipo di attacchi è quella di ricavare un keystream che sia più piccolo di quello totale (quindi non lungo quanto l'MTU della rete). \textbf{In questo caso l'attaccante deve poter estendere tale keystream.}
+				
+				\begin{itemize}
+					\item  Se l’attaccante conosce un keystream lungo N bytes, forgia
+					un nuovo pacchetto (es: Ping), più lungo di un byte.
+					\item Non può cifrare questo byte aggiuntivo perchè non conosce
+					il byte aggiuntivo di keystream, quindi suppone che sia
+					0x00.
+					\item L’attaccante ricalcola il CRC, lo accoda al pacchetto e lo
+					invia.
+					\item A destinazione il CRC viene verificato, se il byte di
+					keystream non era 0x00 il CRC fallisce, e non viene ricevuta
+					risposta. Altrimenti si riceve una risposta, quindi 0x00 era il
+					byte giusto.
+					\item Se non si riceve risposta si riprova con 0x01 . . .	
+				\end{itemize}
+				\textbf{Mediamente dopo 128 tentativi si ottiene il byte di estensione}. Se non si vuole impattare troppo sulle prestazioni della rete si può pensare di indovinare il keystream nell'arco di 24 ore.\\
+				Ottenuto il primo keystream l'attaccante \textbf{può cominciare a costruire il dizionario}
+				\begin{itemize}
+					\item  Avendo a disposizione un
+					keystream intero \textbf{può iniettare} nella rete pacchetti
+					che vengono elaborati correttamente dalle macchine collegate
+					\item Esiste un’opzione del protocollo ICMP che impone ad una
+					macchina che riceve un ping di rispondere esattamente
+					con lo stesso pacchetto.
+					\item L’attaccante forgia dei ping di 1500 byte, e conosce la
+					risposta.
+					\item La vittima risponderà utilizzando IV diversi, quindi
+					mettendo a disposizione dell’attaccante nuovi keystream.
+				\end{itemize}
+				Facciamo due calcoli riguardo il tempo necessario per un attacco del genere:
+				\begin{itemize}
+					\item Individuazione pacchetto DHCP/attacco dell'oracolo (pochi secondi)
+					\item estensione del keystream (24 ore)
+					\item generazione del dizionario (3/4 ore)
+					\item totale circa 28 ore
+					\item tuttavia se si vuole rendere l'attacco \textbf{meno evidente} occorre diminuire il traffico generato e \textbf{raddoppiare o triplicare} il tempo occorrente
+					\item una volta costruito il dizionario si possono decifrare tutti i pacchetti della rete oltre che inviarne senza conoscere la chiave segreta.
+				\end{itemize}
+			\subsubsection{Vulnerabilità di RC4}
+				Scoperta nel 2001 da Fluhrer, Mantin e Shamir. \textbf{La vulnerabilità risiede nel modo in cui RC4 genera i keystream}.
+				In particolare esiste una correlazione statistica tra il primo byte del keystream e la chiave segreta utilizzata. \textbf{Si dice che esistono IV deboli}. Raccogliendo 60 pacchetti cifrati a partire da IV deboli 	si può \textbf{ricavare la chiave segreta}, che una volta compromessa da accesso completo alla rete!
+				\begin{itemize}
+					\item Gli IV deboli sono distribuiti uniformemente nello spazio degli IV, e per ottenere 60 IV interessati ci vogliono mediamente 4.000.000 di pacchetti cifrati.
+					\item Dunque a seconda del traffico generato dalla rete in poche ore si rompe una chaive WEP e si ottiene una chiave di sicurezza da 40 bit.
+					\item La complessità dell'attacco aumenta \textbf{linearmente} con la lunghezza della chiave WEP.
+					\item ALcuni produttori corrono ai ripari impedendo ai  loro AP di utilizzare IV deboli, \textbf{non rispettando lo standard}.
+				\end{itemize}
+				Nel 2004 l'hacker KoreK invia su un forum un programma basato su una sua ricerca statistica, che svela \textbf{un'altra correlazione} anche tra \textbf{altri byte di keystream} e la chiave WEP rendendo l'attacco precedente ancora più facile.\\
+				Successivamente vengono introdotto \textbf{nuove migliorie} per rompere una chiave WEP a 40 bit: basta raccogliere qualche decina di migliaia di pacchetti cifrati ed attendere un tempo di elaborazione \textbf{di pochi secondi}.\\
+				Alcune note sull'algoritmo:
+				\begin{itemize}
+					\item Le specifiche di RC4 vengono rivelate solo alcuni anni dopo la sua pubblicazione
+					\item La comunità scientifica riceve RC4 con sospetto e dunque lo analizza in ritardo.
+					\item \textbf{Utilizzare un algoritmo chiuso ha prodotto questo risultato}
+				\end{itemize} 
+			\subsubsection{Attacchi sul CRC}
+				Il CRC è lineare rispetto all'operazione di 
+				
+				TERMINARE ARGOMENTO
+				
+			\subsubsection{HTTP Authentication}
+				All'ingresso nella rete il client fa un'autenticazione e un'associazione in standard 802.11\\
+				
+				INSERIRE auth 
+				
+				Il client riceve un indirizzo IP con DHCP\\
+				
+				INSERIRE dhcp\\
+				
+				Il client si connette alla porta 80 del server di autenticazione e si autentica con una metodo qualsiasi (SSL, password, md5 password ecc..) 
+				
+				INSERIRE auth 2\\
+				
+				Dunque per sintetizzare non esiste uno standard per effettuare e l'autenticazione deve sempre passare su SSL.\\
+				Si introducono tutti i problemi riguardanti i livelli superiori:
+				\begin{itemize}
+					\item Sicurezza del webserver 
+					\item sicurezza del browser (Cookies, SQL Injection ecc)
+				\end{itemize}
+			
+		\subsection{Il protocollo 802.11i}
+			\begin{center}
+				\textbf{ABBREVIAZIONI}
+			\end{center}
+			\begin{itemize}
+				\item \textbf{802.1X} Port-Based Network Access Control standard.
+				\item \textbf{WPA} Wireless Protected Access certification (vers. 1 o
+				2).
+				\item \textbf{EAP} Extensible Authentication Protocol.
+				\item \textbf{EAPoL} EAP Over LAN.
+				\item \textbf{TLS} Transport Layer Security.
+				\item \textbf{RADIUS} Remote Authentication Dial In User Service
+			\end{itemize}
+			\subsubsection{Storia di 802.11i}
+				\begin{enumerate}
+					\item \textbf{4/2003}: nasce WPA
+					\item \textbf{6/2004}: nasce lo standard 802.11i, ovvero WPA2
+					\item In seguito alla sua uscita molti tra i produttori hanno rilasciato degli aggiornamenti di firmware/driver perchè i loro vecchi prodotti pre 802.11i fossero almeno compatibili con WPA.
+				\end{enumerate}	
+			\subsection{Novità di 802.11i}
+			\textbf{Algoritmi di crittografia rinnovati}:
+			\begin{itemize}
+				\item  \textbf{TKIP}: utilizza RC4 ma in una modalità che non permette gli attacchi visti su WEP.
+				\item \textbf{CCMP:} abbandona RC4 e utilizza AES per la cifratura 
+			\end{itemize}
+			\textbf{Gestione delle chiavi rinnovata:}
+			\begin{itemize}
+				\item \textbf{WPA-PSK}: pre shared key tra le macchine della rete
+				\item \textbf{802.1X based authentication}	
+			\end{itemize}
 			
 				
 			  
