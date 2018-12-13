@@ -1387,7 +1387,7 @@
 					\item \textbf{6/2004}: nasce lo standard 802.11i, ovvero WPA2
 					\item In seguito alla sua uscita molti tra i produttori hanno rilasciato degli aggiornamenti di firmware/driver perchè i loro vecchi prodotti pre 802.11i fossero almeno compatibili con WPA.
 				\end{enumerate}	
-			\subsection{Novità di 802.11i}
+			\subsubsection{Novità di 802.11i}
 			\textbf{Algoritmi di crittografia rinnovati}:
 			\begin{itemize}
 				\item  \textbf{TKIP}: utilizza RC4 ma in una modalità che non permette gli attacchi visti su WEP.
@@ -1398,6 +1398,107 @@
 				\item \textbf{WPA-PSK}: pre shared key tra le macchine della rete
 				\item \textbf{802.1X based authentication}	
 			\end{itemize}
+			\textbf{Non cambiano}:
+			\begin{itemize}
+				\item Il traffico di management
+				\item traffico di controllo 
+			\end{itemize}
+			\textbf{Cambio di algoritmi}: Si utilizzano due algoritmi al posto di WEP, il \textbf{Tkip} o il \textbf{CCMP}, entrambi eliminano le problematiche di sicurezza riguardanti IV (corti, chiavi crackabili ecc), al prezzo di maggiore complessità, quindi difficilmente sono stati portati su hardware esistente.
+			\subsubsection{WPA, WPA2 and insecurity}
+				Il \textbf{WPA} è una versione di 802.11i che anticipa lo standard e già utilizza gli algoritmi di TKIP con gestione delle chiavi statica detta anche WPA Home o WPA-PSK. Gli AP possono utilizzare TKIP  con un semplice aggiornamento del firmware.\\
+				Il \textbf{WPA2} è la versione completa dello standard con l'utilizzo di 802.11X (WPA Enterprise). In questo caso gli ap devono implementare il client RADIUS e l'algoritmo CCMP, difficilmente realizzabili su hardware limitati.\\
+				Per quanto riguarda le \textbf{insicurezza} è da evidenziare l'esistenza di una variante dell'attacco \textbf{chopchop per TKIP}. Vediamo le principali differenze rispetto a WEP:
+				\begin{itemize}
+					\item Con WPA non si può ripetere due volte lo stesso IV (che prendere in questo caso il nome di \textbf{TSC}), perchè il ricevitore tiene un contatore degli ultimi ricevuti.
+					\item Nel caso di IEEE 802.11e, esistono 8 code differenti di ricezione ciascuna con TSC indipendente.
+					\item l'attacco può essere portato decifrando un byte per volta di un pacchetto utilizzando le code diverse.
+					\item Nella pratica possiamo \textbf{decifrare un pacchetto cifrato} e recuperare un keystream per riutilizzarlo in una coda distinta per iniettare un pacchetto nella rete.
+				\end{itemize}                                                   
+			\subsubsection{802.1x: Port based network access control}
+				Si tratta di uno standard che definisce dei ruoli generici per l'architettura di controllo degli accessi in reti 802. In questo standard vengono divisi i due ruoli dell'authenticator e dell'AP, che in questo caso offre solo accesso di livello II. In questo modo viene ridisegnata la \textbf{topologia della rete} rendendola più gestibile.\\
+				
+				INSERIRE topo\\
+				
+				I link in nero sono wired mentre quelli in rosso sono wireless, il link tra \textit{authentication} server e \textit{authenticator}, è un link di livello 3 \textbf{considerato sicuro.}\\
+				Vediamo quali sono i \textbf{ruoli} all'interno della topologia:
+				\begin{itemize}
+					\item \textit{Supplicant:} 
+					\begin{itemize}
+						\item Si deve autenticare per entrare nella rete.
+						\item Deve generare del \textit{keying material} per poter comunicare in modo sicuro con l'\textit{authenticator}.
+					\end{itemize}
+					\item \textit{authenticator}
+					\begin{itemize}
+						\item Non ha ruolo attivo nell'autenticazione (proxy)
+						\item Alla fine dell'autenticazione deve possedere il keying material in comune con il supplicant.
+						\item deriva dal keying material chiavi per cifrare ed autenticare.
+					\end{itemize}
+					\item \textit{authentication server}:
+					\begin{itemize}
+						\item si tratta di un \textbf{database di credenziali} di autenticazione, quindi di fatto è lui che autentica il supplicant.
+						\item una volta stabilita l'identità di supplicant decide se farlo entrare o meno e comunica la decisione all'authenticator.
+						\item Anche l'authentication server deve autenticarsi con il supplicant, \textbf{l'autenticazione è sempre bidirezionale}.
+					\end{itemize}
+				\end{itemize}
+				Vediamo adesso quali sono le \textbf{fasi dell'autenticazione}:
+				\begin{itemize}
+					\item \textit{Fase 1:} autenticazione 802.11 (solo per compatibilità) e associazione.
+					\item \textit{Fase 2}: autenticazione tra supplicant e
+					authentication server. Le due macchine verificano la reciproca
+					identità e producono una chiave simmetrica \textbf{PMK} (Pairwise master key).
+					\item \textit{Fase 3}: la PMK viene spostata sull'authenticator.
+					\item \textit{fase 4}: a partire dalla PMK supplicant e authenticator
+					derivano delle chiavi che verranno utilizzate per cifrare e
+					autenticare tutti i pacchetti successivi (chiave \textbf{PTK} per il traffico
+					unicast e \textbf{GTK} per il traffico broadcast).
+				\end{itemize}
+			 	Da questo momento in poi l’authentication server non partecipa più alle comunicazioni se non interpellato. Saltuariamente supplicant e authenticator possono decidere di generare delle nuove GTK e PTK a partire dalla PMK che rimane la stessa (key refresh). dalla PMK che rimane la stessa (key refresh). L’authenticator può decidere di forzare anche una riautenticazione, e costringere il supplicant a ripetere l’autenticazione iniziale per generare una nuova chiave PMK.\\
+			 	Un’autenticazione completa coinvolge diversi\textbf{ protocolli} e può essere configurata in molti modi diversi.\\
+			 	I \textbf{protocolli} possono essere di due tipi:
+			 	\begin{itemize}
+			 		\item \textbf{End to End (ete)}: un protocollo che coinvolge due macchine virtualmente collegate, ma non fisicamente
+			 		comunicanti (ad es. TCP/UDP). Nel nostro caso EAP.
+			 		\item \textbf{Point to Point (ptp)}: un protocollo che coinvolge due macchine che sono direttamente connesse (ad es.
+			 		DHCP). Nel nostro caso EAPoL, ma anche, astrattamente RADIUS.
+			 	\end{itemize}
+		 		Vediamo nel dettaglio:
+		 		\begin{itemize}
+		 			\item \textbf{Fase 1}: Standard 802.11a/b/g.
+		 			\item \textbf{Fase 2}: Tra supplicant e authentication server si usa il
+		 			protocollo EAP (ete). Questo viene veicolato tra
+		 			supplicant e authenticator dentro a pacchetti in
+		 			formato EAPoL, e tra authenticator e
+		 			authentication server attraverso il protocollo
+		 			RADIUS (ptp).
+		 		\end{itemize}
+	 		\subsubsection{WPA Home}
+	 			 Se non si vuole utilizzare un authentication server si
+	 			possono impostare le chiavi PMK direttamente nel supplicant e nell’authenticator. Si parla di \textbf{PSK Pre-Shared Key:}
+	 			\begin{itemize}
+	 				\item Tutto funziona nello stesso modo, ma si salta la parte di autenticazione EAP e si prosegue dagli handshake.
+	 				\item Le PSK possono essere configurate in una lista, associate
+	 				ai MAC address delle schede di rete dei client.
+	 			\end{itemize}
+	 			Una PSK è costituita da 256 bit e può essere specificata come:
+	 			\begin{itemize}
+	 				\item Una stringa in esadecimale: 0xa39f16ed6. . .
+	 				\item Una password che viene trasformata in 256 bit di chiave
+	 				PSK.
+	 			\end{itemize}
+	 			
+	 		
+	 			
+	 		
+	 		
+			 
+			 
+			 
+			 
+			 
+			 
+			
+				                                     
+				
 			
 				
 			  
