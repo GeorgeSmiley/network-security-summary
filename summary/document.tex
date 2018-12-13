@@ -46,6 +46,7 @@
 			\item Il server NAT viene visto all'esterno come la sorgente della comunicazione
 			\item Il NAT è \textbf{trasparente} per l'utente interno 
 		\end{itemize}
+		Di fatto il NAT permette di di modificare gli indirizzi IP contenuti negli header dei pacchetti in transito dall'esterno verso l'interno della rete locale. Lo scopo è quello di tradurre l'indirizzo di destinazione pubblico in un indirizzo riservato alla rete locale.
 		
 		\textit{Classi di indirizzi privati:\ref{fig:1}}
 		\begin{figure}[h!]
@@ -123,8 +124,12 @@
 			\end{itemize}
 		\subsection{NAT RFC 1631 e RFC 2776 }  
 			Per quanto riguarda \textbf{RFC 1631} si varia \textbf{solo gli indirizzi IP}, in questo modo tuttavia non risolviamo il problema della scarsità di indirizzi. Infatti il numero di indirizzi necessari è pari al numero di PC che vogliono utilizzare \textit{contemporaneamente} lo stesso protocollo.\\
-			
-			INSERIRE 1631\\
+			\textit{NAT: RFC 1631\ref{fig:7}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/1631.PNG}
+				\caption{NAT: RFC 1631\label{fig:7}}
+			\end{figure}
 			
 			In RFC 2776 invece, si varia \textbf{sia indirizzi IP che le porte}. In tal modo il numero delle sessione contemporanee (ovvero il numero di bindings contemporanei) è pari circa a 64000 (escludendo le porte ben conosciute.)
 		\subsection{NAT binding}
@@ -147,22 +152,42 @@
 			\subsubsection{Symmetric NAT}
 				Funziona esattamente come il symmetric per TCP, non funzioneranno i programmi che hanno bisogno di referral e handover (?????)\\
 				
-				INSERIRE sym\\
+				\textit{Symmetric NAT\ref{fig:8}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/sym.PNG}
+					\caption{Symmetric NAT\label{fig:8}}
+				\end{figure}
 				
 			\subsubsection{Full Cone NAT}
 			 	\textbf{Il filter non fa niente}. Tutto e tutti potranno raggiungere  il sorgente (compresi malintenzionati, permetto perfino di eseguire un \textbf{port scanning})\\
 			 	
-			 	INSERIRE cone\\
+			 	\textit{Full Cone NAT \ref{fig:9}}\\
+			 	\begin{figure}[h!]
+			 		\centering
+			 		\includegraphics[scale=0.60]{img/cone.PNG}
+			 		\caption{Full Cone NAT\label{fig:9}}
+			 	\end{figure}\\
 			 
 			 \subsubsection{Restricted Cone NAT}
 			 	I\textbf{l Filter è basato sull'IP del destinatario.} Significa che accettiamo comunicazioni da porte diverse purchè abbiano lo stesso IP ( provengano dallo stesso Host). \textbf{Non c'è controllo sul numero di porta}. Questa politica del Filter è restrittiva poichè non permette a programmi come MSN e mulo di funzionare\\
 			 	
-			 	INSERIRE rest\\
+			 	\textit{Restricted Cone NAT \ref{fig:10}}\\
+			 	\begin{figure}[h!]
+			 		\centering
+			 		\includegraphics[scale=0.60]{img/res.PNG}
+			 		\caption{Restricted Cone NAT \label{fig:10}}
+			 	\end{figure}\\
 			 	
 			 \subsubsection{Port Restricted Cone NAT}
 			 	\textbf{Il filter è basato sulla porta del destinatario}. Funzionano tutti i programmi UDP anche se con delle limitazioni.\\
 			 	
-			 	INSERIRE port\\
+			 	\textit{Port Restricted Cone NAT \ref{fig:11}}\\
+			 	\begin{figure}[h!]
+			 		\centering
+			 		\includegraphics[scale=0.60]{img/port.PNG}
+			 		\caption{Port Restricted Cone NAT \label{fig:11}}
+			 	\end{figure}\\
 			 	
 			 \subsubsection{NAT - STUN}
 			 	\textit{Come può un'applicazione conoscere il tipo di NAT ?}\newline
@@ -226,7 +251,12 @@
 			Risolvono il problema della \textbf{garanzia di integrità} di un documento trasmesso. \\
 			\textit{Una funzione hash è una funzione unidirezionale che si applica ad un'informazione, generando un'impronta (\textbf{digest}) di dimensione fissa che è funzione dei dati in ingresso}. Generalmente sono sequenze di operazioni elementari quali \textbf{shift} e \textbf{XOR} sui dati, quindi \textbf{molto veloci da computare}.\\
 			
-			INSERIRE sha\\
+			\textit{Criptography basis \ref{fig:12}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/sha.PNG}
+				\caption{Criptography basis \label{fig:12}}
+			\end{figure}\\
 			
 			\textbf{Esempio}:
 			\begin{itemize}
@@ -265,7 +295,12 @@
 					\item M e $HMACK_{K}(M)$ possono essere inviate accoppiate nello stesso pacchetto.
 				\end{itemize} 
 			
-				INSERIRE hmac\\
+				\textit{HMAC \ref{fig:13}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/hamac.PNG}
+					\caption{HMAC \label{fig:13}}
+				\end{figure}\\
 				
 				I \textbf{vantaggi rispetto ad una semplice funzione hash} sono:
 				\begin{itemize}
@@ -305,7 +340,19 @@
 				\item Stesso algoritmo per cifrare e decifrare.					
 			\end{itemize}
 				
-			INSERIRE des e des2\\
+			\textit{DES \ref{fig:14}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/des.PNG}
+				\caption{DES \label{fig:14}}
+			\end{figure}\\
+		
+			\textit{DES2 \ref{fig:15}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/des2.PNG}
+				\caption{DES2 \label{fig:15}}
+			\end{figure}\\
 				
 			Tra i \textbf{problemi} che si riscontrano si ha la \textbf{poca flessibilità} dovuta alla necessità per A e B di scambiarsi le chiavi in anticipo. Inoltre ci espone ad \textbf{attacchi di forza bruta} anche se più difficili del caso HMAC (per E sarà più difficile ad ogni tentativo stabili se il messaggio ottenuto è corretto)\\
 			\textbf{Possiamo combinare HMAC e cifratura a chiave simmetrica per ovviare a questi problemi}:
@@ -333,7 +380,12 @@
 			\end{itemize}
 			\textbf{Non è necessario concordare preventivamente una chiave di cifratura comune.}
 		
-			INSERIRE pubpriv\\
+			\textit{Cifratura a chiave pubblica/privata \ref{fig:16}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/pubpriv.PNG}
+				\caption{Cifratura a chiave pubblica/privata \label{fig:16}}
+			\end{figure}\\
 		
 		\subsection{Firma digitale}
 			\textbf{Le chiavi pubbliche e private sono invertibili}: A può utilizzare la sua chiave privata per criptare un messaggio che può essere decriptato utilizzando la relativa chiave pubblica. Il messaggio risulta dunque \textbf{decifrabile da chiunque} (la chiave è appunto pubblica) dunque \textbf{non garantisce la segretezza}. Si puà tuttavia \textbf{garantire l'autenticazione e la non ripudiabilità dei dati}: visto che A è l'unico in possesso di $Priv_{A}$ chiunque decifra il messaggio con la sua chiave pubblica \textbf{è sicuro che il messaggio proviene da quest'ultimo: FIRMA DIGITALE.}\\
@@ -387,7 +439,13 @@
 			La firma digitale ha lo stesso valore probatorio della firma su carta.\\
 			Attraverso i certificati otteniamo un accurato controllo degli accessi.\\
 			
-			INSERIRE CERTIFICATI\\
+			\textit{Certificati \ref{fig:17}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/certificati.PNG}
+				\caption{Certificati \label{fig:17}}
+			\end{figure}\\
+					
 			\subsubsection{Certificati per tutto}
 				Lo stesso modello può essere applicato in \textbf{qualsiasi contesto} anche senza il bisogno di contattare una CA ufficiale.\\
 				Introduciamo l'esempio di un'azienda che ha i seguenti servizi:
@@ -404,8 +462,16 @@
 				La CRL è \textbf{una lista di certificati revocati} dall'ente certificatore. Per fare ciò la CA tiene una lista di certificati non più validi, distribuita \textbf{firmata con la propria chiave privata}. Un utente deve essere in grado di \textbf{scaricare la CRL più aggiornata} tramite servizio offerto dall'infrastruttura di rete. Le CRL sono proprio il motivo per il quale abbiamo bisogno di un'autorità di terzi, poichè introducono un elemento di complicazione in più.
 			\subsubsection{WOT di Thawte (tybyca)}
 			 	COMPLETARE
-			\subsubsection{Confornti e sistema misto}
-				 INSERIRE confronto\\
+			\subsubsection{Confronti e sistema misto}
+				 
+				 \textit{Confronti \ref{fig:18}}\\
+				 \begin{figure}[h!]
+				 	\centering
+				 	\includegraphics[scale=0.60]{img/confronto.PNG}
+				 	\caption{Confronti \label{fig:18}}
+				 \end{figure}\\
+				 
+				 
 				 Le due tecniche vengono utilizzate insieme per garantire performance e sicurezza:
 				 \begin{itemize}
 				 	\item $A \rightarrow B$: certificato A, $C_{A}$
@@ -423,7 +489,8 @@
 				\item se e,d sono inversi moltiplicativi mod $\phi(n)$ ovvero $ed = 1mod\phi(n)$ allora:
 			\end{itemize}
 		
-			INSERIRE FORMULA EULERO\\
+			MANCA FORMULA EULERO\\
+			
 			
 			\begin{itemize}
 				\item Dato $m^{e}=c$ è computazionalmente oneroso ricavare m, per numeri grandi impossibile. \textbf{Si può cifrare esponenziando per e e decifrare esponenziando ancora per d}
@@ -457,7 +524,7 @@
 					\item B calcola $K_{b} = Y_{a}^{X_{b}}modp = (\alpha^{X_{a}})X^{b}modp= \alpha^{X_{a}*X{b}}$
 					\item Risulta $K_{b} = K_{a}$ dunque A e B si sono scambiati una chiave segreta \textbf{senza avere nessuna credenziale comune}
  				\end{enumerate}	
- 				\textbf{Un attaccante che vede passare solo $Y_{a}$ e $Y_{b}$ non è in grado di calcolare il logaritmo discreto quindi non può ricavare la chiave}\\
+ 				\textbf{Un attaccante che vede passare solo $Y_{a}$ e $Y_{b}$ non è in grado di calcolare il logaritmo discreto quindi non può ricavare la chiave.}\\
  				Diffie Hellman non è sicuro contro attacchi \textbf{man in the middle}:
  				\begin{itemize}
  					\item D genera $X{d1}$ e $X{d2}$ e le chiavi pubbliche corrispondenti $Y{d1}$ $Y{d2}$
@@ -468,8 +535,13 @@
  					\item D intercetta $Y{b}$ e invia invece $Y{d2}$ ad A
  					\item A calcola $K_{a}= Y_{d2}^{X_{a}}modp$
  				\end{itemize}
- 			
- 				INSERIRE diffie\\
+ 				
+ 				\textit{Diffie-Hellman \ref{fig:19}}\\
+ 				\begin{figure}[h!]
+ 					\centering
+ 					\includegraphics[scale=0.60]{img/diffie.PNG}
+ 					\caption{Diffie-Hellman \label{fig:19}}
+ 				\end{figure}\\
  			
  			\subsubsection{Algoritmi a chiave simmetrica: One time pad}
  				\begin{enumerate}
@@ -481,8 +553,13 @@
  			
  			\subsubsection{Algoritmi a chiave simmetrica: Cifratura di Feitsel}
  				La cifratura di Feitsel è un algoritmo di sostituzione ideale che mappa un messaggio in chiaro di 2 bit in un messaggio cifrato di 2 bit \textbf{utilizzando una mappa statica}.\\
- 			
- 				INSERIRE static\\
+ 				
+ 				\textit{Mappa statica Feitsel \ref{fig:20}}\\
+ 				\begin{figure}[h!]
+ 					\centering
+ 					\includegraphics[scale=0.60]{img/staticmap.PNG}
+ 					\caption{Mappa statica Feitsel \label{fig:20}}
+ 				\end{figure}\\
  			
  				Se il messaggio è lungo 2 bit e la mappa $2^{2}$ righe, \textbf{l'attaccante può tentare solo attacchi di forza bruta}, non esiste correlazione statica tra testo in chiaro e testo cifrato. Quando il messaggio è più lungo si cifrano blocchi di 2 bit per volta.\\
  				Per risultare sicuro i blocchi devono essere di grandi dimensioni, ma in tal caso \textbf{la mappa diventa molto grande} ($n=64 \rightarrow$ $64x2^{64} = 2^{70} bit$). Procedimento:
@@ -491,22 +568,31 @@
  					\item Si eseguono una serie di fasi di cifratura che hanno come parametro $K_{i}$ e il risultato della fase precedente.
  					\item Tutti gli algoritmi a blocchi come AES utilizzano questo schema di cifratura
  				\end{enumerate}
-			
-				INSERIRE feit\\
+				
+				\textit{Cifratura Feitsel \ref{fig:21}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/feit.PNG}
+					\caption{Cifratura Feitsel \label{fig:21}}
+				\end{figure}\\
 			
 			\subsubsection{Altri algoritmi : DA FINIRE}
 			
 		\subsection{Esempio: organizzazione rete certificati}
 			La rete è composta da:
 			\begin{itemize}
-				\item La vostra rete è composta da
 				\item Una rete di computer fissi per i vostri utenti
 				\item Un server per applicativi web necessari ai vostri utenti
 				\item Un server per la posta elettronica
 				\item Dei possibili utenti remoti, roadwarrior.
 			\end{itemize}
-	
-			INSERIRE rete\\
+			
+			\textit{Topologia di rete \ref{fig:22}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/rete.PNG}
+				\caption{Topologia di rete \label{fig:22}}
+			\end{figure}\\
 		
 			I \textbf{servizi} che la rete offre sono:
 			\begin{itemize}
@@ -561,9 +647,19 @@
 					\item Tale macchian risponde con una ARP-reply specificando il suo indirizzo MAC
 				\end{enumerate}
 				
-				INSERIRE arp\\
+				\textit{ARP-Spoofing \ref{fig:23}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/arp.PNG}
+					\caption{Certificati \label{fig:23}}
+				\end{figure}\\
 				
-				INSERIRE algoarp\\
+				\textit{ARP-Spoofing: algoritmo \ref{fig:24}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/algoarp.PNG}
+					\caption{ARP-Spoofing: algoritmo  \label{fig:24}}
+				\end{figure}\\
 				
 				Lo scopo di un \textbf{attacco ARP-Spoofing} è intercettare il traffico che passa tra due macchine su una rete con switch. L'attaccante fa parte della rete ma non si trova nel path tra le due macchine vittime.	
 				\begin{enumerate}
@@ -580,11 +676,35 @@
 			\subsubsection{Fragmentation attack}
 				Il protocollo IP permette di spezzare un pacchetto in più frammenti nel caso questo debba attraversare sottoreti che hanno MTU minore della lunghezza del pacchetto stesso. \\
 				
-				INSERIRE iphead\\
+				\textit{Header IP \ref{fig:25}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/iphead.PNG}
+					\caption{Header IP \label{fig:25}}
+				\end{figure}\\
 				
 				In generale gli attacchi a frammentazione hanno lo scopo di superare i controlli fatti sugli header dai firewall stateless ( al giorno d'oggi i firewall sono tutti statefull).
 				
-				INSERIRE tcphead, frag, frag2\\
+				\textit{Header TCP \ref{fig:26}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/tcphead.PNG}
+					\caption{Header TCP \label{fig:26}}
+				\end{figure}\\
+			
+				\textit{Fragmentation Attack 1 \ref{fig:27}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/frag.PNG}
+					\caption{Fragmentation Attack 1 \label{fig:27}}
+				\end{figure}\\
+			
+				\textit{Fragmentation Attack 2 \ref{fig:28}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/frag2.PNG}
+					\caption{fragmentation Attack 2 \label{fig:28}}
+				\end{figure}\\
 				
 				I firewall normalmente sono configurati per bloccare i tentativi di connessione dall'esterno della rete verso porte maggiori di 1024 dei server. Per fare ciò scartano i pacchetti TCP con il flag SYN = 1 nell'header. Tuttavia \textbf{devono lasciare passare pacchetti che sono rivolti verso porte alte ma che fanno parte di una connessione aperta dall'interno della rete all'esterno}.\\
 				Un pacchetto IP è un wrapper di un pacchetto TCP, dunque la possibilità di frammentare in piccole parti un pacchetto IP introduce una vulnerabilità per l'header TCP che dunque può essere spezzato, permettendo di superare il controllo del flag SYN.\\
@@ -652,7 +772,7 @@
 				\end{itemize}
 				In questo modo ha probabilità $n/2^{16}$ di riuscire, ammesso che il server DNS riesca ad elaborare tutte le richieste forgiate.\\
 				
-				INSERIRE PARADOSSO BIRTHDAY\\
+				MANCA PARADOSSO BIRTHDAY\\
 				
 				\textbf{In conclusione} possiamo dire che:
 				\begin{itemize}
@@ -699,6 +819,13 @@
 				$$2^{32}/2^{16} = 2^{16} = 65,535 cifre \rightarrow 6 minuti$$
 				
 				INSERIRE tempi\\
+				
+				\textit{ARP-Spoofing \ref{fig:29}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/tempi.PNG}
+					\caption{Certificati \label{fig:29}}
+				\end{figure}\\
 				
 		\subsection{Attacchi al middleware}
 			Per \textit{middleware} si intende tutto quel codice che sta nel mezzo tra la richiesta che fa un browser e la presentazione di una pagina HTML di risposta. CGI scritti in qualsiasi linguaggio, script PHP, Python, Ruby, sono tutti esempi di middleware.\\
@@ -1485,6 +1612,10 @@
 	 				\item Una password che viene trasformata in 256 bit di chiave
 	 				PSK.
 	 			\end{itemize}
+ 			
+ 				INSERIRE hyrerchy\\
+ 				
+ 				
 	 			
 	 		
 	 			
