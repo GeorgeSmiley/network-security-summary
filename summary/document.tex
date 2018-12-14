@@ -39,14 +39,15 @@
 		
 	\section{NAT}
 		\textbf{Problema}: \textit{gli indirizzi IP sono pochi e costosi, per di più non sempre vogliamo esporre la struttura interna di una Intranet (rete locale)}.\\
-		Pe questo motivo vengono utilizzate classi di indirizzi IP (IPv4) \textbf{non-routable} come definito in \textbf{RFC 1918}, riservati alle reti locali con lo \textbf{scopo di ridurre le richieste su indirizzi pubblici}. I pacchetti con tali indirizzi per l'instradamento e l'indirizzamento tramite protocollo IP da router internet.\\
-		Si utilizza il \textbf{NAT} e \textbf{NAPT} mascherano un indirizzo tramite proxy a livello IP:
+		
+		Per questo motivo vengono utilizzate classi di indirizzi IP (IPv4) \textbf{non-routable}, come definito in \textbf{RFC 1918}, riservati alle reti locali, con lo \textbf{scopo di ridurre le richieste su indirizzi pubblici}. I pacchetti con tali indirizzi per l'instradamento e l'indirizzamento tramite protocollo IP da router internet.\\
+		Si utilizza il \textbf{NAT} e \textbf{NAPT} per mascherare un indirizzo tramite proxy a livello IP:
 		\begin{itemize}
 			\item Si trasforma un indirizzo sorgente (IP Number e port) in un altro indirizzo.
 			\item Il server NAT viene visto all'esterno come la sorgente della comunicazione
-			\item Il NAT è \textbf{trasparente} per l'utente interno 
+			\item Il NAT è \textbf{trasparente} all'utente interno 
 		\end{itemize}
-		Di fatto il NAT permette di di modificare gli indirizzi IP contenuti negli header dei pacchetti in transito dall'esterno verso l'interno della rete locale. Lo scopo è quello di tradurre l'indirizzo di destinazione pubblico in un indirizzo riservato alla rete locale.
+		Di fatto il NAT permette di modificare gli indirizzi IP contenuti negli header dei pacchetti, in transito dall'esterno verso l'interno della rete locale. Lo scopo è quello di tradurre l'indirizzo di destinazione pubblico (quello del NAT Server) in un indirizzo riservato  alla rete locale.\\
 		
 		\textit{Classi di indirizzi privati:\ref{fig:1}}
 		\begin{figure}[h!]
@@ -54,7 +55,22 @@
 			\includegraphics[scale=0.40]{img/class.PNG}
 			\caption{Classi di indirizzi privati\label{fig:1}}
 		\end{figure}
+		\subsection{Basi}
+			I pacchetti \textbf{non routable} non sono trasportati in internet (ovvero i router li scartano) poichè il loro indirizzo IP \textbf{non è univoco}. Serve pertanto un traduzione da indirizzi non routable a indirizzi routable: il NAT si occupa di questo.\\
 		
+			\textit{NAT basi:\ref{fig:6}}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/basi.PNG}
+				\caption{NAT basi\label{fig:6}}
+			\end{figure}
+		
+			Un NAT svolge le seguenti \textbf{operazioni} sia quando arriva un pacchetto sull'interfaccia \textbf{interna} che su quella \textbf{esterna}:
+			\begin{itemize}
+				\item Si cerca un \textbf{binding} se c'è si trasla il pacchetto e si esegue un \textbf{forward} di quest'ultimo, altrimenti si \textbf{scarta} il pacchetto
+				\item Allo scadere di un \textbf{timer} specifico si \textbf{cancella il binding}
+			\end{itemize}
+	
 		\subsection{NAT statico}
 			\begin{itemize}
 				\item Si ha un mapping uno a uno tra indirizzi esterni ed interni.
@@ -72,9 +88,10 @@
 		
 		\subsection{NAT Dinamico}
 			\begin{itemize}
-				\item Mapping dinamico tra indirizzi esterni ed indirizzi esterni
-				\item Risolve il problema della scarsità degli indirizzi
+				\item Mapping dinamico tra indirizzi esterni ed indirizzi interni.
+				\item \textbf{Risolve il problema della scarsità degli indirizzi.} Possiamo infatti riutilizzare indirizzi pubblici, assegnandoli ad un indirizzo privato, per poi cancellare questa associazione in caso tale indirizzo  sia necessario ad un ulteriore indirizzo privato.
 				\item Richiede Server stateful ( mantiene informazioni di stato dell'utente durante una sessione).
+				\item Gli indirizzi privati non sono dinamici, sono dunque gli quelli pubblici che possono essere assegnati dinamicamente ad uno privato, scegliendone uno disponibile da un \textbf{pool} di indirizzi prestabiliti.
 			\end{itemize}
 		\textit{NAT Dinamico:\ref{fig:3}}
 		\begin{figure}[h!]
@@ -85,7 +102,7 @@
 		
 		\subsection{NAPT: Network Address and Port Translation}
 			\begin{itemize}
-				\item Mapping dinamico tra indirizzi interni e d esterni \textbf{con porte dinamiche}.
+				\item Mapping dinamico tra indirizzi interni ed esterni \textbf{con porte dinamiche}.
 				\item Risolve il problema della scarsità di indirizzi
 				\item Richied un serve stateful più complesso rispetto al NAT.
 			\end{itemize}
@@ -97,7 +114,7 @@
 				\caption{NAPT\label{fig:4}}
 			\end{figure}
 			
-			Tuttavia il NAT ha una controindicazione: implica un \textbf{ricalcolo dei checksum} IP e TCP come avviene in IPSec (standard per reti a pacchetto per la sicurezza su reti IP). Le due cose possono \textbf{interferire portando ad un completo blocco delle comunicazioni}. Si hanno problemi sia con la funzione \textbf{AH} (Authentication Header, protocollo per controllo integrità di pacchetto, garantisce authentication pacchetto per pacchetto tramite checksum a chiave simmetrica) sia con la funzione \textbf{ESP} (Encapsulating Security Payload utilizzato per autenitcità confidenzialità e integrità) di IPSEC\\
+			Tuttavia il NAT ha una controindicazione: implica un \textbf{ricalcolo dei checksum} IP e TCP come avviene in IPSec (standard per reti a pacchetto per la sicurezza su reti IP). La logica è la seguente: cambiando l'indirizzo IP di un pacchetto il checksum precedente da errore se confrontato con quello ricalcolato con il nuovo IP. Le due cose possono \textbf{interferire portando ad un completo blocco delle comunicazioni}. Si hanno problemi sia con la funzione \textbf{AH} (Authentication Header, protocollo per controllo integrità di pacchetto, garantisce authentication pacchetto per pacchetto tramite checksum a chiave simmetrica) sia con la funzione \textbf{ESP} (Encapsulating Security Payload utilizzato per autenitcità confidenzialità e integrità) di IPSEC.\\
 			
 			\textit{NAT security:\ref{fig:5}}
 			\begin{figure}[h!]
@@ -107,21 +124,6 @@
 			\end{figure}
 			
 			\textbf{La soluzione} può essere quella di applicare il NAT e poi IPSEC, o in alternativa eseguirli insieme. Da tenere in considerazione il fatto che un Host dietro a un NAT non può cominciare una comunicazione IPSec (???????). Inoltre la \textbf{co-locazione di NAT e IPSEC è un potenziale pericolo per la sicurezza}. La terza opzione è quella di utilizzare un tunnel IP-over-IP ma è deprecabile.
-		\subsection{Basi}
-			I pacchetti non routable non sono trasportati in internet (ovvero i router li scartano) poichè il loro indirizzo IP non è univoco. Serve pertanto un traduzione da indirizzi non routable a indirizzi routable: il NAT si occupa di questo.\\
-			
-			\textit{NAT basi:\ref{fig:6}}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=0.60]{img/basi.PNG}
-				\caption{NAT basi\label{fig:6}}
-			\end{figure}
-			
-			Un NAT svolge le seguenti \textbf{operazioni} sia quando arriva un pacchetto sull'interfaccia \textbf{interna} che su quella \textbf{esterna}:
-			\begin{itemize}
-				\item Si cerca un \textbf{binding} se c'è si trasla il pacchetto e si esegue un \textbf{forward} di quest'ultimo, altrimenti si \textbf{scarta} il pacchetto
-				\item Allo scadere di un \textbf{timer} specifico si \textbf{cancella il binding}
-			\end{itemize}
 		\subsection{NAT RFC 1631 e RFC 2776 }  
 			Per quanto riguarda \textbf{RFC 1631} si varia \textbf{solo gli indirizzi IP}, in questo modo tuttavia non risolviamo il problema della scarsità di indirizzi. Infatti il numero di indirizzi necessari è pari al numero di PC che vogliono utilizzare \textit{contemporaneamente} lo stesso protocollo.\\
 			\textit{NAT: RFC 1631\ref{fig:7}}\\
@@ -130,7 +132,6 @@
 				\includegraphics[scale=0.60]{img/1631.PNG}
 				\caption{NAT: RFC 1631\label{fig:7}}
 			\end{figure}
-			
 			In RFC 2776 invece, si varia \textbf{sia indirizzi IP che le porte}. In tal modo il numero delle sessione contemporanee (ovvero il numero di bindings contemporanei) è pari circa a 64000 (escludendo le porte ben conosciute.)
 		\subsection{NAT binding}
 			Per binding intendiamo una relazione: $${IP,proto,port}(int)<=>{IP,Proto,Port}(ext) $$
@@ -145,7 +146,7 @@
 				$$(protocollo, IP, porte sorgente-destinazione) $$
 				(Quintupla ?????)\\
 				Per questo motivo \textbf{le comunicazioni  devono partire dall'interno} e non è possbili effettuare una callback, quindi PASSIVE FTP (????????). Inoltre il \textbf{demultiplexing è definito a livello TCP} 
-				\item UDP è \textbf{stateless}, il binding è basato solo su un timer e sulla conoscenza del comportamento dell'applicazione (informazioni sulle porte utilizzate ad esempio). Il \textbf{demultiplexing} è fatto a \textbf{livello applicazione}, in questo modo una sola applicazioni può utilizzare una sola socket in uscita per due stream diversi con destinatari diversi (a differenza di TCP).
+				\item UDP è \textbf{stateless}, il binding è basato solo su un timer e sulla conoscenza del comportamento dell'applicazione (informazioni sulle porte utilizzate ad esempio). Il \textbf{demultiplexing} è fatto a \textbf{livello applicazione}, in questo modo una sola applicazione può utilizzare una sola socket in uscita per due stream diversi con destinatari diversi (a differenza di TCP).
 			\end{itemize}
 			\textit{\textbf{Abbiamo bisogno di un comportamento diverso del NAT per UDP}}.\\
 			Esistono diversi modi di implementare NAT per UDP, queste diverse implementazioni dipendono dalle modalità di esecuzione del Filter. In base a come si comporta NAT alcuni applicativi possono funzionare o meno, in parte o del tutto.
@@ -227,7 +228,7 @@
 					\item \textbf{Endpoint address and port dependent}:  Filtra i pacchetti che non provengono dall'IP/porta originario del binding (port restricted cone o symmetric).
 				\end{itemize}
 			\subsection{Considerazioni}
-				Per quanto riguarda le \textbf{applicazioni p2p} esse tendono ad aggirare il NAT ma così facendo creano spesso problemi di sicurezza. Per quanto riguarda ICMP rischia di fallire per lo stesso motivo di IPSEC (nel payload sono spesso contenute info su IP e porta originante). Rispetto all'\textbf{IP fragmentation} il problema è quello di ricostruire i pacchetti (o almeno mantenute informazioni sul primo pacchetto), perchè nei frammenti successivi \textbf{manca header UDP/TCP}, ma \textbf{potrebbe essere un attacco a frammentazione}. Inoltre il primo pacchetto può arrivare fuori sequenza. Una soluzione è quella di provare a configurare il nat in modo che esso stesso modifichi il contenuto del payload.
+				Per quanto riguarda le \textbf{applicazioni p2p} esse tendono ad aggirare il NAT ma così facendo creano spesso problemi di sicurezza. Per quanto riguarda ICMP rischia di fallire per lo stesso motivo di IPSEC (nel payload sono spesso contenute info su IP e porta originante). Rispetto all'\textbf{IP fragmentation} il problema è quello di ricostruire i pacchetti (o almeno mantenere informazioni sul primo pacchetto), perchè nei frammenti successivi \textbf{manca header UDP/TCP}, ma \textbf{potrebbe essere un attacco a frammentazione}. Inoltre il primo pacchetto può arrivare fuori sequenza. Una soluzione è quella di provare a configurare il nat in modo che esso stesso modifichi il contenuto del payload.
 			\subsubsection{NAT: UPnP e IGD}
 				\textbf{Universal Plug n Play}: Set di protocolli per la definizione  e l'annuncio di device e servizi. Un dispositivo compatibile UPnP può unirsi dinamicamente ad una rete, ottenendo un indirizzo IP, annunciare il suo nome, trasmettere le proprie capacità su richiesta e venire a conoscenza della presenza e delle capacità degli altri device della rete.\\
 				L'\textbf{Internet Gateway Device (IGD) } permete ad un device UPnP di scoprire l'indirizzo esterno di un NAT e di creare filters e bindings per i suoi servizi in modo automatico. In questo modo le porte sono aperte in modo incontrollato  e potrebbero sovrascrivere i binding esistenti... come per la porta 80 (implementato in Windows). \newpage
@@ -818,13 +819,11 @@
 				Il numero di sequenza è un \textbf{campo a 32 bit} quindi $2^{32}$ numeri da tentare (con un modem a 32k ci vogliono 284 giorni). Tuttavia il protocollo TCP impone che per essere ricevuto un pacchetto di reset debba \textbf{semplicemente cascare nella finestra di numeri di sequenza che la macchina mantiene attivi}. La finestra può essere larga fino a $2^{16} bit$. Non abbiamo bisogno di tentare tutti i numeri di sequenza ma ci basta provare numeri di sequenza non più distanti di $2^{16}$.
 				$$2^{32}/2^{16} = 2^{16} = 65,535 cifre \rightarrow 6 minuti$$
 				
-				INSERIRE tempi\\
-				
-				\textit{ARP-Spoofing \ref{fig:29}}\\
+				\textit{Tempi TCP Reset \ref{fig:29}}\\
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.60]{img/tempi.PNG}
-					\caption{Certificati \label{fig:29}}
+					\caption{Tempi TCP Reset \label{fig:29}}
 				\end{figure}\\
 				
 		\subsection{Attacchi al middleware}
@@ -833,7 +832,12 @@
 			\subsubsection{SQL Injection}
 				Applicabile nel contesto di script PHP ecc viene utilizzato per eseguire query su database. \\
 				
-				INSERIRE sqltable \\
+				\textit{SQL Injection \ref{fig:30}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/sqltable.PNG}
+					\caption{SQL Injection \label{fig:30}}
+				\end{figure}\\
 				
 				\begin{itemize}
 					\item SELECT secret FROM userdb WHERE user =’$user’ AND password =’$password’\\
@@ -865,7 +869,12 @@
 				\end{itemize}
 				Se ci sono altre tabelle nel DB possiamo utilizzare query piu complicate per accedere anche a queste. Sapendo l'esistenza di una tabella come questa:\\
 				
-				INSERIRE table\\
+				\textit{Esempio tabella SQL-Injection \ref{fig:31}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/table.PNG}
+					\caption{Esempio tabella SQL-Injection \label{fig:31}}
+				\end{figure}\\
 				
 				\begin{itemize}
 					\item utilizzando il comando UNION si possono fare query su tabelle diverse:\\
@@ -876,17 +885,34 @@
 					\item \textbf{la prima parte della query fallisce ma la seconda va a fare una richiesta su una seconda tabella, che restituisce informazioni}
 				\end{itemize}
 				
-				Come posso sapere che \textbf{ci sono altre tabelle?}. Facendo le query giuste:\\
+				Come posso sapere se \textbf{ci sono altre tabelle?}. Facendo le query giuste:\\
 				
-				INSERIRE query\\
+				\textit{Esempio Query SQL-Injection 1 \ref{fig:32}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/query.PNG}
+					\caption{Esempio Query SQL-Injection 1 \label{fig:32}}
+				\end{figure}\\
 				
 				\textbf{Come possiamo impedire attacchi di SQL injection?} Le versioni più vecchie dei webserver non fanno nessun parsing sulle stringhe che si inseriscono nelle query. Oggi possiamo inserire controlli:
 				\begin{itemize}
 					\item lista caratteri vulnerabili
 					\item Utilizzare query già preparate
 				\end{itemize}
+						
+				\textit{Esempio Query SQL-Injection 2 \ref{fig:33}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/vulnerable.PNG}
+					\caption{Esempio Query SQL-Injection 2 \label{fig:33}}
+				\end{figure}\\
 			
-				INSERIRE vulnerable, prepared\\
+				\textit{Esempio Query SQL-Injection 3 \ref{fig:34}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/prepared.PNG}
+					\caption{Esempio Query SQL-Injection 3 \label{fig:34}}
+				\end{figure}\\
 				
 			\subsubsection{Cross-site-scripting (XSS) stored }
 				Un attacco XSS è basato sulla possibilità di \textbf{inserire del codice malizioso all'interno di pagine web esterne}, in modo tale che gli utenti che si collegano a tali pagine sono indotti ad eseguirlo.
@@ -914,8 +940,20 @@
 					\item errori prodotti da web server mail configurati (404)
 				\end{itemize}
 				Vediamo attacchi relativi alla tecnologia \textbf{AJAX} (Asynchronous JavaScript and XML). Si tratta di un \textbf{paradigma per la programmazione online} che lega un qualsiasi linguaggio di backend con lo scopo di realizzare un'interazione \textbf{asincrona} tra client e server. In questo modo la pagina reagisce in tempo reale alle azioni dell'utente (gmail, facebook). \textbf{Ajax non è una nuova tecnologia ma una composizione di tecnologie esistenti, con gli stessi problemi di quest'ultime, ma con una piu complessa gestione della sicurezza}. \\ 
+								
+				\textit{Classic WEB application Model \ref{fig:35}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/web.PNG}
+					\caption{Classic WEB application Model \label{fig:35}}
+				\end{figure}\\
 				
-				INSERIRE web, ajax \\
+				\textit{AJAX WEB application Model \ref{fig:36}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/ajax.PNG}
+					\caption{AJAX WEB application Model \label{fig:36}}
+				\end{figure}\\
 				
 				I principali \textbf{pericoli} di AJAX sono:
 				\begin{itemize}
@@ -939,11 +977,21 @@
 			\subsubsection{Buffer overflow}
 				I buffer overflow sono vulnerabilità causate da errori di programmazione nei linguaggi a basso livello e sono la causa maggiore di intrusione. Lo scopo è quello di sfruttare questa vulnerabilità in modo tale che l'attaccante possa eseguire del codice, comandi, che altrimenti non protrebbe eseguire sulla macchina remota.\\
 				
-				INSERIRE c\\
+				\textit{Esempio Buffer Overflow 1\ref{fig:37}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.90]{img/c.PNG}
+					\caption{Esempio Buffer Overflow 1 \label{fig:37}}
+				\end{figure}\\
 				
 				La funzione \textbf{stampa()} viene allocata in uno spazio di indirizzi diverso dalla funzione \textbf{main()}. Quando stampa() è conclusa bisogna di nuovo fare una jump alla locazione di memoria dove si trova la funzione main().\\
 				
-				INSERIRE stack\\
+				\textit{Esempio Buffer Overflow 2 \ref{fig:38}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.90]{img/stack.PNG}
+					\caption{Esempio Buffer Overflow 2\label{fig:38}}
+				\end{figure}\\
 				
 				I passaggi di parametri avvengono mettendo le variabili in una zona comune, lo stack. In questo caso nello stack abbiamo:
 				\begin{itemize}
@@ -956,8 +1004,13 @@
 					\item le variabili dello stack vengono scritte dal basso verso l'alto, ma all'interno della variabile dall'alto verso il basso.
 					\item Si può sovrascrivere anche \textbf{l'indirizzo di ritorno.}
 				\end{itemize}
-			
-				INSERIRE stack2\\
+				
+				\textit{Esempio Buffer Overflow 3 \ref{fig:39}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.90]{img/stack2.PNG}
+					\caption{Esempio Buffer Overflow 3 \label{fig:39}}
+				\end{figure}\\
 				
 				L'attaccante può dunque:
 				\begin{itemize}

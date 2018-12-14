@@ -1,13 +1,13 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Classi di indirizzi privati}}{6}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces NAT Statico}}{7}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces NAT Dinamico}}{8}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces NAPT}}{8}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces NAT security}}{9}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces NAT basi}}{10}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces NAT: RFC 1631}}{10}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Symmetric NAT}}{12}{figure.8}
+\contentsline {figure}{\numberline {1}{\ignorespaces Classi di indirizzi privati}}{7}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces NAT basi}}{7}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces NAT Statico}}{8}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces NAT Dinamico}}{9}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces NAPT}}{10}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces NAT security}}{10}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces NAT: RFC 1631}}{11}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Symmetric NAT}}{13}{figure.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Full Cone NAT}}{13}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Restricted Cone NAT }}{13}{figure.10}
+\contentsline {figure}{\numberline {10}{\ignorespaces Restricted Cone NAT }}{14}{figure.10}
 \contentsline {figure}{\numberline {11}{\ignorespaces Port Restricted Cone NAT }}{14}{figure.11}
 \contentsline {figure}{\numberline {12}{\ignorespaces Criptography basis }}{18}{figure.12}
 \contentsline {figure}{\numberline {13}{\ignorespaces HMAC }}{21}{figure.13}
@@ -26,4 +26,14 @@
 \contentsline {figure}{\numberline {26}{\ignorespaces Header TCP }}{40}{figure.26}
 \contentsline {figure}{\numberline {27}{\ignorespaces Fragmentation Attack 1 }}{40}{figure.27}
 \contentsline {figure}{\numberline {28}{\ignorespaces fragmentation Attack 2 }}{41}{figure.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces Certificati }}{47}{figure.29}
+\contentsline {figure}{\numberline {29}{\ignorespaces Tempi TCP Reset }}{46}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces SQL Injection }}{47}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Esempio tabella SQL-Injection }}{48}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Esempio Query SQL-Injection 1 }}{49}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Esempio Query SQL-Injection 2 }}{49}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Esempio Query SQL-Injection 3 }}{50}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Classic WEB application Model }}{52}{figure.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces AJAX WEB application Model }}{52}{figure.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces Esempio Buffer Overflow 1 }}{54}{figure.37}
+\contentsline {figure}{\numberline {38}{\ignorespaces Esempio Buffer Overflow 2}}{54}{figure.38}
+\contentsline {figure}{\numberline {39}{\ignorespaces Esempio Buffer Overflow 3 }}{55}{figure.39}

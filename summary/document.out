@@ -1,9 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Security Basics}{}% 1
 \BOOKMARK [1][-]{section.2}{NAT}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{NAT statico}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{NAT Dinamico}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{NAPT: Network Address and Port Translation}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Basi}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Basi}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{NAT statico}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{NAT Dinamico}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{NAPT: Network Address and Port Translation}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.5}{NAT RFC 1631 e RFC 2776 }{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.6}{NAT binding}{section.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.6.1}{Symmetric NAT}{subsection.2.6}% 9
