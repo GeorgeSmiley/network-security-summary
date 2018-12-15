@@ -16,24 +16,25 @@
 \contentsline {figure}{\numberline {16}{\ignorespaces Cifratura a chiave pubblica/privata }}{24}{figure.16}
 \contentsline {figure}{\numberline {17}{\ignorespaces Certificati }}{28}{figure.17}
 \contentsline {figure}{\numberline {18}{\ignorespaces Confronti }}{29}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Diffie-Hellman }}{33}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Mappa statica Feitsel }}{33}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Cifratura Feitsel }}{34}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Topologia di rete }}{35}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Certificati }}{38}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces ARP-Spoofing: algoritmo }}{38}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Header IP }}{39}{figure.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Header TCP }}{40}{figure.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Fragmentation Attack 1 }}{40}{figure.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces fragmentation Attack 2 }}{41}{figure.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces Tempi TCP Reset }}{46}{figure.29}
-\contentsline {figure}{\numberline {30}{\ignorespaces SQL Injection }}{47}{figure.30}
-\contentsline {figure}{\numberline {31}{\ignorespaces Esempio tabella SQL-Injection }}{48}{figure.31}
-\contentsline {figure}{\numberline {32}{\ignorespaces Esempio Query SQL-Injection 1 }}{49}{figure.32}
-\contentsline {figure}{\numberline {33}{\ignorespaces Esempio Query SQL-Injection 2 }}{49}{figure.33}
-\contentsline {figure}{\numberline {34}{\ignorespaces Esempio Query SQL-Injection 3 }}{50}{figure.34}
-\contentsline {figure}{\numberline {35}{\ignorespaces Classic WEB application Model }}{52}{figure.35}
-\contentsline {figure}{\numberline {36}{\ignorespaces AJAX WEB application Model }}{52}{figure.36}
-\contentsline {figure}{\numberline {37}{\ignorespaces Esempio Buffer Overflow 1 }}{54}{figure.37}
-\contentsline {figure}{\numberline {38}{\ignorespaces Esempio Buffer Overflow 2}}{54}{figure.38}
-\contentsline {figure}{\numberline {39}{\ignorespaces Esempio Buffer Overflow 3 }}{55}{figure.39}
+\contentsline {figure}{\numberline {19}{\ignorespaces Confronti }}{31}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Diffie-Hellman }}{33}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Mappa statica Feitsel }}{34}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Cifratura Feitsel }}{35}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Topologia di rete }}{36}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Certificati }}{39}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces ARP-Spoofing: algoritmo }}{39}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Header IP }}{40}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Header TCP }}{40}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Fragmentation Attack 1 }}{41}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces fragmentation Attack 2 }}{41}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Tempi TCP Reset }}{47}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces SQL Injection }}{48}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Esempio tabella SQL-Injection }}{49}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Esempio Query SQL-Injection 1 }}{50}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Esempio Query SQL-Injection 2 }}{50}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Esempio Query SQL-Injection 3 }}{50}{figure.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Classic WEB application Model }}{52}{figure.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces AJAX WEB application Model }}{53}{figure.37}
+\contentsline {figure}{\numberline {38}{\ignorespaces Esempio Buffer Overflow 1 }}{54}{figure.38}
+\contentsline {figure}{\numberline {39}{\ignorespaces Esempio Buffer Overflow 2}}{55}{figure.39}
+\contentsline {figure}{\numberline {40}{\ignorespaces Esempio Buffer Overflow 3 }}{56}{figure.40}

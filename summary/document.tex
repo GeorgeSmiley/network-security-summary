@@ -203,8 +203,8 @@
 			\end{itemize}
 			\subsubsection{In base al Binding}
 				\begin{itemize}
-					\item \textbf{Endpoint}: il NAT riusa il binding per tutte le sessioni provenienti da stesso IP/PORTA, IP/PORTA esterni non vengono valutati (\textbf{come full cone NAT})
-					\item \textbf{Endpoint}:Il NAT riusa il binding per tutte le sessioni provenienti dalla stesso IP/porta verso lo stesso IP esterno (la porta non si considera).
+					\item \textbf{Endpoint independent}: il NAT riusa il binding per tutte le sessioni provenienti da stesso IP/PORTA, IP/PORTA esterni non vengono valutati (\textbf{come full cone NAT})
+					\item \textbf{Endpoint address dependent}:Il NAT riusa il binding per tutte le sessioni provenienti dalla stesso IP/porta verso lo stesso IP esterno (la porta non si considera).
 					\textbf{E’ come un Restricted Cone NAT.}
 					\item \textbf{Endpoint address and port dependent}: come symmetric NAT.  	
 				\end{itemize}
@@ -212,7 +212,7 @@
 				\begin{itemize}
 					\item \textbf{Port preservation}: Il NAT tenta di mantenere la porta di origine. Se due Host interni utilizzano la stessa porta di origine uno l'avrà cambiata l'altro no.
 					\item \textbf{Port overloading}: Il NAT fa port preservation in modo aggressivo, un secondo tentativo di binding fa scadere il binding esistente
-					\item \textbf{Port}: ??????
+					\item \textbf{Port Multiplexing}: ??????
 				\end{itemize}
 			\subsubsection{In base al Timer Refresh}
 				\begin{itemize}
@@ -457,7 +457,7 @@
 				\end{itemize}
 				Si può creare una \textbf{CA dedicata} con la sua coppia di 
 				chiavi pubblica/privata ed un certificato che è \textbf{autofirmato} (la CA dunque si \textbf{autocertifica}). In questo modo si possono rilasciare certificati a tutti gli utenti in modo tale che essi inviino solo posta firmata digitalmente. Ogni volta che un utente riceve (invia ????) una mail questa verrà autenticata e cifrata. Inoltre possiamo fornire i browser di certificati così che i server accetteranno le connessioni solo da macchine autorizzate. Quando un portatile si connette alla rete, prima di essere abilitato a ricevere e inviare traffico, dovrà autenticarsi con un server utilizzando un certificato valido.\\
-				Un CA autocertificata aumenta il livello di sicurezza, ma dobbiamo sottolineare che se per qualche motivo il server su cui risiedono le chiavi pubbliche e private della CA, \textbf{verrà compromessa la sicurezza di tutta la rete}.
+				Un CA autocertificata aumenta il livello di sicurezza, ma dobbiamo sottolineare che se per qualche motivo il server su cui risiedono le chiavi pubbliche e private della CA verrà compromesso, allora \textbf{verrà compromessa la sicurezza di tutta la rete}.
 			\subsubsection{Certificate Revocation List: CRL}
 				Un utente ha perso un portatile con un certificato valido ? Uno dei server con certificato viene compromesso? Un utente si comporta male ? \textbf{Dobbiamo riuscire ad invalidare i certificati già rilasciati} di fatto revocandoli.\\
 				La CRL è \textbf{una lista di certificati revocati} dall'ente certificatore. Per fare ciò la CA tiene una lista di certificati non più validi, distribuita \textbf{firmata con la propria chiave privata}. Un utente deve essere in grado di \textbf{scaricare la CRL più aggiornata} tramite servizio offerto dall'infrastruttura di rete. Le CRL sono proprio il motivo per il quale abbiamo bisogno di un'autorità di terzi, poichè introducono un elemento di complicazione in più.
@@ -483,6 +483,32 @@
 				 \end{itemize}
 			 	Una volta generato K possiamo utilizzare quella chiave per cifrare, decifrare e autenticare tutti i messaggi tra A e B. In questo modo abbiamo vantaggi dal punto di vista computazionale.
 		\subsection{Teoria: principi di crittografia}
+			Introduciamo alcuni concetti matematici chiave che stanno alla base della criptografia.\\
+			\begin{itemize}
+				\item \textbf{Campo $Z_{n}$}: l'insieme dei numeri interi minori di n, dato n numero primo è un campo, considerando le operazioni di somma e prodotto.
+				\item definiamo l'operazione di modulo \textbf{mod} come come il resto della divisione di a per n, dati a,n numeri interi.
+				\item per un qualsiasi elemento del campo $Z_{n}$ esiste un unico $a^{-1}$ tale che $aa^{-1} = 1mod(n)$, ovvero \textbf{esiste un solo inverso moltiplicativo}.
+			\end{itemize}
+			\textbf{Funzione Toziente di eulero}:
+			\begin{itemize}
+				\item 	$\phi(x)$ è il numero di interi positivi minori di x e primi relativi con x.
+				\item si dimostra che se p,q sono numeri primi $x=pq$ allora
+				$$\phi(x)= (p-1)(q-1) $$
+				\item Notate che per calcolare $\phi(x)$ per un qualsiasi x è computazionalmente oneroso, addirittura impossibile per x sufficientemente grandi.
+				\item se $x = pq$ e conosco almeno uno tra p e q, invece è possibile
+			\end{itemize}
+			\textbf{Teorema di Eulero}:
+			\begin{itemize}
+				\item per a,x primi tra loro si ha che $a^{\phi(x)} = 1modx$
+			\end{itemize}
+			 
+			 \textit{Confronti \ref{fig:euler}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.60]{img/euler.PNG}
+				\caption{Confronti \label{fig:euler}}
+			\end{figure}\\
+		
 			\subsubsection{RSA}
 			\begin{itemize}
 				\item Dati p,q primi con $n = pq$
@@ -490,7 +516,7 @@
 				\item se e,d sono inversi moltiplicativi mod $\phi(n)$ ovvero $ed = 1mod\phi(n)$ allora:
 			\end{itemize}
 		
-			MANCA FORMULA EULERO\\
+			
 			
 			
 			\begin{itemize}
