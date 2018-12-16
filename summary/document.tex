@@ -402,7 +402,19 @@
 				\end{itemize}
 				Questo tipo di attacco è sempre possibile quando A e B non conoscono le rispettive chiavi, che dunque dovranno essere scambiate tramite canale sicuro. Si presenta lo \textbf{stesso problema di HMAC e chiave simmetrica}: \textbf{l'unica differenza è che per sicuro non intendiamo segreto ma semplicemente autenticato}.
 			\subsubsection{Soluzioni: Fingerprint}
-			???????
+				Una fingerprint è una piccola parte della chiave pubblica, i primi 24 byte.
+				\begin{itemize}
+					\item E’ altamente improbabile che due chiavi pubbliche diverse abbiano i primi
+					24 byte in comune.
+					\item E’ più facile distribuire una fingerprint che una chiave pubblica. Ad
+					esempio la si può usare come signature nella posta elettronica o la si può
+					inserire in un biglietto da visita.
+					\item Se ricevete posta elettronica da qualcuno da anni e lui usa la sua
+					fingerprint nella signature, il giorno che avete bisogno di utilizzare la sua
+					chiave pubblica lui ve la invierà e potrete verificare se la chiave che avete
+					ricevuto corrisponde alla fingerprint che lui ha usato in passato.
+				\end{itemize}
+				
 			\subsubsection{Soluzioni: Keyserver}
 				Sono \textbf{server nei quali è possibile effettuare l'upload delle chiavi pubbliche}. Tuttavia il server non assicura la corrispondenza della chiave pubblica all'identità dichiarata. Si possono inserire info come nome e email, dunque è facile tramite motore di ricerca trovare la chiave che vogliamo (BUSH)
 			\subsubsection{Soluzioni: Web of Trust}
@@ -749,8 +761,8 @@
 					\item i due pacchetti vengono ricomposti.
 				\end{itemize}
 			\subsubsection{Attacchi al DNS}
-				Il DNS (Domain Name System) risolve indirizzi alfanumerici in indirizzi IP. Per ogni dominio di rete esiste un server DNS che può fare tale traduzione in modo \textit{autoritative}. L'indirizzo del server DNS \textit{autoritative} non è noto per ogni dominio a priori, dunque ogni Host è configurato per interagire in primo luogo con un server DNS \textbf{locale}. Sarà dunque il DNS locale a contattare dei \textbf{root server} per ottenere gli indirizzi dei server DNS validi per tradurre l'indirizzo alfanumerico di un dato dominio. Una volta realizzata la traduzione (associazione) il DNS locale la tiene in \textbf{cache} per un certo periodo.\\
-				In generale un \textbf{attacco al DNS} serve a far credere che l'IP corrispondente ad un dato dominio, è un IP diverso da quello originale. Questa possibilità trova terreno fertile nel fatto che il protocollo DNS non utilizza cifratura per i suoi pacchetti, introducendo la possibilità di falsificarne le risposte. Un attacco di questo tipo può essere utilizzato per:
+				\textbf{Il DNS (Domain Name System) risolve indirizzi alfanumerici in indirizzi IP.} Per ogni dominio di rete esiste un server DNS che può fare tale traduzione in modo \textit{autoritative}. L'indirizzo del server DNS \textit{autoritative} non è noto per ogni dominio a priori, dunque ogni Host è configurato per interagire in primo luogo con un server DNS \textbf{locale}. Sarà dunque il DNS locale a contattare dei \textbf{root server} per ottenere gli indirizzi dei server DNS validi per tradurre l'indirizzo alfanumerico di un dato dominio. Una volta realizzata la traduzione (associazione) il DNS locale la tiene in \textbf{cache} per un certo periodo.\\
+				In generale un \textbf{attacco al DNS} serve a far credere che l'IP inviato dall'attaccante derivi dalla traduzione lecita dell'indirizzo alfanumerico nel relativo IP. \textbf{Questa possibilità trova terreno fertile nel fatto che il protocollo DNS non utilizza cifratura per i suoi pacchetti}, introducendo la possibilità di falsificarne le risposte. Un attacco di questo tipo può essere utilizzato per:
 				\begin{itemize}
 					\item Phishing
 					\item Furto di credenziali
@@ -786,7 +798,7 @@
 				Abbiamo dunque due campi di 16 bit che potrebbero essere imprevedibili per un attaccante. Le possibilità sono dunque:
 				$$32bit \rightarrow 2^{32} possibilità$$
 				L'attaccante ammesso che sappia il momento esatto per rispondere, deve inviare prima del server remoto mediamente 2 miliardi di pacchetti. Se ogni pacchetto è pesante 80 byte l'attaccante deve mandare 160GB di traffico prima che il server remoto possa rispondere.	\\
-				Tuttavia \textbf{alcuni server DNS non utilizzano una porta casuale per inviare le richieste} ma fa un BIND all'avvio per scegliere la porta e continua ad usarla. Conoscendo tale porta abbiamo comunque $6500*80 = 5MB$ da inviare in poche decine di millisecondi.\\
+				Tuttavia \textbf{alcuni server DNS non utilizzano una porta casuale per inviare le richieste} ma fa un BIND all'avvio per scegliere la porta e continua ad usarla. Conoscendo tale porta abbiamo comunque $65000*80 = 5MB$ da inviare in poche decine di millisecondi.\\
 				Possiamo provare a \textbf{restringere le ipotesi}: 
 				\begin{itemize}
 					\item Immaginiamo che E possa far iniziare la richiesta al server locale di A (stando dentro la rete oppure nel caso in cui il DNS locale di A accetti richieste dall'esterno).
@@ -799,7 +811,15 @@
 				\end{itemize}
 				In questo modo ha probabilità $n/2^{16}$ di riuscire, ammesso che il server DNS riesca ad elaborare tutte le richieste forgiate.\\
 				
-				MANCA PARADOSSO BIRTHDAY\\
+				Il valore probabilistico di $n/2^16$ è ottenuto grazie all'applicazione del \textbf{paradosso del compleanno}:
+				\begin{itemize}
+					\item qual'è la probabilità P(n) che tra le persone in una stanza ce ne siano due nate lo stesso giorno ? Utilizziamo la \textbf{probabilità inversa}.
+					\item $\bar{P(n)}$ = probabilità che nessuna persona sia nata nello stesso giorno.
+					\item $\bar{P(n)}$ = $\frac{364}{365}*\frac{363}{365}*...* \frac{365-(n-1)}{365}*  $
+					\item con $\frac{364}{365}$ probabilità che 2 persone non siano nate nello stesso giorno e $\frac{363}{365}$ probabilità che 3 persone non siano nate nello stesso girno.
+					\item Volendo ricavare però la probabilità P(n) dobbiamo svolgere:
+					$$1-\bar{P(n)} = 1- \prod_{i=1}^{n-1} \frac{365-i}{365} $$
+				\end{itemize}
 				
 				\textbf{In conclusione} possiamo dire che:
 				\begin{itemize}
