@@ -1,102 +1,102 @@
-\contentsline {section}{\numberline {1}Security Basics}{5}{section.1}
-\contentsline {section}{\numberline {2}NAT}{6}{section.2}
+\contentsline {section}{\numberline {1}Security Basics}{6}{section.1}
+\contentsline {section}{\numberline {2}NAT}{7}{section.2}
 \contentsline {subsection}{\numberline {2.1}Basi}{7}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}NAT statico}{8}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}NAT Dinamico}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}NAT Dinamico}{9}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}NAPT: Network Address and Port Translation}{9}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{10}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.5}NAT RFC 1631 e RFC 2776 }{11}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}NAT binding}{11}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{12}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{12}{subsubsection.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{12}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.1}Symmetric NAT}{13}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Full Cone NAT}{13}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Restricted Cone NAT}{14}{subsubsection.2.6.3}
 \contentsline {subsubsection}{\numberline {2.6.4}Port Restricted Cone NAT}{14}{subsubsection.2.6.4}
 \contentsline {subsubsection}{\numberline {2.6.5}NAT - STUN}{15}{subsubsection.2.6.5}
-\contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{15}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{15}{subsubsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7}NAT: ulteriori classificazioni}{16}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}In base al Binding}{16}{subsubsection.2.7.1}
 \contentsline {subsubsection}{\numberline {2.7.2}In base al Port Binding}{16}{subsubsection.2.7.2}
-\contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{16}{subsubsection.2.7.3}
-\contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{16}{subsubsection.2.7.4}
+\contentsline {subsubsection}{\numberline {2.7.3}In base al Timer Refresh}{17}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.4}In base all'External Filtering }{17}{subsubsection.2.7.4}
 \contentsline {subsection}{\numberline {2.8}Considerazioni}{17}{subsection.2.8}
-\contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{17}{subsubsection.2.8.1}
-\contentsline {section}{\numberline {3}Crittografia}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}Funzioni Hash}{18}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}HMAC}{20}{subsubsection.3.1.1}
-\contentsline {subsection}{\numberline {3.2}Cifratura a chiave simmetrica}{22}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Cifratura a chiave pubblica/privata}{23}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Firma digitale}{24}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Problemi}{25}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Soluzioni: Fingerprint}{25}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Soluzioni: Keyserver}{26}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Soluzioni: Web of Trust}{26}{subsubsection.3.4.4}
-\contentsline {subsubsection}{\numberline {3.4.5}In pratica: PGP}{26}{subsubsection.3.4.5}
-\contentsline {subsection}{\numberline {3.5}Certificati}{27}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Certificati per tutto}{28}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Certificate Revocation List: CRL}{29}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}WOT di Thawte (tybyca)}{29}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Confronti e sistema misto}{29}{subsubsection.3.5.4}
-\contentsline {subsection}{\numberline {3.6}Teoria: principi di crittografia}{30}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}RSA}{31}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Diffie Hellman}{32}{subsubsection.3.6.2}
-\contentsline {subsubsection}{\numberline {3.6.3}Algoritmi a chiave simmetrica: One time pad}{33}{subsubsection.3.6.3}
-\contentsline {subsubsection}{\numberline {3.6.4}Algoritmi a chiave simmetrica: Cifratura di Feitsel}{34}{subsubsection.3.6.4}
-\contentsline {subsubsection}{\numberline {3.6.5}Altri algoritmi : DA FINIRE}{36}{subsubsection.3.6.5}
-\contentsline {subsection}{\numberline {3.7}Esempio: organizzazione rete certificati}{36}{subsection.3.7}
-\contentsline {section}{\numberline {4}Attacchi}{37}{section.4}
-\contentsline {subsection}{\numberline {4.1}Attacchi al mezzo fisico}{37}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Jamming}{38}{subsubsection.4.1.1}
-\contentsline {subsection}{\numberline {4.2}Attacchi a livello di collegamento}{38}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Dos al livello di collegamento}{38}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}ARP-Spoofing}{38}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Attacchi al livello di rete}{40}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Fragmentation attack}{40}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}Attacchi al DNS}{43}{subsubsection.4.3.2}
-\contentsline {subsection}{\numberline {4.4}Attacchi al livello di trasporto o superiori}{46}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Attacchi livello IV: Syn flood}{46}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Attacchi livello IV: TCP reset Guess}{47}{subsubsection.4.4.2}
-\contentsline {subsection}{\numberline {4.5}Attacchi al middleware}{48}{subsection.4.5}
-\contentsline {subsubsection}{\numberline {4.5.1}SQL Injection}{48}{subsubsection.4.5.1}
-\contentsline {subsubsection}{\numberline {4.5.2}Cross-site-scripting (XSS) stored }{51}{subsubsection.4.5.2}
-\contentsline {subsubsection}{\numberline {4.5.3}Cross-site-scripting (XSS) reflected: AJAX}{52}{subsubsection.4.5.3}
-\contentsline {subsection}{\numberline {4.6}Attacchi livello applicazione}{54}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Buffer overflow}{55}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}Format Bug}{57}{subsubsection.4.6.2}
-\contentsline {section}{\numberline {5}Firewall}{57}{section.5}
-\contentsline {subsection}{\numberline {5.1}Posizionamento}{58}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Funzionamento}{59}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Tabella di NAT}{61}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Tabella di Filter}{61}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Il connection tracking}{62}{subsubsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.4}Fault tolerance and Load Balancing }{63}{subsubsection.5.2.4}
-\contentsline {subsubsection}{\numberline {5.2.5}Primary-Backup configuration }{63}{subsubsection.5.2.5}
-\contentsline {subsubsection}{\numberline {5.2.6}Multi-Primary multy path firewall cluster}{63}{subsubsection.5.2.6}
-\contentsline {subsubsection}{\numberline {5.2.7}Multi-primary hash-based stateful firewall cluster}{64}{subsubsection.5.2.7}
-\contentsline {subsubsection}{\numberline {5.2.8}State replication}{64}{subsubsection.5.2.8}
-\contentsline {subsection}{\numberline {5.3}L7 Filtering}{65}{subsection.5.3}
-\contentsline {section}{\numberline {6}Wireless security}{66}{section.6}
-\contentsline {subsection}{\numberline {6.1}Panoramica}{66}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}WiMax: 802.16}{67}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}Bluetooth}{67}{subsubsection.6.1.2}
-\contentsline {subsection}{\numberline {6.2}802.11: Wifi}{67}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Introduzione}{67}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}WEP: Web Equivalent Privacy}{68}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.3}WEP: Autenticazione Shared Key}{69}{subsubsection.6.2.3}
-\contentsline {subsubsection}{\numberline {6.2.4}WEP: Uscita dalla rete}{71}{subsubsection.6.2.4}
-\contentsline {subsubsection}{\numberline {6.2.5}802.11: Accesso al canale, Hidden node problem }{71}{subsubsection.6.2.5}
-\contentsline {subsection}{\numberline {6.3}Insicurezze di 802.11}{72}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}DoS: autenticazione/associazione}{72}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}DoS: sull'accesso al canale}{73}{subsubsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.3}DoS: modalità powersave}{73}{subsubsection.6.3.3}
-\contentsline {subsubsection}{\numberline {6.3.4}DoS: saturazione della banda}{73}{subsubsection.6.3.4}
-\contentsline {subsubsection}{\numberline {6.3.5}DoS: stato fisico (jamming)}{74}{subsubsection.6.3.5}
-\contentsline {subsubsection}{\numberline {6.3.6}Attacchi sui software dell'AP}{74}{subsubsection.6.3.6}
-\contentsline {subsubsection}{\numberline {6.3.7}Shared Key e Oracle attack}{75}{subsubsection.6.3.7}
-\contentsline {subsubsection}{\numberline {6.3.8}Attacchi Man in the middle}{76}{subsubsection.6.3.8}
-\contentsline {subsubsection}{\numberline {6.3.9}Vulnerabilità di RC4}{79}{subsubsection.6.3.9}
-\contentsline {subsubsection}{\numberline {6.3.10}Attacchi sul CRC}{79}{subsubsection.6.3.10}
-\contentsline {subsubsection}{\numberline {6.3.11}HTTP Authentication}{80}{subsubsection.6.3.11}
-\contentsline {subsection}{\numberline {6.4}Il protocollo 802.11i}{80}{subsection.6.4}
-\contentsline {subsubsection}{\numberline {6.4.1}Storia di 802.11i}{81}{subsubsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.2}Novità di 802.11i}{81}{subsubsection.6.4.2}
-\contentsline {subsubsection}{\numberline {6.4.3}WPA, WPA2 and insecurity}{81}{subsubsection.6.4.3}
-\contentsline {subsubsection}{\numberline {6.4.4}802.1x: Port based network access control}{82}{subsubsection.6.4.4}
-\contentsline {subsubsection}{\numberline {6.4.5}WPA Home}{84}{subsubsection.6.4.5}
+\contentsline {subsubsection}{\numberline {2.8.1}NAT: UPnP e IGD}{18}{subsubsection.2.8.1}
+\contentsline {section}{\numberline {3}Crittografia}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}Funzioni Hash}{19}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}HMAC}{21}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {3.2}Cifratura a chiave simmetrica}{23}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Cifratura a chiave pubblica/privata}{24}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Firma digitale}{25}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Problemi}{26}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Soluzioni: Fingerprint}{26}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Soluzioni: Keyserver}{27}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Soluzioni: Web of Trust}{27}{subsubsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.5}In pratica: PGP}{27}{subsubsection.3.4.5}
+\contentsline {subsection}{\numberline {3.5}Certificati}{28}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Certificati per tutto}{29}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Certificate Revocation List: CRL}{30}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}WOT di Thawte (tybyca)}{30}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}Confronti e sistema misto}{30}{subsubsection.3.5.4}
+\contentsline {subsection}{\numberline {3.6}Teoria: principi di crittografia}{31}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}RSA}{32}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\numberline {3.6.2}Diffie Hellman}{33}{subsubsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.3}Algoritmi a chiave simmetrica: One time pad}{34}{subsubsection.3.6.3}
+\contentsline {subsubsection}{\numberline {3.6.4}Algoritmi a chiave simmetrica: Cifratura di Feitsel}{35}{subsubsection.3.6.4}
+\contentsline {subsubsection}{\numberline {3.6.5}Altri algoritmi : DA FINIRE}{37}{subsubsection.3.6.5}
+\contentsline {subsection}{\numberline {3.7}Esempio: organizzazione rete certificati}{37}{subsection.3.7}
+\contentsline {section}{\numberline {4}Attacchi}{38}{section.4}
+\contentsline {subsection}{\numberline {4.1}Attacchi al mezzo fisico}{38}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Jamming}{39}{subsubsection.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Attacchi a livello di collegamento}{39}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Dos al livello di collegamento}{39}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}ARP-Spoofing}{39}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Attacchi al livello di rete}{41}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Fragmentation attack}{41}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Attacchi al DNS}{44}{subsubsection.4.3.2}
+\contentsline {subsection}{\numberline {4.4}Attacchi al livello di trasporto o superiori}{47}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Attacchi livello IV: Syn flood}{47}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Attacchi livello IV: TCP reset Guess}{48}{subsubsection.4.4.2}
+\contentsline {subsection}{\numberline {4.5}Attacchi al middleware}{49}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}SQL Injection}{49}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}Cross-site-scripting (XSS) stored }{52}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.3}Cross-site-scripting (XSS) reflected: AJAX}{53}{subsubsection.4.5.3}
+\contentsline {subsection}{\numberline {4.6}Attacchi livello applicazione}{55}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Buffer overflow}{56}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Format Bug}{58}{subsubsection.4.6.2}
+\contentsline {section}{\numberline {5}Firewall}{59}{section.5}
+\contentsline {subsection}{\numberline {5.1}Posizionamento}{60}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Funzionamento}{61}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Tabella di NAT}{64}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Tabella di Filter}{65}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Il connection tracking}{66}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Fault tolerance and Load Balancing }{67}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Primary-Backup configuration }{68}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}Multi-Primary multy path firewall cluster}{68}{subsubsection.5.2.6}
+\contentsline {subsubsection}{\numberline {5.2.7}Multi-primary hash-based stateful firewall cluster}{68}{subsubsection.5.2.7}
+\contentsline {subsubsection}{\numberline {5.2.8}State replication}{69}{subsubsection.5.2.8}
+\contentsline {subsection}{\numberline {5.3}L7 Filtering}{70}{subsection.5.3}
+\contentsline {section}{\numberline {6}Wireless security}{71}{section.6}
+\contentsline {subsection}{\numberline {6.1}Panoramica}{71}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}WiMax: 802.16}{72}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Bluetooth}{73}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}802.11: Wifi}{73}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Introduzione}{73}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}WEP: Web Equivalent Privacy}{74}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}WEP: Autenticazione Shared Key}{74}{subsubsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.4}WEP: Uscita dalla rete}{78}{subsubsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.5}802.11: Accesso al canale, Hidden node problem }{78}{subsubsection.6.2.5}
+\contentsline {subsection}{\numberline {6.3}Insicurezze di 802.11}{79}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}DoS: autenticazione/associazione}{79}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}DoS: sull'accesso al canale}{80}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}DoS: modalità powersave}{80}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.4}DoS: saturazione della banda}{81}{subsubsection.6.3.4}
+\contentsline {subsubsection}{\numberline {6.3.5}DoS: stato fisico (jamming)}{81}{subsubsection.6.3.5}
+\contentsline {subsubsection}{\numberline {6.3.6}Attacchi sui software dell'AP}{82}{subsubsection.6.3.6}
+\contentsline {subsubsection}{\numberline {6.3.7}Shared Key e Oracle attack}{82}{subsubsection.6.3.7}
+\contentsline {subsubsection}{\numberline {6.3.8}Attacchi Man in the middle}{83}{subsubsection.6.3.8}
+\contentsline {subsubsection}{\numberline {6.3.9}Vulnerabilità di RC4}{86}{subsubsection.6.3.9}
+\contentsline {subsubsection}{\numberline {6.3.10}Attacchi sul CRC}{87}{subsubsection.6.3.10}
+\contentsline {subsubsection}{\numberline {6.3.11}HTTP Authentication}{87}{subsubsection.6.3.11}
+\contentsline {subsection}{\numberline {6.4}Il protocollo 802.11i}{88}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Storia di 802.11i}{88}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Novità di 802.11i}{88}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.3}WPA, WPA2 and insecurity}{89}{subsubsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.4}802.1x: Port based network access control}{90}{subsubsection.6.4.4}
+\contentsline {subsubsection}{\numberline {6.4.5}WPA Home}{92}{subsubsection.6.4.5}

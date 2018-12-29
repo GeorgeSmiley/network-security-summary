@@ -1,40 +1,57 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Classi di indirizzi privati}}{7}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces NAT basi}}{7}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces NAT Statico}}{8}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces NAT Dinamico}}{9}{figure.4}
+\contentsline {figure}{\numberline {2}{\ignorespaces NAT basi}}{8}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces NAT Statico}}{9}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces NAT Dinamico}}{10}{figure.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces NAPT}}{10}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces NAT security}}{10}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces NAT: RFC 1631}}{11}{figure.7}
+\contentsline {figure}{\numberline {6}{\ignorespaces NAT security}}{11}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces NAT: RFC 1631}}{12}{figure.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Symmetric NAT}}{13}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Full Cone NAT}}{13}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Restricted Cone NAT }}{14}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Port Restricted Cone NAT }}{14}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Criptography basis }}{18}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces HMAC }}{21}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces DES }}{22}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces DES2 }}{23}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Cifratura a chiave pubblica/privata }}{24}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Certificati }}{28}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Confronti }}{29}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Confronti }}{31}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Diffie-Hellman }}{34}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Mappa statica Feitsel }}{34}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Cifratura Feitsel }}{35}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Topologia di rete }}{36}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Certificati }}{39}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces ARP-Spoofing: algoritmo }}{39}{figure.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Header IP }}{40}{figure.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Header TCP }}{41}{figure.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces Fragmentation Attack 1 }}{41}{figure.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces fragmentation Attack 2 }}{42}{figure.29}
-\contentsline {figure}{\numberline {30}{\ignorespaces Tempi TCP Reset }}{48}{figure.30}
-\contentsline {figure}{\numberline {31}{\ignorespaces SQL Injection }}{49}{figure.31}
-\contentsline {figure}{\numberline {32}{\ignorespaces Esempio tabella SQL-Injection }}{50}{figure.32}
-\contentsline {figure}{\numberline {33}{\ignorespaces Esempio Query SQL-Injection 1 }}{50}{figure.33}
-\contentsline {figure}{\numberline {34}{\ignorespaces Esempio Query SQL-Injection 2 }}{51}{figure.34}
-\contentsline {figure}{\numberline {35}{\ignorespaces Esempio Query SQL-Injection 3 }}{51}{figure.35}
-\contentsline {figure}{\numberline {36}{\ignorespaces Classic WEB application Model }}{53}{figure.36}
-\contentsline {figure}{\numberline {37}{\ignorespaces AJAX WEB application Model }}{54}{figure.37}
-\contentsline {figure}{\numberline {38}{\ignorespaces Esempio Buffer Overflow 1 }}{55}{figure.38}
-\contentsline {figure}{\numberline {39}{\ignorespaces Esempio Buffer Overflow 2}}{56}{figure.39}
-\contentsline {figure}{\numberline {40}{\ignorespaces Esempio Buffer Overflow 3 }}{57}{figure.40}
+\contentsline {figure}{\numberline {9}{\ignorespaces Full Cone NAT}}{14}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Restricted Cone NAT }}{15}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Port Restricted Cone NAT }}{15}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Criptography basis }}{19}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces HMAC }}{22}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces DES }}{23}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces DES2 }}{24}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Cifratura a chiave pubblica/privata }}{25}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Certificati }}{29}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Confronti }}{30}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Confronti }}{32}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Diffie-Hellman }}{35}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Mappa statica Feitsel }}{35}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Cifratura Feitsel }}{36}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Topologia di rete }}{37}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Certificati }}{40}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces ARP-Spoofing: algoritmo }}{40}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Header IP }}{41}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Header TCP }}{42}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Fragmentation Attack 1 }}{42}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces fragmentation Attack 2 }}{43}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Tempi TCP Reset }}{49}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces SQL Injection }}{50}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Esempio tabella SQL-Injection }}{51}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Esempio Query SQL-Injection 1 }}{51}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Esempio Query SQL-Injection 2 }}{52}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Esempio Query SQL-Injection 3 }}{52}{figure.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Classic WEB application Model }}{54}{figure.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces AJAX WEB application Model }}{55}{figure.37}
+\contentsline {figure}{\numberline {38}{\ignorespaces Esempio Buffer Overflow 1 }}{56}{figure.38}
+\contentsline {figure}{\numberline {39}{\ignorespaces Esempio Buffer Overflow 2}}{57}{figure.39}
+\contentsline {figure}{\numberline {40}{\ignorespaces Esempio Buffer Overflow 3 }}{58}{figure.40}
+\contentsline {figure}{\numberline {41}{\ignorespaces Format Bug}}{59}{figure.41}
+\contentsline {figure}{\numberline {42}{\ignorespaces Firewall: posizionamento 1}}{61}{figure.42}
+\contentsline {figure}{\numberline {43}{\ignorespaces Firewall: posizionamento 2}}{62}{figure.43}
+\contentsline {figure}{\numberline {44}{\ignorespaces ip tables rules}}{62}{figure.44}
+\contentsline {figure}{\numberline {45}{\ignorespaces Firewall: posizionamento}}{63}{figure.45}
+\contentsline {figure}{\numberline {46}{\ignorespaces Firewall: posizionamento}}{64}{figure.46}
+\contentsline {figure}{\numberline {47}{\ignorespaces Funzionamento completo}}{65}{figure.47}
+\contentsline {figure}{\numberline {48}{\ignorespaces Firewall: posizionamento}}{66}{figure.48}
+\contentsline {figure}{\numberline {49}{\ignorespaces Stati per una connessione}}{67}{figure.49}
+\contentsline {figure}{\numberline {50}{\ignorespaces Multy-primary hash based stateful firewall cluster}}{69}{figure.50}
+\contentsline {figure}{\numberline {51}{\ignorespaces State replication}}{70}{figure.51}
+\contentsline {figure}{\numberline {52}{\ignorespaces Infrastructure vs ad-hoc}}{72}{figure.52}
+\contentsline {figure}{\numberline {53}{\ignorespaces Autenticazione}}{75}{figure.53}
+\contentsline {figure}{\numberline {54}{\ignorespaces Frame WEP}}{76}{figure.54}
+\contentsline {figure}{\numberline {55}{\ignorespaces Stream}}{76}{figure.55}
+\contentsline {figure}{\numberline {56}{\ignorespaces Encryption RSA}}{77}{figure.56}
+\contentsline {figure}{\numberline {57}{\ignorespaces Macchina a stati 802.11}}{78}{figure.57}

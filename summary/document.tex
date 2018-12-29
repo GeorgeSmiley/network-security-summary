@@ -1078,9 +1078,32 @@
 			\subsubsection{Format Bug}
 				Si basa su un errore di programmazione molto comune che ha sempre a che vedere con la formattazione delle stringhe.
 				
+				\textit{Format Bug \ref{fig:format}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.70]{img/formatbug.PNG}
+					\caption{Format Bug\label{fig:format}}
+				\end{figure}\\
+				La possibile vulnerabilità risiede nella definizione della \textbf{printf}
+				\begin{itemize}
+					\item definita come:  \textbf{int printf(const char *format, ...);.}
+					\item Prende una sequenza di puntatori a char, di cui il primo parametro è il
+					formato. Nel formato generalmente è scritto quanti e quali sono i
+					parametri che seguono, ad esempio: \textbf{printf(”\%s”,”Hello World”);}
+					\item La printf legge la stringa di formato, trova i simboli speciali che iniziano
+					per \%, conta quanti e quali parametri seguono, li legge dallo stack, li
+					sostituisce ai caratteri speciali e poi stampa la stringa di formato.
+					\item \textbf{Se si lascia all’utente la possibilità di scrivere nella stringa di formato
+					(invece che riempire i buchi usando gli speciali \%) si va incontro a
+					problemi seri.}
+					
+					
+					
+					
+				\end{itemize}
 				COMPLETARE
 	\section{Firewall}
-		Un firewall è un apparato software o hardware configurato per \textbf{ammettere, abbattere o veicolare (proxy firewall)} connessioni tra due aree di rete con differenti livelli di fiducia. Come \textbf{esempio} si può citare un \textbf{firewall perimetrale } posto su un getway per separare la rete locale(alto livello di fiduci) da internet (basso livello di fiducia).\\
+		Un firewall è un apparato software o hardware configurato per \textbf{ammettere, abbattere o veicolare (proxy firewall)} connessioni tra due aree di rete con differenti livelli di fiducia. Come \textbf{esempio} si può citare un \textbf{firewall perimetrale}, posto su un getway per separare la rete locale(alto livello di fiducia) da internet (basso livello di fiducia).\\
 		\textit{Possiamo dire che un firewall è un interfaccia configurabile tra due segmenti di rete con diversi livelli di fiducia}. Tale interfaccia deve essere configurata seguendo due principali \textbf{security poilicy}:
 		\begin{itemize}
 			\item \textbf{Least privilege}
@@ -1101,16 +1124,26 @@
 				\item Rete esterna: una rete che è accessibile dall'esterno, su cui risiedono server we, di posta e di DNS, \textbf{a diretto contatto con internet} e dunque a maggiore rischio. Tuttavia nell'ottica di chi vede la rete da fuori questa rete esterna contiene dati accessibili dall'esterno e dunque di minore valore e con minori restrizioni di accesso (\textbf{DeMilitarized Zone})
 			\end{itemize}
 			
-			INSERIRE fire\\
+			\textit{Firewall: posizionamento 1 \ref{fig:40}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/fire.PNG}
+				\caption{Firewall: posizionamento 1\label{fig:40}}
+			\end{figure}\\
 			
 			\textbf{La seconda configurazione prevede di aggiungere un ulteriore firewall in modo da avere due elementi di difesa prima di arrivare alla rete corporate.} La configurazione risulta più robusta perchè:
 			\begin{itemize}
-				\item Un attaccante deve bucare due firewall prima di arrivare alla rete corporate ( i firewall utilizzeranno software e hardware diversi per offrire ridondanza ?????????????)
+				\item Un attaccante deve bucare due firewall prima di arrivare alla rete corporate ( i firewall utilizzeranno software e hardware diversi per offrire ridondanza)
 				\item la DMZ è separata anche dall'interno verso l'esterno con lo stesso principio
 				\item è più facile separare il traffico, quindi tipi di connessione considerati meno sicuri si possono inserire nella DMZ
 			\end{itemize}
 			
-			INSERIRE fire2\\
+			\textit{Firewall: posizionamento 2 \ref{fig:41}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/fire2.PNG}
+				\caption{Firewall: posizionamento 2\label{fig:41}}
+			\end{figure}\\
 			
 		\subsection{Funzionamento}
 			Per spiegare il funzionamento di un firewall introduciamo prima due strumenti per la gestione e il filtraggio di pacchetti in UNIX: \textbf{Netfliers} e \textbf{Iptable}.
@@ -1119,7 +1152,12 @@
 				\item \textbf{Iptables}: è uno strumento che permette di \textbf{configurare le regole di scarto.}
 			\end{itemize}
 			
-			INSERIRE rule\\
+			\textit{Iptables rules \ref{fig:42}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/rule.PNG}
+				\caption{ip tables rules\label{fig:42}}
+			\end{figure}\\
 			
 			\textbf{Le regole} sono organizzate in:
 			\begin{itemize}
@@ -1129,9 +1167,19 @@
 			Descriviamo con più dettaglio cosa significa filtrare i pacchetti.\\
 			Un firewall è un host a tutti gli effetti che possiede \textbf{almeno 2 schede} di rete, i pacchetti possono arrivare su entrambe le schede, essere filtrati e poi inviati sull'altra (\textbf{forwarding}). Ovviamente se un pacchetto arriva alla scheda uno con IP 1 non si effettuerà il forwarding. Si possono anche \textbf{generare pacchetti} da inviare all'\textbf{esterno}.\\
 			
-			INSERIRE logic\\
+			\textit{Firewall: posizionamento \ref{fig:43}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/logic.PNG}
+				\caption{Firewall: posizionamento\label{fig:43}}
+			\end{figure}\\
 			
-			INSERIRE logic2\\
+			\textit{Firewall: posizionamento \ref{fig:44}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/logic2.PNG}
+				\caption{Firewall: posizionamento\label{fig:44}}
+			\end{figure}\\
 			
 			Il filtraggio dei pacchetti è composto da un insieme di regole che svolgono diverse funzioni in diversi punti di una catena. 
 			\begin{itemize}
@@ -1150,6 +1198,13 @@
 				\item fitler
 			\end{itemize}
 			\textbf{All'interno di ogni catena si richiamano regole appartenenti a tabelle differenti}.
+			
+			\textit{Funzionamento completo\ref{fig:chain}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.70]{img/chain.PNG}
+				\caption{Funzionamento completo\label{fig:chain}}
+			\end{figure}\\
 			
 			\subsubsection{Tabella di NAT}
 				Una tabella di NAT \textbf{serve a modificare i campi di indirizzo IP all'interno degli header del pacchetto}.
@@ -1176,9 +1231,14 @@
 					\item Pacchetti che fanno parte della stessa connessione
 					\item Pacchetti che fanno parte di connessioni distinte ma relazionate tra loro (FTP)
 				\end{itemize}
-				Queste funzionalità non devono essere utilizzate con attenzione o si rischia di saturare le risorse della macchina.\\
+				Queste funzionalità devono essere utilizzate con attenzione o si rischia di saturare le risorse della macchina.\\
 				
-				INSERIRE conntrack\\
+				\textit{Firewall: posizionamento \ref{fig:45}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/conntrack.PNG}
+					\caption{Firewall: posizionamento\label{fig:45}}
+				\end{figure}\\
 				
 				Come posso distinguere i pacchetti 1 e 2??\\
 				Non possiamo usare il SYN poichè non è conveniente, il problema si riproporrebbe con pacchetti di altri protocolli (UDP). \textbf{Esiste una differenza fondamentale}
@@ -1194,7 +1254,12 @@
 					\item RELATED: il pacchetto appartiene ad una connessione in qualche modo relazionata a una già ESTABLISHED (FTP)
 				\end{itemize}
 			
-				INSERIRE state \\
+				\textit{Stati per una connessione \ref{fig:46}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/state.PNG}
+					\caption{Stati per una connessione\label{fig:46}}
+				\end{figure}\\
 				
 			\subsubsection{Fault tolerance and Load Balancing  }
 				Il firewall solitamente è un punto di uscita ingresso nella rete dunque \textbf{rappresenta un collo di bottiglia}.\\
@@ -1225,8 +1290,12 @@
 					\item in questo modo i firewall si distribuiscono il traffico autonomamente
 					\item c'è bisogno comunque di un \textit{heartbeat} per reagire alle situazioni di guasto.
 				\end{itemize} 
-				
-				INSERIRE multipriha\\
+				\textit{Multy-primary hash based stateful firewall cluster \ref{fig:47}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/multipriha.PNG}
+					\caption{Multy-primary hash based stateful firewall cluster\label{fig:47}}
+				\end{figure}\\
 				
 			\subsubsection{State replication}
 				In tutte queste situazioni \textbf{quando un firewall si guasta si perdono le connessioni attive in quel momento}. Per evitare questa conseguenza è fondamentale che quando una connessione cambia stato, il cambio sia notificato al server di backup. Si può fare secondo due politiche:
@@ -1236,7 +1305,12 @@
 				\end{itemize}
 				Si ottengono, in relazione alle politiche performance diverse in termini di affidabilità, ma anche costi computazionali differenti.\\
 				
-				INSERIRE staterep\\
+				\textit{State replication \ref{fig:48}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/staterep.PNG}
+					\caption{State replication\label{fig:48}}
+				\end{figure}\\
 				
 		\subsection{L7 Filtering}
 			Il filtraggio al livello 7 viene fatto se non è sufficiente utilizzare il numero di porta sorgente e destinazione per capire che tipo di traffico si sta analizzando. Un amministratore di rete può voler filtrare a livello 7 per \textbf{i seguenti motivi}
@@ -1269,11 +1343,16 @@
 				\item Modello infrastructure
 				\item Modello ad-hoc
 			\end{itemize}
-		
-			INSERIRE panor\\
 			
-			Dove vi è la \textbf{mancanza di limite geografico} implica che le informazioni possono essere \textit{sniffate} più facilmente. Inoltre si possono subire attacchi dall'esterno (richio per l'attaccante minimo).\\
-			Spostando il focus su reti wireless si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. Questa ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
+			\textit{Infrastructure vs ad-hoc\ref{fig:49}}\\
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.50]{img/panor.PNG}
+				\caption{Infrastructure vs ad-hoc\label{fig:49}}
+			\end{figure}\\
+			
+			La \textbf{mancanza di limite geografico} implica che le informazioni possono essere \textit{sniffate} più facilmente. Inoltre si possono subire attacchi dall'esterno (richio per l'attaccante minimo).\\
+			Spostando il focus su reti wireless si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. La tecnologia wireless ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
 			Descriviamo in breve \textbf{reti atipiche} rispetto alla norma.
 			\begin{itemize}
 				\item \textbf{Reti ad-hoc}:  sono reti \textbf{spontanee} e auto-organizzanti. Possono essere reti allestite per ritrovi temporanei, interventi in situazione di emergenza, reti tattiche e militari, ambienti con mancanza di infrastruttura. Si utilizzano per coprire il \textbf{problema dell'ultimo miglio} e per coprire aree molto estese. Per problema dell'ultimo miglio intendiamo il calo di risorse del canale che si ha in una rete nella parte finale di attacco all'utente, ovvero la rete di accesso.
@@ -1333,12 +1412,22 @@
 					\item Il client risponde con il \textbf{challenge text cifrato}.
 				\end{itemize}
 		
-				INSERIRE aut \\
+				\textit{Autenticazione \ref{fig:50}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/aut.PNG}
+					\caption{Autenticazione\label{fig:50}}
+				\end{figure}\\
 			
 				I pacchetti sono pacchetti di \textbf{management} quindi non sono ne autenticati ne cifrati, ne consegue che la procedura è \textbf{molto veloce} e quindi pensata come procedura di handoff rapido anche tra più AP. L'AP è l'unico elemento che decide chi far entrare nella rete, ciò comporta che la gestione degli accessi è \textbf{tutta a carico dell'AP}. Nel caso di reti gestite da più AP la gestione diviene molto complicata o del tutto statica.
 				Il \textbf{Generic frame format} è il seguente\\
 			
-				INSERIRE framewep\\
+				\textit{Frame WEP \ref{fig:51}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.60]{img/framewep.PNG}
+					\caption{Frame WEP\label{fig:51}}
+				\end{figure}\\
 			
 				\textbf{Viene cifrato solo il campo di payload del pacchetto con un algoritmo di tipo stream}. Gli algoritmi di tipo stream \textbf{cifrano il contenuto in chiaro bit per bit}.
 				\begin{enumerate}
@@ -1348,7 +1437,12 @@
 				\end{enumerate}
 				Questo tipo di algoritmi è molto facile e veloce da implementare. Importante specificare che \textbf{riutilizzare lo stesso IV significa ripetere due volte lo stesso keystream}. Se si conosce uno dei due pacchetti in chiaro si ricava anche il secondo. \textbf{Non utilizzare mai lo stesso keystream}.\\
 			
-				INSERIRE stream\\
+				\textit{Stream  \ref{fig:52}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/stream.PNG}
+					\caption{Stream\label{fig:52}}
+				\end{figure}\\
 				
 				Entriamo nel dettaglio di una procedura di encryption con \textbf{RC4} (RC4 utilizza in 802.11b chiavi di 40 bit.
 				):
@@ -1360,7 +1454,12 @@
 					\item Si trasmette il pacchetto IV nell'header (non cifrato) e il payload cifrato.  
 				\end{enumerate} 
 				
-				INSERIRE enrsa\\
+				\textit{Encryption RSA \ref{fig:53}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/enrsa.PNG}
+					\caption{Encryption RSA\label{fig:53}}
+				\end{figure}\\
 				
 				Per quanto riguarda la decriptazione abbiamo:
 				\begin{itemize}
@@ -1381,13 +1480,18 @@
 				L'autenticazione dei pacchetti non utilizza algoritmi a chiave pubblica e privata, ci deve essere un \textbf{segreto condiviso in precedenza e quindi un canale sicuro}. Non esistono inoltre controllo sull'unicità dei pacchetti, due pacchetti possono essere identici, inoltre non esiste un controllo di sequenza dei pacchetti, il valore IV viene deciso dagli apparati senza una politica definita. Un attaccante può dunque replicare un pacchetto anche senza conoscerne il significato, saranno i protocolli a livello superiore a gestire i dati, accettandoli o rifiutandoli.
 			\subsubsection{WEP: Uscita dalla rete}
 				\begin{itemize}
-					\item Per deautenticare il client l'AP manda un messaggio di deautenticazione, e il client dovrò ripetere l'autenticazione
-					\item Per deassociare un cline, l'AP manda un messaggio di deassociazione, il client deve ripere l'associazione.
+					\item Per deautenticare il client l'AP manda un messaggio di deautenticazione,  il client dovrà ripetere l'autenticazione
+					\item Per deassociare un client, l'AP manda un messaggio di deassociazione, il client deve ripere l'associazione.
 					\item Se il client riceve un messagio di deautenticazione quando è ancora associato, deve ripetere entrambe le fasi.
 					\item si utilizzano pacchetti di tipo management.
 				\end{itemize}
 			
-				INSERIRE statemach\\
+				\textit{Macchina a stati 802.11 \ref{fig:54}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/statemach.PNG}
+					\caption{Macchina a stati 802.11\label{fig:54}}
+				\end{figure}\\
 			
 			\subsubsection{802.11: Accesso al canale, Hidden node problem }
 				I client connessi alla LAN condividono lo stesso canale fisico con una politica \textbf{CSMA/CA.} Questo tipo di politica serve per la realizzazione dell'accesso multiplo, basato sul rilevamento della portante, in cui i nodi tentano di evitare a priori il verificarsi di collisioni. Il client può \textbf{prenotare il canale} per un per un periodo di tempo specifico, attraverso il campo \textit{duration} nei pacchetti \textbf{ACK/RTS}. Il canale non sarà dunque utilizzabile da altri client in quel periodo di tempo. \\
@@ -1400,7 +1504,7 @@
 				TERMINARE UNA VOLTA CAPITO\\
 				
 		\subsection{Insicurezze di 802.11}
-			Le insicurezze che vedremo riguardano alle versioni \textbf{a, b, g}, alcune di queste non riguardano algoritmi crittografici utilizzati quindi vengono ritrovati anche nella versione \textbf{i}. 
+			Le insicurezze che vedremo riguardano le versioni \textbf{a, b, g}, alcune di queste non riguardano gli algoritmi crittografici utilizzati quindi vengono ritrovati anche nella versione \textbf{i}. 
 			\subsubsection{DoS: autenticazione/associazione}
 				Se li servizio di cui l'attaccante vuole interrompere l'erogazione è l'accesso stesso ad internet, il danno in termini economici è rilevante. In casi specifici \textbf{mission critical} non ci si può permettere di non avere connettività (sistemi real time, scadenze produttive ecc). In generale l'interruzione del servizio rende un'idea di inaffidabilità che allontana l'utente.\\
 				Passiamo ora a descrivere il primo DoS che riguarda autenticazione/associazione alla rete. Ricordiamo che tale processo svolge i seguenti passi:
@@ -1412,8 +1516,8 @@
 				L\textbf{a maggiore criticità risiede nel fatto che i pacchetti di autenticazione non sono autenticati, rendendo facile per un attaccante falsificarli.}
 				\begin{enumerate}
 					\item Durante la fase di ingresso l'attaccante attende l'autenticazione e risponde al posto dell'AP con un pacchetto di deautenticazione
-					\item In questo modo evita che la macchina bersaglio non entri nella rete
-					\item L'invio di un pacchetto di deautenticazione può essere inviato in qualsiasi momento da un'attaccante.
+					\item In questo modo evita che la macchina bersaglio entri nella rete
+					\item Un pacchetto di deautenticazione può essere inviato in qualsiasi momento da un'attaccante.
 				\end{enumerate}
 				\textbf{Lo scopo} di questo attacco potrebbe essere mirato al negare l'entrata di un particolare client all'interno della rete, o più semplicemente tenere fuori dalla rete altri client\textbf{ per avere più banda a disposizione.} L'attaccante dovrà stare sempre in ascolto di nuove autenticazioni se vuole compiere l'attacco in modo continuativo.\\
 				\textbf{Si può fare un attacco specifico per l'associazione}, la differenza sta nel fatto che quest'ultimo non richiede una riautenticazione e quindi di minor impatto (può servire per far rivelare l ssdi quando l'AP non lo rivela.)\\
