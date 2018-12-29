@@ -1352,7 +1352,7 @@
 			\end{figure}\\
 			
 			La \textbf{mancanza di limite geografico} implica che le informazioni possono essere \textit{sniffate} più facilmente. Inoltre si possono subire attacchi dall'esterno (richio per l'attaccante minimo).\\
-			Spostando il focus su reti wireless si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. La tecnologia wireless ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
+			Si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. La tecnologia wireless ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
 			Descriviamo in breve \textbf{reti atipiche} rispetto alla norma.
 			\begin{itemize}
 				\item \textbf{Reti ad-hoc}:  sono reti \textbf{spontanee} e auto-organizzanti. Possono essere reti allestite per ritrovi temporanei, interventi in situazione di emergenza, reti tattiche e militari, ambienti con mancanza di infrastruttura. Si utilizzano per coprire il \textbf{problema dell'ultimo miglio} e per coprire aree molto estese. Per problema dell'ultimo miglio intendiamo il calo di risorse del canale che si ha in una rete nella parte finale di attacco all'utente, ovvero la rete di accesso.
@@ -1362,7 +1362,7 @@
 			\subsubsection{WiMax: 802.16}
 				Un'altra tecnologia da introdurre è quella \textbf{WiMax}, utilizzate per \textbf{sostituire le connessioni cablate} dalla centrale del gestore alle singole abitazioni (connettendo tra loro più htspot 802.11). Gli standard di riferimento sono l’IEEE 802.16d del 2004, e l’IEEE 802.16e del 2005. Di seguito le caratteristiche più importanti di tale tecnologia:
 				\begin{itemize}
-					\item WiMax utilizza delle frequenze che \textbf{non sono in banda ISM.}
+					\item WiMax utilizza delle frequenze che \textbf{non sono in banda ISM} (\textit{\textbf{Industrial Scentific Medical}}. \textit{Insieme di porzioni dello spettro elettromagnetico riservate alle applicazioni di radiocomunicazioni non commerciali})
 					\item Utilizza uno spettro di frequenze molto ampio (2-66 Ghz) e permette collegamenti (teoricamente) fino a 74Mbps e può essere utilizzato anche su distanze molto grandi (chilometri).
 					\item Offre controllo di qualità del servizio a livello MAC.
 					\item Offre anche una modalità ad-hoc (mesh)
@@ -1384,11 +1384,14 @@
 				Di seguito si elencano le caratteristiche dello \textbf{strato fisico}:
 				\begin{itemize}
 					\item Frequenze: 2.4 - 5 GHz.
-					\item Bitrate: 11 - 108 (?) Mbps.
-					\item Range: fino a 50m indoor, 300m outdoor senza linea di
-					vista.
+					\item Bitrate: 11 - 108 Mbps.
+					\item Range: fino a 50m in ambienti indoor, 300m  in ambienti outdoor senza linea di vista.
 					\item Permette la mobilità.
 				\end{itemize}
+				\textbf{La differenza sostanziale tra 802.11 ed il WiFi} è che\textbf{ il primo è un insieme di standard} creati dalla IEEE per implementare reti wireless locali e si occupa del livelli 1 e 2, mentre \textbf{il secondo è un trademark} creato dalla Wifi-Alliance che certifica se un determinato dispositivo è conforme agli standard 802.11. \\
+				Prima che gli standard 802.11 vengano rilasciati ufficialmente, i maggiori produttori, che formano un consorzio WiFi (detto WiFi Alliance), rilasciano una pre-release e certificazioni sui prodotti hardware. In particolare, il consorzio, per rimediare all’emergenza causata dalle insicurezze riscontrate in tutte le versioni di 802.11 precedenti alla i, anticipa nei propri prodotti una versione incompleta di 802.11i che chiama WPA (Wireless Protected Access). A questa segue WPA2, che corrisponde alla versione aderente a 802.11i. Attualmente esistono molti working group (j, h, f, . . . ) con lo scopo di arricchire il protocollo con nuove caratteristiche quali QoS, fast handoff etc. Negli standard vi è quindi sempre una parte resa volutamente implementation dependent, che ha lo scopo di lasciare parti dello standard libere, in modo che le aziende possano scegliere quali parti dello standard utilizzare
+				o personalizzare e quali no. Questa parte serve sostanzialmente per permettere la competizione tra aziende. Di seguito verrà introdotto il funzionamento di 802.11 nelle versioni precedenti alla i.\\
+				
 				I tipi di traffico gestito sono i seguenti:
 				\begin{itemize}
 					\item \textbf{Pacchetti di tipo management}: non trasportano dati ma vengono utilizzati dalle macchine per gestire il traffico dati (pacchetti associazione o deassociazione, di autenticazione o deautenticazione, beacon). \textbf{Non prevedono nessuna forma di cifratura o autenticazione}
@@ -1396,13 +1399,14 @@
 					\item \textbf{Pacchetti di tipo data}: trasportano contenuto informatico. \textbf{Possono essere cifrati e autenticati}.
 				\end{itemize}
 			\subsubsection{WEP: Web Equivalent Privacy}
-				Il WEP è un insieme di procedure introdotte in 802.11 \textbf{per garantire la privacy e sicurezza della comunicazione, oltre che il controllo degli accessi}. Lo scopo è quello di fornire un livello di sicurezza pari a quello di una rete wired tradizionale. \textbf{Le macchine che appartengono alla rete hanno tutte una chiave comune detta chiave WEP.} Alcune caratteristiche del protocollo
+				Il WEP è un insieme di procedure introdotte in 802.11 \textbf{per garantire la privacy e sicurezza della comunicazione, oltre che il controllo degli accessi}. Lo scopo è quello di fornire un livello di sicurezza pari a quello di una rete wired tradizionale. \textbf{Le macchine che appartengono alla rete hanno tutte una chiave comune detta chiave WEP.}\\
+				Alcune caratteristiche del protocollo:
 				\begin{itemize}
-					\item  prevede una \textbf{fase di autenticazione} in cui una nuova macchina dimostra di possedere la chiave WEP.
-					\item ha un algoritmo di cifratura dei pacchetti di tipo \textbf{strem}
-					\item Non sono previste autenticazione di pacchetti relative ad una singola macchina
-					\item non esistono comunicazioni segrete tra due singole macchine.
-					\item  Non esiste un meccanismo di \textbf{refresh della chiave}
+					\item  Prevede una \textbf{fase di autenticazione} in cui una nuova macchina dimostra di possedere la chiave WEP.
+					\item Ha un algoritmo di cifratura dei pacchetti di tipo \textbf{stream}.
+					\item \textbf{Non sono previste autenticazione di pacchetti relative ad una singola macchina.} Ciò significa che per autenticazione di pacchetti (o frame) si intende stabilire se quest'ultimi sono originati da una macchina che ha accesso legittimo alla rete, senza però assicurare che provenga da una specifica macchina. 
+					\item \textbf{Non esistono comunicazioni segrete tra due singole macchine.} Nello specifico gli header dei pacchetti non sono cifrati mentre il payload lo è. Tuttavia quest'ultimo può essere decifrato da tutte le macchine che hanno accesso alla rete, tramite la chiave WEP.
+					\item  Non esiste un meccanismo di \textbf{refresh della chiave}.
 				\end{itemize}
 			\subsubsection{WEP: Autenticazione Shared Key}
 				Vediamo nello specifico \textbf{l'autenticazione} che avviene tra un client e l'AP. Il client deve dimostrare di possedere la chiave WEP condivisa:
@@ -1419,7 +1423,7 @@
 					\caption{Autenticazione\label{fig:50}}
 				\end{figure}\\
 			
-				I pacchetti sono pacchetti di \textbf{management} quindi non sono ne autenticati ne cifrati, ne consegue che la procedura è \textbf{molto veloce} e quindi pensata come procedura di handoff rapido anche tra più AP. L'AP è l'unico elemento che decide chi far entrare nella rete, ciò comporta che la gestione degli accessi è \textbf{tutta a carico dell'AP}. Nel caso di reti gestite da più AP la gestione diviene molto complicata o del tutto statica.
+				I pacchetti sono pacchetti di \textbf{management} quindi non sono ne autenticati ne cifrati, ne consegue che la procedura è \textbf{molto veloce} e quindi pensata come procedura di handoff rapido anche tra più AP. Quest'ultimo è l'unico elemento che decide chi far entrare nella rete, ciò comporta che la gestione degli accessi è \textbf{tutta a carico dell'AP}. Nel caso di reti gestite da più AP la gestione diviene molto complicata o del tutto statica.\\
 				Il \textbf{Generic frame format} è il seguente\\
 			
 				\textit{Frame WEP \ref{fig:51}}\\
@@ -1431,20 +1435,20 @@
 			
 				\textbf{Viene cifrato solo il campo di payload del pacchetto con un algoritmo di tipo stream}. Gli algoritmi di tipo stream \textbf{cifrano il contenuto in chiaro bit per bit}.
 				\begin{enumerate}
-					\item A partire da un segreto si genera un vettore di dati pseudocasuali  (\textbf{Keystream})
-					\item Per rendere unico ogni pacchetto si aggiunge al segreto un vettore di inizializzazione, il \textbf{keystream} dipende dalla coppia (segreto,IV)
+					\item A partire da un segreto (chiave WEP) si genera un vettore di dati pseudocasuali  (\textbf{Keystream})
+					\item Per rendere unico ogni pacchetto si aggiunge al segreto un vettore di inizializzazione, il \textbf{keystream} dipende dalla coppia (segreto, IV)
 					\item Si fa lo XOR logico tra il keystream e l'informazione che si vuole cifrare
 				\end{enumerate}
 				Questo tipo di algoritmi è molto facile e veloce da implementare. Importante specificare che \textbf{riutilizzare lo stesso IV significa ripetere due volte lo stesso keystream}. Se si conosce uno dei due pacchetti in chiaro si ricava anche il secondo. \textbf{Non utilizzare mai lo stesso keystream}.\\
 			
-				\textit{Stream  \ref{fig:52}}\\
+				\textit{Algoritmo di cifratura tipo stream  \ref{fig:52}}\\
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.50]{img/stream.PNG}
-					\caption{Stream\label{fig:52}}
+					\caption{Algoritmo di cifratura tipo stream \label{fig:52}}
 				\end{figure}\\
 				
-				Entriamo nel dettaglio di una procedura di encryption con \textbf{RC4} (RC4 utilizza in 802.11b chiavi di 40 bit.
+				Entriamo nel dettaglio di una procedura di encryption con \textbf{RC4}, utilizzato nello standard 802.11 (RC4 utilizza in 802.11b chiavi di 40 bit.
 				):
 				\begin{enumerate}
 					\item Si concatena la chiave WEP con il IV per \textbf{generare il seed}
@@ -1457,7 +1461,7 @@
 				\textit{Encryption RSA \ref{fig:53}}\\
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.50]{img/enrsa.PNG}
+					\includegraphics[scale=0.60]{img/enrsa.PNG}
 					\caption{Encryption RSA\label{fig:53}}
 				\end{figure}\\
 				
@@ -1475,7 +1479,6 @@
 				%			\item si trasmette il pacchetto
 				%			\item  
 				%		\end{enumerate}
-				CAPIRE SE SI PARLA DELLA STESSA COSA O MENO.\\
 				
 				L'autenticazione dei pacchetti non utilizza algoritmi a chiave pubblica e privata, ci deve essere un \textbf{segreto condiviso in precedenza e quindi un canale sicuro}. Non esistono inoltre controllo sull'unicità dei pacchetti, due pacchetti possono essere identici, inoltre non esiste un controllo di sequenza dei pacchetti, il valore IV viene deciso dagli apparati senza una politica definita. Un attaccante può dunque replicare un pacchetto anche senza conoscerne il significato, saranno i protocolli a livello superiore a gestire i dati, accettandoli o rifiutandoli.
 			\subsubsection{WEP: Uscita dalla rete}
@@ -1486,42 +1489,64 @@
 					\item si utilizzano pacchetti di tipo management.
 				\end{itemize}
 			
-				\textit{Macchina a stati 802.11 \ref{fig:54}}\\
+				\textit{Macchina a stati 802.11: autenticazione/associazione \ref{fig:54}}\\
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.50]{img/statemach.PNG}
-					\caption{Macchina a stati 802.11\label{fig:54}}
+					\caption{Macchina a stati 802.11: autenticazione associazione\label{fig:54}}
 				\end{figure}\\
 			
 			\subsubsection{802.11: Accesso al canale, Hidden node problem }
-				I client connessi alla LAN condividono lo stesso canale fisico con una politica \textbf{CSMA/CA.} Questo tipo di politica serve per la realizzazione dell'accesso multiplo, basato sul rilevamento della portante, in cui i nodi tentano di evitare a priori il verificarsi di collisioni. Il client può \textbf{prenotare il canale} per un per un periodo di tempo specifico, attraverso il campo \textit{duration} nei pacchetti \textbf{ACK/RTS}. Il canale non sarà dunque utilizzabile da altri client in quel periodo di tempo. \\
-				Il protocollo \textbf{RTS/CST} è stato introdotto per ovviare al problema dell'\textbf{Hidden node}, per quanto riguarda il protocollo CSMA. In un \textbf{modello infrastructure} l'AP si comporta come \textbf{centro stella}: tutto il traffico è inviato all'AP che lo ridirige ai client (compresi i pacchetti rts cts), mentre in un modello ad-hoc questi pacchetti sono scambiati direttamente tra gli host. 
+				I client connessi alla LAN condividono lo stesso canale fisico con una politica \textbf{CSMA/CA.} Questo tipo di politica serve per la realizzazione dell'accesso multiplo, basato sul rilevamento della portante, in cui i nodi tentano di evitare a priori il verificarsi di collisioni. Il client può \textbf{prenotare il canale} per un per un periodo di tempo specifico, attraverso il campo \textit{duration} nei pacchetti \textbf{ACK/RTS}. Il canale non sarà dunque utilizzabile da altri client in quel periodo di tempo.\\
+				In un \textbf{modello infrastructure} l'AP si comporta come \textbf{centro stella}: tutto il traffico è inviato all'AP che lo ridirige ai client (compresi i pacchetti rts cts), mentre in un modello ad-hoc questi pacchetti sono scambiati direttamente tra gli host. \\
+				
+				Un problema molto noto di questo tipo di accesso è il \textbf{problema del terminale nascosto.} 
+				Le ellissi rappresentano le aree di copertura tra l’AP ed i client C1 e C2. In sostanza, l’AP può comunicare con entrambi i client C1 e C2 , ma qualcosa (ad esempio la distanza) impedisce a C1 e C2 di comunicare direttamente tra loro e quindi anche di poter rilevare (\textbf{sensing}) la portante trasmessa
+				dall’altro client verso l’AP. In questo contesto è allora possibile che si verifichino collisioni in ricezione sull’AP quando entrambi i client C1 e C2, rilevando il canale libero, trasmettono contemporaneamente verso l’AP. Per evitare collisioni, lo standard IEEE 802.11 permette di usare un meccanismo con il quale la stazione, prima di inviare un frame, richiede la trasmissione di speciali piccoli pacchetti:
 				\begin{itemize}
-					\item Le performance di una rete wireless dipendono dal medium access control (\textbf{MAC}).
-					\item  	
+					\item \textbf{RTS} (Request To Send): oltre a riservarsi il mezzo, fa tacere qualsiasi stazione che lo sente.
+					\item \textbf{CTS} (Clear To Send): viene inviato dall’AP in risposta all’RTS, e ha il compito di far tacere le
+					stazioni nell’immediata vicinanza.
+				\end{itemize}	
+				Dunque, se ad esempio C1 vuole trasmettere all’AP, invia un messaggio RTS. Se l’AP non sta comunicando con nessun altro nodo, allora invia un messaggio CTS in cui dà il permesso a C1 di trasmettere ed a tutti gli altri nodi (nel caso in Figura 6.6 solo C2 ) indica che in quel momento sta effettuando una comunicazione con un altro nodo.\\
+				
+					\textit{Problema dell'hidden node \ref{fig:55}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.80]{img/hidden.PNG}
+					\caption{Problema dell'hidden node\label{fig:55}}
+				\end{figure}\\
+				
+				Facciamo adesso altre precisazioni su ulteriori caratteristiche e componenti dei meccanismi di gestione del canale. Coinvolti in questi processi ci sono \textbf{beacon frame}. Il beacon è un pacchetto che viene inviato
+				dagli AP per segnalare la propria presenza. I contenuti più importanti del Beacon Frame sono: 
+				\begin{itemize}
+					\item La\textbf{ modalità} (ad-hoc o infrastructure)
+					\item \textbf{ESSID} (cioè il nome dell’AP; è necessario specificarlo per entrare
+					nella rete durante la fase dell’associazione) e privacy (definisce se l’AP supporta WEP o meno).
 				\end{itemize}
+				Accenniamo ora al WDS (Wireless Distribution System). E un sistema di scambio di dati tra AP. Quando gli APs vogliono fare routing dei pacchetti tra di loro, per unire due reti distinte fisicamente in una unica rete logica devono utilizzare le interfacce WDS. Sulle interfacce WDS si può utilizzare WEP, ma non esiste associazione o autenticazione. L’utilizzo di interfacce WDS tuttavia sottrae banda per il servizio della rete infrastructure.
 				
-				TERMINARE UNA VOLTA CAPITO\\
 				
+							
 		\subsection{Insicurezze di 802.11}
-			Le insicurezze che vedremo riguardano le versioni \textbf{a, b, g}, alcune di queste non riguardano gli algoritmi crittografici utilizzati quindi vengono ritrovati anche nella versione \textbf{i}. 
+			Le insicurezze che vedremo riguardano le versioni \textbf{a, b, g}, alcune di queste non riguardano gli algoritmi crittografici utilizzati quindi vengono ritrovati anche nella versione \textbf{i} (che sostituisce RSA in favore di altri algoritmi di cifratura). 
 			\subsubsection{DoS: autenticazione/associazione}
-				Se li servizio di cui l'attaccante vuole interrompere l'erogazione è l'accesso stesso ad internet, il danno in termini economici è rilevante. In casi specifici \textbf{mission critical} non ci si può permettere di non avere connettività (sistemi real time, scadenze produttive ecc). In generale l'interruzione del servizio rende un'idea di inaffidabilità che allontana l'utente.\\
-				Passiamo ora a descrivere il primo DoS che riguarda autenticazione/associazione alla rete. Ricordiamo che tale processo svolge i seguenti passi:
+				Se il servizio di cui l'attaccante vuole interrompere l'erogazione è l'accesso stesso ad internet, il danno in termini economici è rilevante. In contesti \textbf{mission critical} non ci si può permettere di non avere connettività (sistemi real time, scadenze produttive ecc). Oltretutto l'interruzione del servizio rende un'idea di inaffidabilità che allontana l'utente.\\
+				Passiamo ora a descrivere il primo DoS che riguarda \textbf{autenticazione/associazione} alla rete. Ricordiamo che tale processo svolge i seguenti passi:
 				\begin{enumerate}
 					\item Il client chiede di autenticarsi
 					\item L'AP invia un challenge text
 					\item il client invia il challenge text cifrato con la chiave WEP
 				\end{enumerate}
-				L\textbf{a maggiore criticità risiede nel fatto che i pacchetti di autenticazione non sono autenticati, rendendo facile per un attaccante falsificarli.}
+				L\textbf{a maggiore criticità risiede nel fatto che i pacchetti di autenticazione non sono autenticati alla singola macchina, rendendo facile per un attaccante falsificarli.}
 				\begin{enumerate}
 					\item Durante la fase di ingresso l'attaccante attende l'autenticazione e risponde al posto dell'AP con un pacchetto di deautenticazione
 					\item In questo modo evita che la macchina bersaglio entri nella rete
 					\item Un pacchetto di deautenticazione può essere inviato in qualsiasi momento da un'attaccante.
 				\end{enumerate}
 				\textbf{Lo scopo} di questo attacco potrebbe essere mirato al negare l'entrata di un particolare client all'interno della rete, o più semplicemente tenere fuori dalla rete altri client\textbf{ per avere più banda a disposizione.} L'attaccante dovrà stare sempre in ascolto di nuove autenticazioni se vuole compiere l'attacco in modo continuativo.\\
-				\textbf{Si può fare un attacco specifico per l'associazione}, la differenza sta nel fatto che quest'ultimo non richiede una riautenticazione e quindi di minor impatto (può servire per far rivelare l ssdi quando l'AP non lo rivela.)\\
-				Questo tipo di attacchi sono ancora più pericolosi se l'attaccante oltre a cambiare (\textbf{spoofare}), utilizza \textbf{l'indirizzo di destinazione di broadcast}, di fatto inviando pacchetti di deautenticazione a tutti i client della rete. Si possono configurare i client per non accettare richieste di autenticazione/deautenticazione in broadcast,\textbf{ non rispettando lo standard.} 
+				\textbf{Si può fare un attacco specifico per l'associazione}, la differenza sta nel fatto che quest'ultimo non richiede una riautenticazione e quindi di minor impatto (può servire per far rivelare l ssdi, ovvero il nome della rete quando l'AP non lo rivela. Potrebbe essere il caso di reti nascoste.)\\
+				Questo tipo di attacchi sono ancora più pericolosi se l'attaccante oltre a cambiare (\textbf{spoofare}) l'indirizzo sorgente, utilizza \textbf{l'indirizzo di destinazione di broadcast}, di fatto inviando pacchetti di deautenticazione a tutti i client della rete. Si possono configurare i client per non accettare richieste di autenticazione/deautenticazione in broadcast,\textbf{ non rispettando lo standard.} 
 			\subsubsection{DoS: sull'accesso al canale}
 				
 				INSERIRE duration\\

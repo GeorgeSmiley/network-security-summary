@@ -1,16 +1,23 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.10)  28 DEC 2018 16:29
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  29 DEC 2018 13:35
+ restricted system commands enabled.
 **document.tex
 (./document.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+[\directlua]:1: module 'luaotfload-main' not found:
+	no field package.preload['luaotfload-main']
+	[kpse lua searcher] file not found: 'luaotfload-main'
+	[kpse C searcher] file not found: 'luaotfload-main'
+Error in luaotfload: reverting to OT1
+Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
-)
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 54.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 \c@part=\count79
 \c@section=\count80
 \c@subsection=\count81
@@ -39,10 +46,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: luatex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -53,34 +60,32 @@ Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package ifluatex Info: LuaTeX detected.
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
+Package: luatex-loader 2016/05/16 v0.6 Lua module loader (HO)
+
+(/usr/share/texlive/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua)
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
+
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks15
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
-)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+
 Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
 Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
@@ -146,22 +151,22 @@ LaTeX Info: Redefining \pageref on input line 6443.
 \c@Item=\count93
 \c@Hfootnote=\count94
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (autodetected): hluatex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2018/02/06 v6.86b Hyperref driver for luaTeX
 \Fld@listcount=\count95
 \c@bookmark@seq@number=\count96
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+2.
 )
 \Hy@SectionHShift=\skip43
 )
 (./document.aux)
-\openout1 = `document.aux'.
+\openout1 = document.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -170,6 +175,8 @@ LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -185,28 +192,28 @@ LaTeX Font Info:    ... okay on input line 12.
 \scratchbox=\box26
 \nofMPsegments=\count98
 \nofMParguments=\count99
-\everyMPshowfont=\toks15
+\everyMPshowfont=\toks16
 \MPscratchCnt=\count100
 \MPscratchDim=\dimen110
 \MPnumerator=\count101
 \makeMPintoPDFobject=\count102
-\everyMPtoPDFconversion=\toks16
+\everyMPtoPDFconversion=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
+8.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG
+,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
 ))
 \AtBeginShipoutBox=\box27
 Package hyperref Info: Link coloring OFF on input line 12.
@@ -225,8 +232,8 @@ LaTeX Info: Redefining \nameref on input line 12.
 
 (./document.out) (./document.out)
 \@outlinefile=\write3
-\openout3 = `document.out'.
 
+\openout3 = document.out
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -240,232 +247,136 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [3]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3])
 \tf@toc=\write4
-\openout4 = `document.toc'.
 
+\openout4 = document.toc
  (./document.lot)
 \tf@lot=\write5
-\openout5 = `document.lot'.
 
+\openout5 = document.lot
  (./document.lof [4])
 \tf@lof=\write6
-\openout6 = `document.lof'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
+\openout6 = document.lof
 
 [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 22.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmti12!
-Missing character: There is no π in font cmti12!
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 22.
 
-Overfull \hbox (3.01672pt too wide) in paragraph at lines 41--42
-\OT1/cmr/bx/n/12 Problema\OT1/cmr/m/n/12 : \OT1/cmr/m/it/12 gli in-d-i-rizzi IP
- sono pochi e cos-tosi, per di pi non sem-pre vogliamo
- []
-
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 22.
 
 Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 [6]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<img/class.PNG, id=664, 318.43968pt x 82.80937pt>
+<img/class.PNG, id=671, 318.43968pt x 82.80937pt>
 File: img/class.PNG Graphic file (type png)
 <use img/class.PNG>
-Package pdftex.def Info: img/class.PNG  used on input line 55.
-(pdftex.def)             Requested size: 127.37361pt x 33.12315pt.
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
+Package luatex.def Info: img/class.PNG  used on input line 55.
+(luatex.def)             Requested size: 127.37361pt x 33.12315pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-<img/basi.PNG, id=666, 328.22626pt x 240.9pt>
+<img/basi.PNG, id=673, 328.22626pt x 240.9pt>
 File: img/basi.PNG Graphic file (type png)
 <use img/basi.PNG>
-Package pdftex.def Info: img/basi.PNG  used on input line 64.
-(pdftex.def)             Requested size: 196.93727pt x 144.5411pt.
-[7 <./img/class.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-<img/static.PNG, id=674, 511.15968pt x 380.92313pt>
+Package luatex.def Info: img/basi.PNG  used on input line 64.
+(luatex.def)             Requested size: 196.93727pt x 144.5411pt.
+[7<./img/class.PNG>]
+<img/static.PNG, id=682, 511.15968pt x 380.92313pt>
 File: img/static.PNG Graphic file (type png)
 <use img/static.PNG>
-Package pdftex.def Info: img/static.PNG  used on input line 85.
-(pdftex.def)             Requested size: 204.46024pt x 152.36655pt.
+Package luatex.def Info: img/static.PNG  used on input line 85.
+(luatex.def)             Requested size: 204.46024pt x 152.36655pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-[8 <./img/basi.PNG (PNG copy)>]
-<img/dinamic.PNG, id=681, 337.26pt x 231.86626pt>
+[8<./img/basi.PNG>]
+<img/dinamic.PNG, id=689, 337.26pt x 231.86626pt>
 File: img/dinamic.PNG Graphic file (type png)
 <use img/dinamic.PNG>
-Package pdftex.def Info: img/dinamic.PNG  used on input line 99.
-(pdftex.def)             Requested size: 202.35756pt x 139.12082pt.
+Package luatex.def Info: img/dinamic.PNG  used on input line 99.
+(luatex.def)             Requested size: 202.35756pt x 139.12082pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (5.53738pt too wide) in paragraph at lines 105--106
-[]\OT1/cmr/m/n/12 Mapping di-nam-ico tra in-d-i-rizzi in-terni ed es-terni \OT1
-/cmr/bx/n/12 con porte di-namiche\OT1/cmr/m/n/12 . 
+Overfull \hbox (5.54172pt too wide) in paragraph at lines 105--106
+[]\OT1/lmr/m/n/12 Map-ping di-nam-ico tra in-d-i-rizzi in-terni ed es-terni \OT
+1/lmr/bx/n/12 con porte di-namiche\OT1/lmr/m/n/12 . 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-<img/natp.PNG, id=683, 343.2825pt x 292.09125pt>
+<img/natp.PNG, id=691, 343.2825pt x 292.09125pt>
 File: img/natp.PNG Graphic file (type png)
 <use img/natp.PNG>
-Package pdftex.def Info: img/natp.PNG  used on input line 113.
-(pdftex.def)             Requested size: 205.97107pt x 175.25609pt.
+Package luatex.def Info: img/natp.PNG  used on input line 113.
+(luatex.def)             Requested size: 205.97107pt x 175.25609pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-[9 <./img/static.PNG (PNG copy)>] [10 <./img/dinamic.PNG (PNG copy)> <./img/nat
-p.PNG (PNG copy)>]
-<img/natipsec.PNG, id=693, 334.24875pt x 205.5178pt>
+[9<./img/static.PNG>] [10<./img/dinamic.PNG><./img/natp.PNG>]
+<img/natipsec.PNG, id=703, 334.24875pt x 205.5178pt>
 File: img/natipsec.PNG Graphic file (type png)
 <use img/natipsec.PNG>
-Package pdftex.def Info: img/natipsec.PNG  used on input line 122.
-(pdftex.def)             Requested size: 200.55078pt x 123.31163pt.
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/1631.PNG, id=695, 402.75468pt x 189.70876pt>
+Package luatex.def Info: img/natipsec.PNG  used on input line 122.
+(luatex.def)             Requested size: 200.55078pt x 123.31163pt.
+<img/1631.PNG, id=705, 402.75468pt x 189.70876pt>
 File: img/1631.PNG Graphic file (type png)
 <use img/1631.PNG>
-Package pdftex.def Info: img/1631.PNG  used on input line 132.
-(pdftex.def)             Requested size: 241.65466pt x 113.82613pt.
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
+Package luatex.def Info: img/1631.PNG  used on input line 132.
+(luatex.def)             Requested size: 241.65466pt x 113.82613pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[11 <./img/natipsec.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
-Overfull \hbox (0.29536pt too wide) in paragraph at lines 151--153
-\OT1/cmr/bx/it/12 Abbiamo bisogno di un com-por-ta-mento di-verso del NAT per U
-DP\OT1/cmr/m/n/12 . 
+[11<./img/natipsec.PNG>]
+Overfull \hbox (0.72855pt too wide) in paragraph at lines 146--149
+\OT1/lmr/m/n/12 non √® poss-bili ef-fet-tuare una call-back, quindi PAS-SIVE FT
+P (????????).
  []
 
-[12 <./img/1631.PNG (PNG copy)>]
+[12<./img/1631.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-<img/sym.PNG, id=707, 408.02437pt x 271.76532pt>
+<img/sym.PNG, id=721, 408.02437pt x 271.76532pt>
 File: img/sym.PNG Graphic file (type png)
 <use img/sym.PNG>
-Package pdftex.def Info: img/sym.PNG  used on input line 159.
-(pdftex.def)             Requested size: 244.81651pt x 163.06044pt.
+Package luatex.def Info: img/sym.PNG  used on input line 159.
+(luatex.def)             Requested size: 244.81651pt x 163.06044pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
-<img/cone.PNG, id=709, 400.49625pt x 275.52937pt>
+<img/cone.PNG, id=723, 400.49625pt x 275.52937pt>
 File: img/cone.PNG Graphic file (type png)
 <use img/cone.PNG>
-Package pdftex.def Info: img/cone.PNG  used on input line 169.
-(pdftex.def)             Requested size: 240.29959pt x 165.3189pt.
+Package luatex.def Info: img/cone.PNG  used on input line 169.
+(luatex.def)             Requested size: 240.29959pt x 165.3189pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 166--172
 
@@ -474,27 +385,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--172
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
-[13 <./img/sym.PNG (PNG copy)>]
-<img/res.PNG, id=716, 402.00188pt x 302.63063pt>
+[13<./img/sym.PNG>]
+<img/res.PNG, id=730, 402.00188pt x 302.63063pt>
 File: img/res.PNG Graphic file (type png)
 <use img/res.PNG>
-Package pdftex.def Info: img/res.PNG  used on input line 179.
-(pdftex.def)             Requested size: 241.20297pt x 181.57977pt.
+Package luatex.def Info: img/res.PNG  used on input line 179.
+(luatex.def)             Requested size: 241.20297pt x 181.57977pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 176--182
 
@@ -503,18 +404,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--182
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-<img/port.PNG, id=718, 402.75468pt x 290.58563pt>
+<img/port.PNG, id=732, 402.75468pt x 290.58563pt>
 File: img/port.PNG Graphic file (type png)
 <use img/port.PNG>
-Package pdftex.def Info: img/port.PNG  used on input line 189.
-(pdftex.def)             Requested size: 241.65466pt x 174.35272pt.
+Package luatex.def Info: img/port.PNG  used on input line 189.
+(luatex.def)             Requested size: 241.65466pt x 174.35272pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
@@ -523,79 +422,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmti12!
-Missing character: There is no ≤ in font cmti12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[14 <./img/cone.PNG (PNG copy)>] [15 <./img/res.PNG (PNG copy)> <./img/port.PNG
- (PNG copy)>]
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ô in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [16]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ¨ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [17] [18]
-Missing character: There is no √ in font cmti12!
-Missing character: There is no ® in font cmti12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmti12!
-Missing character: There is no ® in font cmti12!
-Missing character: There is no √ in font cmti12!
-Missing character: There is no ® in font cmti12!
-
-Overfull \hbox (1.11377pt too wide) in paragraph at lines 252--254
-\OT1/cmr/m/n/12 Risolvono il prob-lema della \OT1/cmr/bx/n/12 garanzia di in-te
-grit \OT1/cmr/m/n/12 di un doc-u-mento trasmesso. 
+[14<./img/cone.PNG>] [15<./img/res.PNG><./img/port.PNG>] [16
+Missing character: There is no ‚Äô (U+2019) in font rm-lmbx12!
+]
+Overfull \hbox (5.63933pt too wide) in paragraph at lines 231--232
+\OT1/lmr/bx/n/12 header UDP/TCP\OT1/lmr/m/n/12 , ma \OT1/lmr/bx/n/12 potrebbe e
+s-sere un at-tacco a fram-men-tazione\OT1/lmr/m/n/12 .
  []
 
-
-Overfull \hbox (21.32596pt too wide) in paragraph at lines 252--254
-\OT1/cmr/m/it/12 Una fun-zione hash  una fun-zione uni-di-rezionale che si ap-p
-lica ad un'informazione,
+[17] [18]
+Overfull \hbox (8.09045pt too wide) in paragraph at lines 252--254
+\OT1/lmr/m/n/12 Ri-solvono il prob-lema della \OT1/lmr/bx/n/12 garanzia di in-t
+egrit√† \OT1/lmr/m/n/12 di un doc-u-mento trasmesso. 
  []
 
 
@@ -603,59 +441,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
-<img/sha.PNG, id=740, 483.30562pt x 137.7647pt>
+<img/sha.PNG, id=755, 483.30562pt x 137.7647pt>
 File: img/sha.PNG Graphic file (type png)
 <use img/sha.PNG>
-Package pdftex.def Info: img/sha.PNG  used on input line 258.
-(pdftex.def)             Requested size: 289.98561pt x 82.65944pt.
+Package luatex.def Info: img/sha.PNG  used on input line 258.
+(luatex.def)             Requested size: 289.98561pt x 82.65944pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 255--261
 
  []
 
-[19 <./img/sha.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [20]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-<img/hamac.PNG, id=751, 507.39563pt x 207.02344pt>
+[19<./img/sha.PNG>] [20]
+<img/hamac.PNG, id=766, 507.39563pt x 207.02344pt>
 File: img/hamac.PNG Graphic file (type png)
 <use img/hamac.PNG>
-Package pdftex.def Info: img/hamac.PNG  used on input line 302.
-(pdftex.def)             Requested size: 304.43973pt x 124.21501pt.
+Package luatex.def Info: img/hamac.PNG  used on input line 302.
+(luatex.def)             Requested size: 304.43973pt x 124.21501pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 299--305
 
@@ -664,41 +465,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--305
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[21]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [22 <./img/hamac.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/des.PNG, id=766, 429.85594pt x 210.7875pt>
+[21] [22<./img/hamac.PNG>]
+<img/des.PNG, id=784, 429.85594pt x 210.7875pt>
 File: img/des.PNG Graphic file (type png)
 <use img/des.PNG>
-Package pdftex.def Info: img/des.PNG  used on input line 347.
-(pdftex.def)             Requested size: 257.91554pt x 126.47346pt.
+Package luatex.def Info: img/des.PNG  used on input line 347.
+(luatex.def)             Requested size: 257.91554pt x 126.47346pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 344--350
 
  []
 
-<img/des2.PNG, id=768, 427.5975pt x 223.58531pt>
+<img/des2.PNG, id=786, 427.5975pt x 223.58531pt>
 File: img/des2.PNG Graphic file (type png)
 <use img/des2.PNG>
-Package pdftex.def Info: img/des2.PNG  used on input line 354.
-(pdftex.def)             Requested size: 256.56047pt x 134.1522pt.
+Package luatex.def Info: img/des2.PNG  used on input line 354.
+(luatex.def)             Requested size: 256.56047pt x 134.1522pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 351--357
 
@@ -707,62 +489,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 351--357
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[23 <./img/des.PNG (PNG copy)>]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ¨ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
- [24 <./img/des2.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-<img/pubpriv.PNG, id=780, 444.91219pt x 349.305pt>
+[23<./img/des.PNG>] [24<./img/des2.PNG>]
+Overfull \hbox (4.91629pt too wide) in paragraph at lines 382--383
+\OT1/lmr/bx/n/12 Non √® nec-es-sario con-cor-dare pre-ven-ti-va-mente una chi-a
+ve di cifratura
+ []
+
+<img/pubpriv.PNG, id=799, 444.91219pt x 349.305pt>
 File: img/pubpriv.PNG Graphic file (type png)
 <use img/pubpriv.PNG>
-Package pdftex.def Info: img/pubpriv.PNG  used on input line 387.
-(pdftex.def)             Requested size: 266.94936pt x 209.58461pt.
+Package luatex.def Info: img/pubpriv.PNG  used on input line 387.
+(luatex.def)             Requested size: 266.94936pt x 209.58461pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 384--390
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
@@ -773,223 +515,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
  []
 
-[25 <./img/pubpriv.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [26]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
-Overfull \hbox (4.44307pt too wide) in paragraph at lines 421--422
-\OT1/cmr/bx/n/12 Rete di con-tatti at-traverso la quale i parte-ci-panti cer-ti
--f-i-cano l'identit
+[25<./img/pubpriv.PNG>] [26
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+] [27
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Overfull \hbox (24.47961pt too wide) in paragraph at lines 435--437
+[]\OT1/lmr/bx/n/12 come us-are un key-server: \OT1/lmr/m/n/12 gpg ‚Äìkey-server
+ pgp.mit.edu ‚Äìsend-key C93F299D 
  []
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-[27]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Overfull \hbox (24.475pt too wide) in paragraph at lines 435--437
-[]\OT1/cmr/bx/n/12 come us-are un key-server: \OT1/cmr/m/n/12 gpg key-server pg
-p.mit.edu send-key C93F299D 
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ¨ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 452--454
 
  []
 
-<img/certificati.PNG, id=796, 255.95625pt x 293.59688pt>
+<img/certificati.PNG, id=814, 255.95625pt x 293.59688pt>
 File: img/certificati.PNG Graphic file (type png)
 <use img/certificati.PNG>
-Package pdftex.def Info: img/certificati.PNG  used on input line 458.
-(pdftex.def)             Requested size: 153.57492pt x 176.15947pt.
+Package luatex.def Info: img/certificati.PNG  used on input line 458.
+(luatex.def)             Requested size: 153.57492pt x 176.15947pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 455--461
 
  []
 
-[28]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ¨ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
- [29 <./img/certificati.PNG (PNG copy)>]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-<img/confronto.PNG, id=806, 551.05875pt x 126.4725pt>
+[28
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+] [29<./img/certificati.PNG>]
+<img/confronto.PNG, id=825, 551.05875pt x 126.4725pt>
 File: img/confronto.PNG Graphic file (type png)
 <use img/confronto.PNG>
-Package pdftex.def Info: img/confronto.PNG  used on input line 483.
-(pdftex.def)             Requested size: 330.63779pt x 75.88408pt.
+Package luatex.def Info: img/confronto.PNG  used on input line 483.
+(luatex.def)             Requested size: 330.63779pt x 75.88408pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 480--486
 
  []
 
-[30 <./img/confronto.PNG (PNG copy)>]
+[30<./img/confronto.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 [31]
-<img/euler.PNG, id=818, 648.17157pt x 61.73062pt>
+<img/euler.PNG, id=838, 648.17157pt x 61.73062pt>
 File: img/euler.PNG Graphic file (type png)
 <use img/euler.PNG>
-Package pdftex.def Info: img/euler.PNG  used on input line 520.
-(pdftex.def)             Requested size: 388.90594pt x 37.03864pt.
+Package luatex.def Info: img/euler.PNG  used on input line 520.
+(luatex.def)             Requested size: 388.90594pt x 37.03864pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 517--523
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-[32 <./img/euler.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [33]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/diffie.PNG, id=831, 438.13687pt x 380.17032pt>
+[32<./img/euler.PNG>] [33]
+<img/diffie.PNG, id=852, 438.13687pt x 380.17032pt>
 File: img/diffie.PNG Graphic file (type png)
 <use img/diffie.PNG>
-Package pdftex.def Info: img/diffie.PNG  used on input line 581.
-(pdftex.def)             Requested size: 262.88414pt x 228.10394pt.
+Package luatex.def Info: img/diffie.PNG  used on input line 581.
+(luatex.def)             Requested size: 262.88414pt x 228.10394pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 578--584
 
@@ -998,180 +590,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 578--584
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 594--595
 
  []
 
 [34]
-<img/staticmap.PNG, id=843, 104.64093pt x 108.405pt>
+<img/staticmap.PNG, id=865, 104.64093pt x 108.405pt>
 File: img/staticmap.PNG Graphic file (type png)
 <use img/staticmap.PNG>
-Package pdftex.def Info: img/staticmap.PNG  used on input line 599.
-(pdftex.def)             Requested size: 62.78502pt x 65.04349pt.
+Package luatex.def Info: img/staticmap.PNG  used on input line 599.
+(luatex.def)             Requested size: 62.78502pt x 65.04349pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 596--602
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-[35 <./img/diffie.PNG (PNG copy)> <./img/staticmap.PNG (PNG copy)>]
-<img/feit.PNG, id=849, 303.38344pt x 424.58624pt>
+[35<./img/diffie.PNG><./img/staticmap.PNG>]
+<img/feit.PNG, id=872, 303.38344pt x 424.58624pt>
 File: img/feit.PNG Graphic file (type png)
 <use img/feit.PNG>
-Package pdftex.def Info: img/feit.PNG  used on input line 614.
-(pdftex.def)             Requested size: 182.03146pt x 254.75371pt.
+Package luatex.def Info: img/feit.PNG  used on input line 614.
+(luatex.def)             Requested size: 182.03146pt x 254.75371pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 611--617
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[36 <./img/feit.PNG (PNG copy)>]
-<img/rete.PNG, id=858, 449.42906pt x 418.56375pt>
+[36<./img/feit.PNG>]
+<img/rete.PNG, id=882, 449.42906pt x 418.56375pt>
 File: img/rete.PNG Graphic file (type png)
 <use img/rete.PNG>
-Package pdftex.def Info: img/rete.PNG  used on input line 632.
-(pdftex.def)             Requested size: 269.6595pt x 251.14018pt.
+Package luatex.def Info: img/rete.PNG  used on input line 632.
+(luatex.def)             Requested size: 269.6595pt x 251.14018pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 629--635
 
  []
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-[37 <./img/rete.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [38]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Overfull \hbox (1.00983pt too wide) in paragraph at lines 684--685
-[]\OT1/cmr/m/n/12 la macchina 192.168.2.51 vuole rag-giun-gere l'indirizzo 192.
-168.2.52 nella
+[37<./img/rete.PNG>] [38
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Overfull \hbox (1.01437pt too wide) in paragraph at lines 684--685
+[]\OT1/lmr/m/n/12 la macchina 192.168.2.51 vuole rag-giun-gere l'in-d-i-rizzo 1
+92.168.2.52 nella
  []
 
 [39]
-<img/arp.PNG, id=875, 283.0575pt x 188.20313pt>
+<img/arp.PNG, id=900, 283.0575pt x 188.20313pt>
 File: img/arp.PNG Graphic file (type png)
 <use img/arp.PNG>
-Package pdftex.def Info: img/arp.PNG  used on input line 692.
-(pdftex.def)             Requested size: 169.8358pt x 112.92273pt.
+Package luatex.def Info: img/arp.PNG  used on input line 692.
+(luatex.def)             Requested size: 169.8358pt x 112.92273pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 689--695
 
  []
 
-<img/algoarp.PNG, id=877, 437.38406pt x 143.78719pt>
+<img/algoarp.PNG, id=902, 437.38406pt x 143.78719pt>
 File: img/algoarp.PNG Graphic file (type png)
 <use img/algoarp.PNG>
-Package pdftex.def Info: img/algoarp.PNG  used on input line 699.
-(pdftex.def)             Requested size: 262.43245pt x 86.27296pt.
+Package luatex.def Info: img/algoarp.PNG  used on input line 699.
+(luatex.def)             Requested size: 262.43245pt x 86.27296pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 696--702
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 
-Overfull \hbox (25.04027pt too wide) in paragraph at lines 706--707
-[]\OT1/cmr/m/n/12 Eve manda mes-sagi ARP-Reply an-che all'indirizzo MAC di Bob,
- dichiarando
+Overfull \hbox (25.04553pt too wide) in paragraph at lines 706--707
+[]\OT1/lmr/m/n/12 Eve manda mes-sagi ARP-Reply an-che all'in-d-i-rizzo MAC di B
+ob, dichiarando
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[40 <./img/arp.PNG (PNG copy)> <./img/algoarp.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
+[40<./img/arp.PNG><./img/algoarp.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
-<img/iphead.PNG, id=887, 445.665pt x 253.69781pt>
+<img/iphead.PNG, id=912, 445.665pt x 253.69781pt>
 File: img/iphead.PNG Graphic file (type png)
 <use img/iphead.PNG>
-Package pdftex.def Info: img/iphead.PNG  used on input line 721.
-(pdftex.def)             Requested size: 267.40106pt x 152.21985pt.
+Package luatex.def Info: img/iphead.PNG  used on input line 721.
+(luatex.def)             Requested size: 267.40106pt x 152.21985pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 718--724
 
  []
 
-<img/tcphead.PNG, id=889, 401.24907pt x 234.1247pt>
+<img/tcphead.PNG, id=914, 401.24907pt x 234.1247pt>
 File: img/tcphead.PNG Graphic file (type png)
 <use img/tcphead.PNG>
-Package pdftex.def Info: img/tcphead.PNG  used on input line 730.
-(pdftex.def)             Requested size: 240.75128pt x 140.47589pt.
+Package luatex.def Info: img/tcphead.PNG  used on input line 730.
+(luatex.def)             Requested size: 240.75128pt x 140.47589pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 727--733
 
  []
 
-[41 <./img/iphead.PNG (PNG copy)>]
-<img/frag.PNG, id=896, 460.72125pt x 236.38312pt>
+[41<./img/iphead.PNG>]
+<img/frag.PNG, id=923, 460.72125pt x 236.38312pt>
 File: img/frag.PNG Graphic file (type png)
 <use img/frag.PNG>
-Package pdftex.def Info: img/frag.PNG  used on input line 737.
-(pdftex.def)             Requested size: 276.43488pt x 141.83096pt.
+Package luatex.def Info: img/frag.PNG  used on input line 737.
+(luatex.def)             Requested size: 276.43488pt x 141.83096pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 734--740
 
  []
 
-<img/frag2.PNG, id=898, 389.95688pt x 194.97844pt>
+<img/frag2.PNG, id=925, 389.95688pt x 194.97844pt>
 File: img/frag2.PNG Graphic file (type png)
 <use img/frag2.PNG>
-Package pdftex.def Info: img/frag2.PNG  used on input line 744.
-(pdftex.def)             Requested size: 233.97592pt x 116.98795pt.
+Package luatex.def Info: img/frag2.PNG  used on input line 744.
+(luatex.def)             Requested size: 233.97592pt x 116.98795pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 741--747
 
@@ -1180,155 +714,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 741--747
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[42 <./img/tcphead.PNG (PNG copy)> <./img/frag.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [43 <./img/frag2.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-
-Overfull \hbox (19.44826pt too wide) in paragraph at lines 764--766
-\OT1/cmr/m/n/12 In gen-erale un \OT1/cmr/bx/n/12 at-tacco al DNS \OT1/cmr/m/n/1
-2 serve a far credere che l'IP in-vi-ato dall'attaccante
- []
-
-
-Overfull \hbox (8.48517pt too wide) in paragraph at lines 764--766
-\OT1/cmr/m/n/12 de-rivi dalla traduzione lecita dell'indirizzo al-fanu-merico n
-el rel-a-tivo IP. \OT1/cmr/bx/n/12 Questa
- []
-
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-[44]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
+[42<./img/tcphead.PNG><./img/frag.PNG>] [43<./img/frag2.PNG>] [44]
+Missing character: There is no √† (U+00E0) in font cmmi12!
  [45]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
 Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[46]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [47]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
-Overfull \hbox (17.81114pt too wide) in paragraph at lines 864--866
-\OT1/cmr/m/n/12 Un at-tac-cante che vo-lesse in-ter-rompere una con-nes-sione T
+[46] [47]
+Overfull \hbox (17.81227pt too wide) in paragraph at lines 864--866
+\OT1/lmr/m/n/12 Un at-tac-cante che vo-lesse in-ter-rompere una con-nes-sione T
 CP dovrebbe conoscere
  []
 
 [48]
-<img/tempi.PNG, id=938, 467.49657pt x 114.4275pt>
+<img/tempi.PNG, id=965, 467.49657pt x 114.4275pt>
 File: img/tempi.PNG Graphic file (type png)
 <use img/tempi.PNG>
-Package pdftex.def Info: img/tempi.PNG  used on input line 871.
-(pdftex.def)             Requested size: 280.50009pt x 68.65701pt.
+Package luatex.def Info: img/tempi.PNG  used on input line 871.
+(luatex.def)             Requested size: 280.50009pt x 68.65701pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 868--874
 
@@ -1339,11 +743,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--880
 
  []
 
-<img/sqltable.PNG, id=940, 237.13594pt x 79.79813pt>
+<img/sqltable.PNG, id=967, 237.13594pt x 79.79813pt>
 File: img/sqltable.PNG Graphic file (type png)
 <use img/sqltable.PNG>
-Package pdftex.def Info: img/sqltable.PNG  used on input line 884.
-(pdftex.def)             Requested size: 142.28265pt x 47.87923pt.
+Package luatex.def Info: img/sqltable.PNG  used on input line 884.
+(luatex.def)             Requested size: 142.28265pt x 47.87923pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 881--887
 
@@ -1352,224 +756,120 @@ Underfull \hbox (badness 10000) in paragraph at lines 881--887
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-[49 <./img/tempi.PNG (PNG copy)>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ù in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-
+Missing character: There is no ‚Äô (U+2019) in font cmr12!
+Missing character: There is no ‚Äô (U+2019) in font cmr12!
+[49
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+<./img/tempi.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 916--917
 
  []
 
-<img/table.PNG, id=947, 219.82124pt x 70.76437pt>
+[50
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmbx12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmr12!
+<./img/sqltable.PNG>]
+<img/table.PNG, id=978, 219.82124pt x 70.76437pt>
 File: img/table.PNG Graphic file (type png)
 <use img/table.PNG>
-Package pdftex.def Info: img/table.PNG  used on input line 921.
-(pdftex.def)             Requested size: 131.89375pt x 42.45894pt.
+Package luatex.def Info: img/table.PNG  used on input line 921.
+(luatex.def)             Requested size: 131.89375pt x 42.45894pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 918--924
 
  []
 
-[50 <./img/sqltable.PNG (PNG copy)>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 934--935
 
  []
 
-<img/query.PNG, id=953, 462.97969pt x 171.64125pt>
+<img/query.PNG, id=980, 462.97969pt x 171.64125pt>
 File: img/query.PNG Graphic file (type png)
 <use img/query.PNG>
-Package pdftex.def Info: img/query.PNG  used on input line 939.
-(pdftex.def)             Requested size: 277.78995pt x 102.98552pt.
+Package luatex.def Info: img/query.PNG  used on input line 939.
+(luatex.def)             Requested size: 277.78995pt x 102.98552pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 936--942
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[51 <./img/table.PNG (PNG copy)> <./img/query.PNG (PNG copy)>]
-<img/vulnerable.PNG, id=959, 420.82219pt x 144.54pt>
+[51
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+<./img/table.PNG><./img/query.PNG>]
+<img/vulnerable.PNG, id=989, 420.82219pt x 144.54pt>
 File: img/vulnerable.PNG Graphic file (type png)
 <use img/vulnerable.PNG>
-Package pdftex.def Info: img/vulnerable.PNG  used on input line 952.
-(pdftex.def)             Requested size: 252.49525pt x 86.72466pt.
+Package luatex.def Info: img/vulnerable.PNG  used on input line 952.
+(luatex.def)             Requested size: 252.49525pt x 86.72466pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 949--955
 
  []
 
-<img/prepared.PNG, id=961, 397.485pt x 112.92188pt>
+<img/prepared.PNG, id=991, 397.485pt x 112.92188pt>
 File: img/prepared.PNG Graphic file (type png)
 <use img/prepared.PNG>
-Package pdftex.def Info: img/prepared.PNG  used on input line 959.
-(pdftex.def)             Requested size: 238.49283pt x 67.75363pt.
+Package luatex.def Info: img/prepared.PNG  used on input line 959.
+(luatex.def)             Requested size: 238.49283pt x 67.75363pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 956--962
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[52 <./img/vulnerable.PNG (PNG copy)> <./img/prepared.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
+[52<./img/vulnerable.PNG><./img/prepared.PNG>]
+Overfull \hbox (4.39282pt too wide) in paragraph at lines 970--972
+\OT1/lmr/m/n/12 L'at-tac-cante cercher√† di in-serire codice es-eguibile all'in
+-terno del codice HTML. 
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 988--989
 
  []
 
-[53]
-<img/web.PNG, id=971, 500.62032pt x 298.11375pt>
+[53
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+<img/web.PNG, id=1002, 500.62032pt x 298.11375pt>
 File: img/web.PNG Graphic file (type png)
 <use img/web.PNG>
-Package pdftex.def Info: img/web.PNG  used on input line 993.
-(pdftex.def)             Requested size: 300.37451pt x 178.86963pt.
+Package luatex.def Info: img/web.PNG  used on input line 993.
+(luatex.def)             Requested size: 300.37451pt x 178.86963pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 990--996
 
  []
 
-<img/ajax.PNG, id=973, 398.99063pt x 276.28218pt>
+<img/ajax.PNG, id=1004, 398.99063pt x 276.28218pt>
 File: img/ajax.PNG Graphic file (type png)
 <use img/ajax.PNG>
-Package pdftex.def Info: img/ajax.PNG  used on input line 1000.
-(pdftex.def)             Requested size: 239.39622pt x 165.77057pt.
+Package luatex.def Info: img/ajax.PNG  used on input line 1000.
+(luatex.def)             Requested size: 239.39622pt x 165.77057pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 997--1003
 
@@ -1578,43 +878,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 997--1003
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[54 <./img/web.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
+[54<./img/web.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 
  []
 
-[55 <./img/ajax.PNG (PNG copy)>]
-<img/c.PNG, id=984, 273.27094pt x 173.14688pt>
+[55<./img/ajax.PNG>]
+<img/c.PNG, id=1015, 273.27094pt x 173.14688pt>
 File: img/c.PNG Graphic file (type png)
 <use img/c.PNG>
-Package pdftex.def Info: img/c.PNG  used on input line 1029.
-(pdftex.def)             Requested size: 245.94154pt x 155.83075pt.
+Package luatex.def Info: img/c.PNG  used on input line 1029.
+(luatex.def)             Requested size: 245.94154pt x 155.83075pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1026--1032
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
 
  []
 
-<img/stack.PNG, id=986, 252.19218pt x 163.3603pt>
+<img/stack.PNG, id=1017, 252.19218pt x 163.3603pt>
 File: img/stack.PNG Graphic file (type png)
 <use img/stack.PNG>
-Package pdftex.def Info: img/stack.PNG  used on input line 1038.
-(pdftex.def)             Requested size: 226.97086pt x 147.0229pt.
+Package luatex.def Info: img/stack.PNG  used on input line 1038.
+(luatex.def)             Requested size: 226.97086pt x 147.0229pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1035--1041
 
@@ -1623,19 +912,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1035--1041
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[56 <./img/c.PNG (PNG copy)>]
-Overfull \hbox (8.7778pt too wide) in paragraph at lines 1050--1051
-[]\OT1/cmr/m/n/12 le vari-abili dello stack ven-gono scritte dal basso verso l'
-alto, ma all'interno
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-<img/stack2.PNG, id=993, 149.05687pt x 170.13562pt>
+[56<./img/c.PNG>]
+<img/stack2.PNG, id=1024, 149.05687pt x 170.13562pt>
 File: img/stack2.PNG Graphic file (type png)
 <use img/stack2.PNG>
-Package pdftex.def Info: img/stack2.PNG  used on input line 1057.
-(pdftex.def)             Requested size: 134.14993pt x 153.12062pt.
+Package luatex.def Info: img/stack2.PNG  used on input line 1057.
+(luatex.def)             Requested size: 134.14993pt x 153.12062pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1054--1060
 
@@ -1644,12 +926,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1054--1060
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-[57 <./img/stack.PNG (PNG copy)>]
-Overfull \hbox (40.04137pt too wide) in paragraph at lines 1071--1072
-[]\OT1/cmr/m/n/12 Utilizzare fun-zioni che lim-i-tano la lunghezza della scrit-
-tura (strncpy(),strcpy()). 
+[57<./img/stack.PNG>]
+Overfull \hbox (9.36386pt too wide) in paragraph at lines 1071--1072
+[]\OT1/lmr/m/n/12 Uti-liz-zare fun-zioni che lim-i-tano la lunghezza della scri
+t-tura (strncpy(),str-
  []
 
 
@@ -1657,82 +937,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
 
  []
 
-<img/formatbug.PNG, id=999, 386.19281pt x 226.59656pt>
+<img/formatbug.PNG, id=1031, 386.19281pt x 226.59656pt>
 File: img/formatbug.PNG Graphic file (type png)
 <use img/formatbug.PNG>
-Package pdftex.def Info: img/formatbug.PNG  used on input line 1084.
-(pdftex.def)             Requested size: 270.33311pt x 158.6165pt.
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
+Package luatex.def Info: img/formatbug.PNG  used on input line 1084.
+(luatex.def)             Requested size: 270.33311pt x 158.6165pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ù in font cmbx12!
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ù in font cmbx12!
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ù in font cmbx12!
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ù in font cmbx12!
-[58 <./img/stack2.PNG (PNG copy)>]
-Missing character: There is no ‚ in font cmbx12!
-Missing character: There is no Ä in font cmbx12!
-Missing character: There is no ô in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmti12!
-Missing character: There is no ® in font cmti12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
- [59 <./img/formatbug.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
-Overfull \hbox (16.968pt too wide) in paragraph at lines 1123--1124
-\OT1/cmr/m/n/12 Deve es-sere pro-tetto perch con-tiene in-for-mazioni im-por-ta
-nti per un'azienda
+[58
+Missing character: There is no ‚Äù (U+201D) in font rm-lmbx12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmbx12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmbx12!
+Missing character: There is no ‚Äù (U+201D) in font rm-lmbx12!
+<./img/stack2.PNG>] [59
+Missing character: There is no ‚Äô (U+2019) in font rm-lmbx12!
+<./img/formatbug.PNG>]
+Overfull \hbox (22.19315pt too wide) in paragraph at lines 1123--1124
+\OT1/lmr/m/n/12 Deve es-sere pro-tetto per-ch√® con-tiene in-for-mazioni im-por
+-tanti per un'azienda
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/fire.PNG, id=1009, 487.8225pt x 255.95625pt>
+<img/fire.PNG, id=1042, 487.8225pt x 255.95625pt>
 File: img/fire.PNG Graphic file (type png)
 <use img/fire.PNG>
-Package pdftex.def Info: img/fire.PNG  used on input line 1130.
-(pdftex.def)             Requested size: 243.91064pt x 127.9778pt.
+Package luatex.def Info: img/fire.PNG  used on input line 1130.
+(luatex.def)             Requested size: 243.91064pt x 127.9778pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1127--1133
 
@@ -1741,22 +971,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1127--1133
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 [60]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-<img/fire2.PNG, id=1018, 491.58656pt x 258.9675pt>
+<img/fire2.PNG, id=1052, 491.58656pt x 258.9675pt>
 File: img/fire2.PNG Graphic file (type png)
 <use img/fire2.PNG>
-Package pdftex.def Info: img/fire2.PNG  used on input line 1144.
-(pdftex.def)             Requested size: 245.79268pt x 129.48341pt.
+Package luatex.def Info: img/fire2.PNG  used on input line 1144.
+(luatex.def)             Requested size: 245.79268pt x 129.48341pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1141--1147
 
@@ -1765,48 +985,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 1141--1147
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[61 <./img/fire.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/rule.PNG, id=1025, 397.485pt x 113.67468pt>
+[61<./img/fire.PNG>]
+<img/rule.PNG, id=1060, 397.485pt x 113.67468pt>
 File: img/rule.PNG Graphic file (type png)
 <use img/rule.PNG>
-Package pdftex.def Info: img/rule.PNG  used on input line 1158.
-(pdftex.def)             Requested size: 198.742pt x 56.83719pt.
+Package luatex.def Info: img/rule.PNG  used on input line 1158.
+(luatex.def)             Requested size: 198.742pt x 56.83719pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1155--1161
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
 
  []
 
-[62 <./img/fire2.PNG (PNG copy)> <./img/rule.PNG (PNG copy)>]
-<img/logic.PNG, id=1031, 505.89pt x 304.88907pt>
+[62<./img/fire2.PNG><./img/rule.PNG>]
+<img/logic.PNG, id=1067, 505.89pt x 304.88907pt>
 File: img/logic.PNG Graphic file (type png)
 <use img/logic.PNG>
-Package pdftex.def Info: img/logic.PNG  used on input line 1173.
-(pdftex.def)             Requested size: 252.94437pt x 152.44415pt.
+Package luatex.def Info: img/logic.PNG  used on input line 1173.
+(luatex.def)             Requested size: 252.94437pt x 152.44415pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1170--1176
 
  []
 
-<img/logic2.PNG, id=1033, 543.53062pt x 417.81094pt>
+<img/logic2.PNG, id=1069, 543.53062pt x 417.81094pt>
 File: img/logic2.PNG Graphic file (type png)
 <use img/logic2.PNG>
-Package pdftex.def Info: img/logic2.PNG  used on input line 1180.
-(pdftex.def)             Requested size: 271.76463pt x 208.90495pt.
+Package luatex.def Info: img/logic2.PNG  used on input line 1180.
+(luatex.def)             Requested size: 271.76463pt x 208.90495pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1177--1183
 
@@ -1815,23 +1025,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1177--1183
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[63 <./img/logic.PNG (PNG copy)>]
-Overfull \hbox (4.35277pt too wide) in paragraph at lines 1200--1201
-\OT1/cmr/bx/n/12 All'interno di ogni catena si richia-mano re-gole ap-parte-nen
-ti a tabelle
+[63<./img/logic.PNG>]
+Overfull \hbox (4.35484pt too wide) in paragraph at lines 1200--1201
+\OT1/lmr/bx/n/12 All'in-terno di ogni catena si richia-mano re-gole ap-parte-ne
+nti a tabelle
  []
 
-<img/chain.PNG, id=1039, 502.87875pt x 382.42876pt>
+<img/chain.PNG, id=1076, 502.87875pt x 382.42876pt>
 File: img/chain.PNG Graphic file (type png)
 <use img/chain.PNG>
-Package pdftex.def Info: img/chain.PNG  used on input line 1205.
-(pdftex.def)             Requested size: 352.01273pt x 267.69829pt.
+Package luatex.def Info: img/chain.PNG  used on input line 1205.
+(luatex.def)             Requested size: 352.01273pt x 267.69829pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1202--1208
 
@@ -1840,122 +1044,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 1202--1208
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Overfull \hbox (8.01009pt too wide) in paragraph at lines 1210--1211
-\OT1/cmr/m/n/12 Una tabella di NAT \OT1/cmr/bx/n/12 serve a mod-i-fi-care i cam
-pi di in-d-i-rizzo IP all'interno
+[64<./img/logic2.PNG>]
+Overfull \hbox (9.83322pt too wide) in paragraph at lines 1215--1218
+\OT1/lmr/m/n/12 iptables -t nat -I PRE-ROUT-ING -d 150.217.5.123 -j DNAT ‚Äìto-
+destination
  []
 
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-[64 <./img/logic2.PNG (PNG copy)>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Overfull \hbox (9.8309pt too wide) in paragraph at lines 1215--1218
-\OT1/cmr/m/n/12 iptables -t nat -I PRE-ROUT-ING -d 150.217.5.123 -j DNAT to-des
-tination
- []
-
-[65 <./img/chain.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
+[65
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+Missing character: There is no ‚Äì (U+2013) in font rm-lmr12!
+<./img/chain.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
 
  []
 
-<img/conntrack.PNG, id=1049, 493.845pt x 261.22594pt>
+<img/conntrack.PNG, id=1087, 493.845pt x 261.22594pt>
 File: img/conntrack.PNG Graphic file (type png)
 <use img/conntrack.PNG>
-Package pdftex.def Info: img/conntrack.PNG  used on input line 1239.
-(pdftex.def)             Requested size: 246.92189pt x 130.61264pt.
+Package luatex.def Info: img/conntrack.PNG  used on input line 1239.
+(luatex.def)             Requested size: 246.92189pt x 130.61264pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1236--1242
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[66 <./img/conntrack.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-<img/state.PNG, id=1055, 402.00188pt x 194.97844pt>
+[66<./img/conntrack.PNG>]
+<img/state.PNG, id=1095, 402.00188pt x 194.97844pt>
 File: img/state.PNG Graphic file (type png)
 <use img/state.PNG>
-Package pdftex.def Info: img/state.PNG  used on input line 1260.
-(pdftex.def)             Requested size: 201.00044pt x 97.48897pt.
+Package luatex.def Info: img/state.PNG  used on input line 1260.
+(luatex.def)             Requested size: 201.00044pt x 97.48897pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1257--1263
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-[67 <./img/state.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [68]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Overfull \hbox (0.17184pt too wide) in paragraph at lines 1291--1292
-[]\OT1/cmr/m/n/12 c' bisogno co-munque di un \OT1/cmr/m/it/12 heart-beat \OT1/c
-mr/m/n/12 per rea-gire alle situ-azioni di guasto. 
- []
-
-<img/multipriha.PNG, id=1066, 482.55281pt x 238.64156pt>
+[67<./img/state.PNG>] [68]
+<img/multipriha.PNG, id=1106, 482.55281pt x 238.64156pt>
 File: img/multipriha.PNG Graphic file (type png)
 <use img/multipriha.PNG>
-Package pdftex.def Info: img/multipriha.PNG  used on input line 1296.
-(pdftex.def)             Requested size: 241.2758pt x 119.32048pt.
+Package luatex.def Info: img/multipriha.PNG  used on input line 1296.
+(luatex.def)             Requested size: 241.2758pt x 119.32048pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1293--1299
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
 
  []
 
-<img/staterep.PNG, id=1068, 469.00218pt x 321.45094pt>
+<img/staterep.PNG, id=1108, 469.00218pt x 321.45094pt>
 File: img/staterep.PNG Graphic file (type png)
 <use img/staterep.PNG>
-Package pdftex.def Info: img/staterep.PNG  used on input line 1311.
-(pdftex.def)             Requested size: 234.50052pt x 160.72507pt.
+Package luatex.def Info: img/staterep.PNG  used on input line 1311.
+(luatex.def)             Requested size: 234.50052pt x 160.72507pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1308--1314
 
@@ -1964,57 +1108,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 1308--1314
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-[69 <./img/multipriha.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [70 <./img/staterep.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
+[69<./img/multipriha.PNG>] [70
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+<./img/staterep.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 1337--1338
 
  []
 
-<img/panor.PNG, id=1078, 502.87875pt x 255.20343pt>
+<img/panor.PNG, id=1119, 502.87875pt x 255.20343pt>
 File: img/panor.PNG Graphic file (type png)
 <use img/panor.PNG>
-Package pdftex.def Info: img/panor.PNG  used on input line 1350.
-(pdftex.def)             Requested size: 251.43875pt x 127.6014pt.
+Package luatex.def Info: img/panor.PNG  used on input line 1350.
+(luatex.def)             Requested size: 251.43875pt x 127.6014pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1347--1353
 
@@ -2023,599 +1133,258 @@ Underfull \hbox (badness 10000) in paragraph at lines 1347--1353
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[71]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
+[71
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
 Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-[72 <./img/panor.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [73]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
- [74]
-<img/aut.PNG, id=1098, 187.45032pt x 243.91125pt>
+[72
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+<./img/panor.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1391--1394
+
+ []
+
+[73] [74
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmbx12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmbx12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+]
+<img/aut.PNG, id=1139, 187.45032pt x 243.91125pt>
 File: img/aut.PNG Graphic file (type png)
 <use img/aut.PNG>
-Package pdftex.def Info: img/aut.PNG  used on input line 1418.
-(pdftex.def)             Requested size: 93.72491pt x 121.95532pt.
+Package luatex.def Info: img/aut.PNG  used on input line 1422.
+(luatex.def)             Requested size: 93.72491pt x 121.95532pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1421
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1422--1424
-
- []
-
-<img/framewep.PNG, id=1100, 492.33937pt x 253.69781pt>
-File: img/framewep.PNG Graphic file (type png)
-<use img/framewep.PNG>
-Package pdftex.def Info: img/framewep.PNG  used on input line 1428.
-(pdftex.def)             Requested size: 295.40588pt x 152.21985pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1425--1431
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1425
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1438--1439
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1428
 
  []
 
-[75 <./img/aut.PNG (PNG copy)>]
-<img/stream.PNG, id=1109, 472.76625pt x 130.23656pt>
+[75]
+<img/framewep.PNG, id=1146, 492.33937pt x 253.69781pt>
+File: img/framewep.PNG Graphic file (type png)
+<use img/framewep.PNG>
+Package luatex.def Info: img/framewep.PNG  used on input line 1432.
+(luatex.def)             Requested size: 295.40588pt x 152.21985pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1429--1435
+
+ []
+
+[76<./img/aut.PNG><./img/framewep.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1442--1443
+
+ []
+
+<img/stream.PNG, id=1153, 472.76625pt x 130.23656pt>
 File: img/stream.PNG Graphic file (type png)
 <use img/stream.PNG>
-Package pdftex.def Info: img/stream.PNG  used on input line 1443.
-(pdftex.def)             Requested size: 236.38254pt x 65.11812pt.
+Package luatex.def Info: img/stream.PNG  used on input line 1447.
+(luatex.def)             Requested size: 236.38254pt x 65.11812pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1440--1446
+Underfull \hbox (badness 10000) in paragraph at lines 1444--1450
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[76 <./img/framewep.PNG (PNG copy)> <./img/stream.PNG (PNG copy)>]
-<img/enrsa.PNG, id=1118, 463.7325pt x 155.07938pt>
+<img/enrsa.PNG, id=1155, 463.7325pt x 155.07938pt>
 File: img/enrsa.PNG Graphic file (type png)
 <use img/enrsa.PNG>
-Package pdftex.def Info: img/enrsa.PNG  used on input line 1460.
-(pdftex.def)             Requested size: 231.86568pt x 77.53949pt.
+Package luatex.def Info: img/enrsa.PNG  used on input line 1464.
+(luatex.def)             Requested size: 278.24164pt x 93.04832pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1457--1463
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-
-Overfull \hbox (0.80725pt too wide) in paragraph at lines 1469--1470
-[]\OT1/cmr/m/n/12 Si sep-ara il pay-load dal CRC e si ri-cal-cola il CRC per ve
-r-i-fi-care l'integrit.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1478--1479
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1467
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[77 <./img/enrsa.PNG (PNG copy)>]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-<img/statemach.PNG, id=1126, 414.04688pt x 304.88907pt>
+[77<./img/stream.PNG>] [78<./img/enrsa.PNG>]
+<img/statemach.PNG, id=1175, 414.04688pt x 304.88907pt>
 File: img/statemach.PNG Graphic file (type png)
 <use img/statemach.PNG>
-Package pdftex.def Info: img/statemach.PNG  used on input line 1492.
-(pdftex.def)             Requested size: 207.02292pt x 152.44415pt.
+Package luatex.def Info: img/statemach.PNG  used on input line 1495.
+(luatex.def)             Requested size: 207.02292pt x 152.44415pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1489--1495
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Overfull \hbox (6.64702pt too wide) in paragraph at lines 1497--1499
-\OT1/cmr/m/n/12 Il pro-to-collo \OT1/cmr/bx/n/12 RTS/CST  \OT1/cmr/m/n/12 stato
- in-trodotto per ovviare al prob-lema dell'\OT1/cmr/bx/n/12 Hidden
- []
-
-[78 <./img/statemach.PNG (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1505
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-
-Overfull \hbox (12.42787pt too wide) in paragraph at lines 1509--1511
-\OT1/cmr/m/n/12 Passiamo ora a de-scri-vere il primo DoS che riguarda au-t-en-t
-i-cazione/associazione
- []
-
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-
-Overfull \hbox (10.57085pt too wide) in paragraph at lines 1518--1519
-[]\OT1/cmr/m/n/12 Durante la fase di in-gresso l'attaccante at-tende l'autentic
-azione e risponde
- []
-
-[79]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
-Overfull \hbox (42.59134pt too wide) in paragraph at lines 1522--1525
-\OT1/cmr/m/n/12 sono con-fig-u-rare i client per non ac-cettare richi-este di a
-u-t-en-ti-cazione/deautenticazione
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1527--1528
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1535
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[80]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no π in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [81]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
- [82]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-
-Overfull \hbox (14.75893pt too wide) in paragraph at lines 1571--1572
-[]\OT1/cmr/m/n/12 un at-tac-cante pu poten-zial-mente re-cu-per-are un fram-men
-to del \OT1/cmr/bx/n/12 keystream
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-
-Overfull \hbox (11.79337pt too wide) in paragraph at lines 1572--1573
-[]\OT1/cmr/m/n/12 un at-tac-cante pu ef-fet-tuare un at-tacco di tipo \OT1/cmr/
-bx/n/12 re-ply \OT1/cmr/m/n/12 an-che senza conoscere
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-
-Overfull \hbox (1.62242pt too wide) in paragraph at lines 1581--1584
-\OT1/cmr/m/n/12 hanno spinto i pro-dut-tori di AP e i gestori delle reti a pref
-erire l'autenticazione
- []
-
-
-Overfull \hbox (4.91576pt too wide) in paragraph at lines 1581--1584
-\OT1/cmr/bx/n/12 opend sys-tem. \OT1/cmr/m/n/12 Per evitare che chi-unque en-tr
-i nella rete si preferisce mascher-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-[83]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-
-Overfull \hbox (28.49149pt too wide) in paragraph at lines 1595--1596
-[]\OT1/cmr/m/n/12 Se un at-tac-cante deau-t-en-tica l'host, l'host cercher di r
-ipetere l'autenticazione.
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ¨ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Overfull \hbox (12.02786pt too wide) in paragraph at lines 1603--1604
-[]\OT1/cmr/m/n/12 Il campo IV  lungo 24 bit dunque si pos-sono ot-tenere 16.777
-.216 keystream
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-[84]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1618--1619
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
-Overfull \hbox (14.19164pt too wide) in paragraph at lines 1620--1621
-[]\OT1/cmr/m/n/12 Un'eventualit du-rante questo tipo di at-tac-chi  quella di r
-i-cavare un keystream
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ≤ in font cmbx12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-[85]
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
- [86]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1682--1683
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1498
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
+Underfull \hbox (badness 10000) in paragraph at lines 1500--1502
+
+ []
+
+[79<./img/statemach.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1511--1512
+
+ []
+
+<img/hidden.PNG, id=1182, 258.21469pt x 127.22531pt>
+File: img/hidden.PNG Graphic file (type png)
+<use img/hidden.PNG>
+Package luatex.def Info: img/hidden.PNG  used on input line 1516.
+(luatex.def)             Requested size: 206.57202pt x 101.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1513--1519
+
+ []
+
+[80
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+<./img/hidden.PNG>] [81
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmbx12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ÃÄ (U+0300) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Overfull \hbox (10.57332pt too wide) in paragraph at lines 1543--1544
+[]\OT1/lmr/m/n/12 Du-rante la fase di in-gresso l'at-tac-cante at-tende l'au-t-
+en-ti-cazione e risponde
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1552--1553
+
+ []
+
+[82]
+Underfull \hbox (badness 10000) in paragraph at lines 1559--1560
+
+ []
+
+[83] [84
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Overfull \hbox (20.68251pt too wide) in paragraph at lines 1596--1597
+[]\OT1/lmr/m/n/12 un at-tac-cante pu√≤ poten-zial-mente re-cu-per-are un fram-m
+ento del \OT1/lmr/bx/n/12 keystream
+ []
+
+[85] [86]
+Underfull \hbox (badness 10000) in paragraph at lines 1643--1644
+
+ []
+
+[87
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+] [88
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1707--1708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
+Underfull \hbox (badness 10000) in paragraph at lines 1713--1714
 
  []
 
 
-Overfull \hbox (29.17482pt too wide) in paragraph at lines 1694--1696
-[]\OT1/cmr/m/n/12 Dunque per sin-te-tiz-zare non es-iste uno stan-dard per ef-f
-et-tuare e l'autenticazione
- []
-
-[87]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no † in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
- [88]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
+Underfull \hbox (badness 10000) in paragraph at lines 1717--1718
 
  []
 
-[89]
-Underfull \hbox (badness 10000) in paragraph at lines 1750--1751
+[89] [90] [91]
+Underfull \hbox (badness 10000) in paragraph at lines 1773--1774
 
  []
 
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmbx12!
-Missing character: There is no ® in font cmbx12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no † in font cmr12!
-[90]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no π in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [91]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ® in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≤ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1819--1820
+Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1890.
-[92]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1890.
+[92] [93
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1844--1845
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1915.
+[94
+Missing character: There is no ‚Äô (U+2019) in font rm-lmr12!
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1915.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1890.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1890.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1915.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1915.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: B724FCB80A51A3588E7ABF2F0C6BF83A;7920.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1890.
- ) 
-Here is how much of TeX's memory you used:
- 5797 strings out of 492982
- 85450 string characters out of 6134895
- 164652 words of memory out of 5000000
- 8979 multiletter control sequences out of 15000+600000
- 9514 words of font info for 33 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 28i,7n,28p,806b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
-pfb>
-Output written on document.pdf (92 pages, 2374971 bytes).
-PDF statistics:
- 1313 PDF objects out of 1440 (max. 8388607)
- 1138 compressed objects within 12 object streams
- 308 named destinations out of 1000 (max. 500000)
- 1102 words of extra memory for PDF output out of 10000 (max. 10000000)
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1915.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 6475 strings out of 494480
+ 100000,221844 words of node,token memory allocated
+ 356 words of node memory still in use:
+   2 hlist, 1 vlist, 1 rule, 2 glue, 48 glue_spec, 1 write nodes
+   avail lists: 2:26,3:193,4:22,5:318,6:2602,7:714,8:52,9:272,10:15,11:231
+ 9765 multiletter control sequences out of 65536+600000
+ 48 fonts using 1996711 bytes
+ 28i,7n,28p,930b,465s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmsy10.pfb>
+Output written on document.pdf (94 pages, 2468418 bytes).
+
+PDF statistics: 1321 PDF objects out of 1440 (max. 8388607)
+ 1141 compressed objects within 12 object streams
+ 311 named destinations out of 1000 (max. 131072)
+ 817 words of extra memory for PDF output out of 10000 (max. 100000000)
 

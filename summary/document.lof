@@ -50,8 +50,9 @@
 \contentsline {figure}{\numberline {50}{\ignorespaces Multy-primary hash based stateful firewall cluster}}{69}{figure.50}
 \contentsline {figure}{\numberline {51}{\ignorespaces State replication}}{70}{figure.51}
 \contentsline {figure}{\numberline {52}{\ignorespaces Infrastructure vs ad-hoc}}{72}{figure.52}
-\contentsline {figure}{\numberline {53}{\ignorespaces Autenticazione}}{75}{figure.53}
+\contentsline {figure}{\numberline {53}{\ignorespaces Autenticazione}}{76}{figure.53}
 \contentsline {figure}{\numberline {54}{\ignorespaces Frame WEP}}{76}{figure.54}
-\contentsline {figure}{\numberline {55}{\ignorespaces Stream}}{76}{figure.55}
-\contentsline {figure}{\numberline {56}{\ignorespaces Encryption RSA}}{77}{figure.56}
-\contentsline {figure}{\numberline {57}{\ignorespaces Macchina a stati 802.11}}{78}{figure.57}
+\contentsline {figure}{\numberline {55}{\ignorespaces Algoritmo di cifratura tipo stream }}{77}{figure.55}
+\contentsline {figure}{\numberline {56}{\ignorespaces Encryption RSA}}{78}{figure.56}
+\contentsline {figure}{\numberline {57}{\ignorespaces Macchina a stati 802.11: autenticazione associazione}}{79}{figure.57}
+\contentsline {figure}{\numberline {58}{\ignorespaces Problema dell'hidden node}}{80}{figure.58}
