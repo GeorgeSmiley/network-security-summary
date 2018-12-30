@@ -1549,14 +1549,24 @@
 				Questo tipo di attacchi sono ancora più pericolosi se l'attaccante oltre a cambiare (\textbf{spoofare}) l'indirizzo sorgente, utilizza \textbf{l'indirizzo di destinazione di broadcast}, di fatto inviando pacchetti di deautenticazione a tutti i client della rete. Si possono configurare i client per non accettare richieste di autenticazione/deautenticazione in broadcast,\textbf{ non rispettando lo standard.} 
 			\subsubsection{DoS: sull'accesso al canale}
 				
-				INSERIRE duration\\
+					\textit{Campo duration dei pacchetti MAC \ref{fig:56}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.80]{img/duration.PNG}
+					\caption{Campo duration dei pacchetti MAC\label{fig:56}}
+				\end{figure}\\
 				
 				Un attacco che sfrutta il campo \textbf{duration} dell'header in un pacchetto MAC. Questo campo specifica quanto il canale sarà occupato dal mittente del pacchetto. \textbf{Ogni client che riceve un pacchetto MAC, anche se non rivolto al suo indirizzo MAC, deve leggerlo e rispettare il campo duration}.\\
-				Il campo duration è espresso in \textit{microsecondi}, ma l'attaccante può inviare un nuovo pacchetto prima che scada il timeout, riprenotando il canale.\\
+				Il campo duration è espresso in \textit{microsecondi}, ma l'attaccante può inviare un nuovo pacchetto prima che scada il timeout, prenotando nuovamente il canale.\\
 				Il risultato è che \textbf{nessuna macchina può trasmettere a parte l'attaccante.}
 			\subsubsection{DoS: modalità powersave}
 			
-				INSERIRE power\\
+					\textit{Campo power save pacchetto dati \ref{fig:57}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.80]{img/power.PNG}
+					\caption{Campo power save pacchetto dati\label{fig:57}}
+				\end{figure}\\
 				
 				Questo attacco utilizza pacchetti con il \textbf{bit di Power Save} settato a 1. Normalmente il client invia pacchetti con bit Power save a 1 quando non vuole ricevere più traffico da parte dell'AP, che salverà i pacchetti a lui indirizzati in un \textbf{buffer}, in attesa che lo stesso client li richieda.\\
 				Se l'attaccante invia pacchetti \textbf{spoofati} (dunque con un indirizzo sorgente relativo ad un particolare client della rete) \textbf{con una certa frequenza}, potrà \textbf{isolare} il client con uno sforzo relativamente basso.
@@ -1575,12 +1585,15 @@
 				Il risultato è che un segnale molto potente ma concentrato su una gamma di frequenza molto stretta, viene ricevuto a destinazione, dopo la ricostruzione, \textbf{come un rumore diffuso su tutta la frequenza}.	 \textbf{Risulta molto difficile disturbare la ricezione di tutti i dati}. \\
 				Un attacco di questo genere ha dunque l'obiettivo di invalidare il \textbf{codice di controllo errori} presente nei pacchetti di rete. Per farlo è sufficiente disturbare la ricezione di \textbf{un solo bit}. Il pacchetto non passerà il controllo di errore e sarà \textbf{scartato} e quindi ritrasmesso.
 			\subsubsection{Attacchi sui software dell'AP}		
-				Molto spesso le AP presentano delle interfacce WEB di gestione, utilizzate dalle macchine collegate alla rete per accedere \textbf{all'interfaccia di gestione} attraverso la quale possono configurare l'AP. Questi SW hanno spesso dimostrato di avere vulnerabilità come \textbf{buffer overflow} e \textbf{password attive di default.} In alcuni casi \textbf{il reset improvviso} dell'AP può provocare il riavvio di una modalità provvisoria che offre a utenti senza credenziali la possibilità di autenticarsi.\\
-				\textbf{Altri attacchi} riguardano le liste SW gestite dall'AP.  Gli AP devono \textbf{mantenere una lista} delle macchine
-				autenticate nella rete, delle macchine associate e delle
-				macchine che hanno richiesto l’autenticazione ma non
-				hanno ancora completato le procedure. Quando una lista
-				si riempie, altre richieste vengono scartate.\\
+				Molto spesso le AP presentano delle interfacce web, utilizzate dalle macchine collegate alla rete per accedere \textbf{all'interfaccia di gestione} attraverso la quale possono configurare l'AP. Questi SW hanno spesso dimostrato di avere vulnerabilità come \textbf{buffer overflow} e \textbf{password attive di default.} In alcuni casi \textbf{il reset improvviso} dell'AP può provocare il riavvio di una modalità provvisoria che offre a utenti senza credenziali la possibilità di autenticarsi.\\
+				\textbf{Altri attacchi} riguardano le liste SW gestite dall'AP.  Gli AP devono \textbf{mantenere una lista} delle:
+				\begin{itemize}
+					\item macchine autenticate nella rete
+					\item macchine associate
+					\item macchine che hanno richiesto l'autenticazione ma non
+					hanno ancora completato le procedure.
+				\end{itemize} 
+				  Quando una lista si riempie, altre richieste vengono scartate.\\
 				Si devono dunque utilizzare politiche di gestione delle liste efficienti. Ecco alcuni esempi di inefficienza.
 				\begin{itemize}
 					\item Le liste sono \textbf{code a scorrimento}, dunque se la lista è piena e arriva un'ulteriore macchina la più vecchia viene tolta dalla lista. \textbf{Forgiando richieste di autenticazione false si riempie la lista e si impediscono anche le autenticazioni in corso}.
@@ -1600,7 +1613,7 @@
 			L'attacco dell'oracolo dunque vede un attaccante che ha la volontà di inviare messaggi nella rete senza conoscere la chiave segreta:
 			\begin{enumerate}
 				\item In primo luogo \textbf{deautentica un client}
-				\item forgia un pacchetto con un \textit{challenge text} \textbf{contenente i dati che vuole inviare}.
+				\item forgia un pacchetto con un \textit{challenge text}, spacciandosi per l'AP, \textbf{contenente i dati che vuole inviare}.
 				\item Il client risponde con un challenge text cifrato con un certo IV. Di fatto questo pacchetto è valido per essere inviato lungo massimo 128byte.
 			\end{enumerate}	
 			L'attacco non ha un utilizzo concreto molto comune, ma dimostra la goffaggine con cui sono stati progettati i meccanismi di sicurezza.
@@ -1640,7 +1653,12 @@
 					automaticamente ricava il keystream.
 				\end{itemize}
 					
-				INSERIRE keystream \\
+					\textit{Ottenere un keystream \ref{fig:57}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/keystream.PNG}
+					\caption{Ottenere un keystream\label{fig:57}}
+				\end{figure}\\
 				
 				Un'eventualità durante questo tipo di attacchi è quella di ricavare un keystream che sia più piccolo di quello totale (quindi non lungo quanto l'MTU della rete). \textbf{In questo caso l'attaccante deve poter estendere tale keystream.}
 				
@@ -1686,9 +1704,9 @@
 				In particolare esiste una correlazione statistica tra il primo byte del keystream e la chiave segreta utilizzata. \textbf{Si dice che esistono IV deboli}. Raccogliendo 60 pacchetti cifrati a partire da IV deboli 	si può \textbf{ricavare la chiave segreta}, che una volta compromessa da accesso completo alla rete!
 				\begin{itemize}
 					\item Gli IV deboli sono distribuiti uniformemente nello spazio degli IV, e per ottenere 60 IV interessati ci vogliono mediamente 4.000.000 di pacchetti cifrati.
-					\item Dunque a seconda del traffico generato dalla rete in poche ore si rompe una chaive WEP e si ottiene una chiave di sicurezza da 40 bit.
+					\item Dunque a seconda del traffico generato dalla rete in poche ore si rompe una chiave WEP e si ottiene una chiave di sicurezza da 40 bit.
 					\item La complessità dell'attacco aumenta \textbf{linearmente} con la lunghezza della chiave WEP.
-					\item ALcuni produttori corrono ai ripari impedendo ai  loro AP di utilizzare IV deboli, \textbf{non rispettando lo standard}.
+					\item Alcuni produttori corrono ai ripari impedendo ai  loro AP di utilizzare IV deboli, \textbf{non rispettando lo standard}.
 				\end{itemize}
 				Nel 2004 l'hacker KoreK invia su un forum un programma basato su una sua ricerca statistica, che svela \textbf{un'altra correlazione} anche tra \textbf{altri byte di keystream} e la chiave WEP rendendo l'attacco precedente ancora più facile.\\
 				Successivamente vengono introdotto \textbf{nuove migliorie} per rompere una chiave WEP a 40 bit: basta raccogliere qualche decina di migliaia di pacchetti cifrati ed attendere un tempo di elaborazione \textbf{di pochi secondi}.\\
@@ -1699,22 +1717,83 @@
 					\item \textbf{Utilizzare un algoritmo chiuso ha prodotto questo risultato}
 				\end{itemize} 
 			\subsubsection{Attacchi sul CRC}
-				Il CRC è lineare rispetto all'operazione di 
+				Il CRC è lineare rispetto all'operazione di $\oplus$. Definiamo C come un pacchetto cifrato, M pacchetto in chiaro e K il keystream.
 				
-				TERMINARE ARGOMENTO
+					\textit{Linearità del CRC \ref{fig:58}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/crc1.PNG}
+					\caption{Linearità del CRC\label{fig:58}}
+				\end{figure}\\
+				
+				Se vogliamo generare un messaggio $M^{1}_{p}$ 0 che sia una modifica
+				del messaggio originale M (definiamo $M^{1}_{p}$ = $M_{p} + d$  dove d è la modifica che vogliamo apportare) e ottenere un corrispondente messaggio cifrato $C^{1}$ possiamo farlo:
+				
+				\textit{Linearità del CRC \ref{fig:59}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/crc2.PNG}
+					\caption{Linearità del CRC\label{fig:59}}
+				\end{figure}\\
+			
+				L'attaccante può prendere un pacchetto cifrato, cambiarne
+				il contenuto (facendo lo XOR sia del contenuto con d, sia
+				del CRC con CRC(d)), reinviarlo anche senza conoscere il
+				contenuto.
+				Ad esempio, l’attaccante potrebbe\textbf{ cambiare parte
+				dell’indirizzo IP destinazione} (se è predicibile in qualche
+				modo). In questo modo l’AP reinstraderebbe verso
+				l’esterno (possibilmente verso un host controllato
+				dall’attaccante stesso) il pacchetto, ovviamente dopo
+				averlo decifrato.\\
+				
+				Lo stesso tipo di attacco può essere utilizzato per recuperare
+				una messaggio in chiaro dato un messaggio cifrato un byte alla
+				volta:
+				\begin{itemize}
+					\item L’attaccante prende un pacchetto C, ed elimina l’ultimo
+					byte B.
+					\item Con trasformazioni simili a quelle viste, si può ricalcolare il
+					CRC del messaggio troncato a partire da C e da B. Ma
+					l’attaccante non conosce B.
+					\item Pone B=0x00, ricalcola il CRC del pacchetto troncato e lo
+					invia.
+					\item 	Se l’AP risponde qualcosa (qualsiasi risposta indica che il CRC era corretto) allora l’ultimo byte del messaggio
+					originale è effettivamente 0x00.
+					\item Altrimenti cicla con 0x01
+				\end{itemize}
+	
+				
+			
+				
 				
 			\subsubsection{HTTP Authentication}
 				All'ingresso nella rete il client fa un'autenticazione e un'associazione in standard 802.11\\
 				
-				INSERIRE auth 
+				\textit{HTTP Authentication \ref{fig:60}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/auth.PNG}
+					\caption{HTTP Authentication\label{fig:60}}
+				\end{figure}\\
 				
 				Il client riceve un indirizzo IP con DHCP\\
 				
-				INSERIRE dhcp\\
+				\textit{HTTP Authentication 2\ref{fig:61}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/dhcp.PNG}
+					\caption{HTTP Authentication 2\label{fig:61}}
+				\end{figure}\\
 				
 				Il client si connette alla porta 80 del server di autenticazione e si autentica con una metodo qualsiasi (SSL, password, md5 password ecc..) 
 				
-				INSERIRE auth 2\\
+						\textit{HTTP Authentication \ref{fig:62}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/auth2.PNG}
+					\caption{HTTP Authentication\label{fig:62}}
+				\end{figure}\\
 				
 				Dunque per sintetizzare non esiste uno standard per effettuare e l'autenticazione deve sempre passare su SSL.\\
 				Si introducono tutti i problemi riguardanti i livelli superiori:
@@ -1772,7 +1851,12 @@
 			\subsubsection{802.1x: Port based network access control}
 				Si tratta di uno standard che definisce dei ruoli generici per l'architettura di controllo degli accessi in reti 802. In questo standard vengono divisi i due ruoli dell'authenticator e dell'AP, che in questo caso offre solo accesso di livello II. In questo modo viene ridisegnata la \textbf{topologia della rete} rendendola più gestibile.\\
 				
-				INSERIRE topo\\
+						\textit{Topologia 802.1X \ref{fig:63}}\\
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.50]{img/topo.PNG}
+					\caption{Topologia 802.1X\label{fig:63}}
+				\end{figure}\\
 				
 				I link in nero sono wired mentre quelli in rosso sono wireless, il link tra \textit{authentication} server e \textit{authenticator}, è un link di livello 3 \textbf{considerato sicuro.}\\
 				Vediamo quali sono i \textbf{ruoli} all'interno della topologia:

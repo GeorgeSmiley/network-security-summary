@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Security Basics}{6}{section.1}
 \contentsline {section}{\numberline {2}NAT}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Basi}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Basi}{8}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}NAT statico}{8}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}NAT Dinamico}{9}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}NAPT: Network Address and Port Translation}{9}{subsection.2.4}
@@ -87,16 +87,16 @@
 \contentsline {subsubsection}{\numberline {6.3.2}DoS: sull'accesso al canale}{82}{subsubsection.6.3.2}
 \contentsline {subsubsection}{\numberline {6.3.3}DoS: modalità powersave}{83}{subsubsection.6.3.3}
 \contentsline {subsubsection}{\numberline {6.3.4}DoS: saturazione della banda}{83}{subsubsection.6.3.4}
-\contentsline {subsubsection}{\numberline {6.3.5}DoS: stato fisico (jamming)}{83}{subsubsection.6.3.5}
+\contentsline {subsubsection}{\numberline {6.3.5}DoS: stato fisico (jamming)}{84}{subsubsection.6.3.5}
 \contentsline {subsubsection}{\numberline {6.3.6}Attacchi sui software dell'AP}{84}{subsubsection.6.3.6}
 \contentsline {subsubsection}{\numberline {6.3.7}Shared Key e Oracle attack}{85}{subsubsection.6.3.7}
 \contentsline {subsubsection}{\numberline {6.3.8}Attacchi Man in the middle}{86}{subsubsection.6.3.8}
-\contentsline {subsubsection}{\numberline {6.3.9}Vulnerabilità di RC4}{88}{subsubsection.6.3.9}
-\contentsline {subsubsection}{\numberline {6.3.10}Attacchi sul CRC}{89}{subsubsection.6.3.10}
-\contentsline {subsubsection}{\numberline {6.3.11}HTTP Authentication}{89}{subsubsection.6.3.11}
-\contentsline {subsection}{\numberline {6.4}Il protocollo 802.11i}{90}{subsection.6.4}
-\contentsline {subsubsection}{\numberline {6.4.1}Storia di 802.11i}{90}{subsubsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.2}Novità di 802.11i}{91}{subsubsection.6.4.2}
-\contentsline {subsubsection}{\numberline {6.4.3}WPA, WPA2 and insecurity}{91}{subsubsection.6.4.3}
-\contentsline {subsubsection}{\numberline {6.4.4}802.1x: Port based network access control}{92}{subsubsection.6.4.4}
-\contentsline {subsubsection}{\numberline {6.4.5}WPA Home}{94}{subsubsection.6.4.5}
+\contentsline {subsubsection}{\numberline {6.3.9}Vulnerabilità di RC4}{89}{subsubsection.6.3.9}
+\contentsline {subsubsection}{\numberline {6.3.10}Attacchi sul CRC}{90}{subsubsection.6.3.10}
+\contentsline {subsubsection}{\numberline {6.3.11}HTTP Authentication}{91}{subsubsection.6.3.11}
+\contentsline {subsection}{\numberline {6.4}Il protocollo 802.11i}{93}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Storia di 802.11i}{93}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Novità di 802.11i}{93}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.3}WPA, WPA2 and insecurity}{94}{subsubsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.4}802.1x: Port based network access control}{95}{subsubsection.6.4.4}
+\contentsline {subsubsection}{\numberline {6.4.5}WPA Home}{97}{subsubsection.6.4.5}
