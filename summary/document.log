@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  30 DEC 2018 12:25
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  30 DEC 2018 12:44
  restricted system commands enabled.
 **document.tex
 (./document.tex
@@ -1122,49 +1122,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 1337--1338
 
  []
 
-<img/panor.PNG, id=1138, 502.87875pt x 255.20343pt>
-File: img/panor.PNG Graphic file (type png)
-<use img/panor.PNG>
-Package luatex.def Info: img/panor.PNG  used on input line 1350.
-(luatex.def)             Requested size: 251.43875pt x 127.6014pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1353
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1345
 
  []
 
+<img/panor.PNG, id=1138, 502.87875pt x 255.20343pt>
+File: img/panor.PNG Graphic file (type png)
+<use img/panor.PNG>
+Package luatex.def Info: img/panor.PNG  used on input line 1355.
+(luatex.def)             Requested size: 251.43875pt x 127.6014pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 1352--1358
+
+ []
 
 [71
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1366
 
  []
 
 [72
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
+<./img/panor.PNG>] [73
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
-<./img/panor.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1394
-
- []
-
-[73] [74
 Missing character: There is no ̀ (U+0300) in font rm-lmr12!
 Missing character: There is no ̀ (U+0300) in font rm-lmbx12!
 Missing character: There is no ̀ (U+0300) in font rm-lmbx12!
 Missing character: There is no ̀ (U+0300) in font rm-lmr12!
+] [74
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ̀ (U+0300) in font rm-lmr12!
 ]
 <img/aut.PNG, id=1158, 187.45032pt x 243.91125pt>
 File: img/aut.PNG Graphic file (type png)
 <use img/aut.PNG>
-Package luatex.def Info: img/aut.PNG  used on input line 1422.
+Package luatex.def Info: img/aut.PNG  used on input line 1426.
 (luatex.def)             Requested size: 93.72491pt x 121.95532pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1419--1425
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1429
 
  []
 
@@ -1172,7 +1170,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1419--1425
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1426--1428
+Underfull \hbox (badness 10000) in paragraph at lines 1430--1432
 
  []
 
@@ -1180,35 +1178,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 1426--1428
 <img/framewep.PNG, id=1165, 492.33937pt x 253.69781pt>
 File: img/framewep.PNG Graphic file (type png)
 <use img/framewep.PNG>
-Package luatex.def Info: img/framewep.PNG  used on input line 1432.
+Package luatex.def Info: img/framewep.PNG  used on input line 1436.
 (luatex.def)             Requested size: 295.40588pt x 152.21985pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1429--1435
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1439
 
  []
 
 [76<./img/aut.PNG><./img/framewep.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1442--1443
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
 
  []
 
 <img/stream.PNG, id=1172, 472.76625pt x 130.23656pt>
 File: img/stream.PNG Graphic file (type png)
 <use img/stream.PNG>
-Package luatex.def Info: img/stream.PNG  used on input line 1447.
+Package luatex.def Info: img/stream.PNG  used on input line 1451.
 (luatex.def)             Requested size: 236.38254pt x 65.11812pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1444--1450
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1454
 
  []
 
 <img/enrsa.PNG, id=1174, 463.7325pt x 155.07938pt>
 File: img/enrsa.PNG Graphic file (type png)
 <use img/enrsa.PNG>
-Package luatex.def Info: img/enrsa.PNG  used on input line 1464.
+Package luatex.def Info: img/enrsa.PNG  used on input line 1468.
 (luatex.def)             Requested size: 278.24164pt x 93.04832pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1461--1467
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1471
 
  []
 
@@ -1216,30 +1214,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 1461--1467
 <img/statemach.PNG, id=1194, 414.04688pt x 304.88907pt>
 File: img/statemach.PNG Graphic file (type png)
 <use img/statemach.PNG>
-Package luatex.def Info: img/statemach.PNG  used on input line 1495.
+Package luatex.def Info: img/statemach.PNG  used on input line 1499.
 (luatex.def)             Requested size: 207.02292pt x 152.44415pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1498
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1500--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1504--1506
 
  []
 
 [79<./img/statemach.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1511--1512
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1516
 
  []
 
 <img/hidden.PNG, id=1202, 258.21469pt x 127.22531pt>
 File: img/hidden.PNG Graphic file (type png)
 <use img/hidden.PNG>
-Package luatex.def Info: img/hidden.PNG  used on input line 1516.
+Package luatex.def Info: img/hidden.PNG  used on input line 1520.
 (luatex.def)             Requested size: 206.57202pt x 101.78038pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1513--1519
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1523
 
  []
 
@@ -1271,7 +1269,7 @@ Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ̀ (U+0300) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 ]
-Overfull \hbox (10.57332pt too wide) in paragraph at lines 1543--1544
+Overfull \hbox (10.57332pt too wide) in paragraph at lines 1547--1548
 []\OT1/lmr/m/n/12 Du-rante la fase di in-gresso l'at-tac-cante at-tende l'au-t-
 en-ti-cazione e risponde
  []
@@ -1279,15 +1277,15 @@ en-ti-cazione e risponde
 <img/duration.PNG, id=1216, 497.60907pt x 93.34875pt>
 File: img/duration.PNG Graphic file (type png)
 <use img/duration.PNG>
-Package luatex.def Info: img/duration.PNG  used on input line 1555.
+Package luatex.def Info: img/duration.PNG  used on input line 1559.
 (luatex.def)             Requested size: 398.08778pt x 74.6791pt.
 
-Overfull \hbox (8.08778pt too wide) in paragraph at lines 1555--1556
+Overfull \hbox (8.08778pt too wide) in paragraph at lines 1559--1560
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1552--1558
+Underfull \hbox (badness 10000) in paragraph at lines 1556--1562
 
  []
 
@@ -1298,15 +1296,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/power.PNG, id=1227, 475.02469pt x 85.82062pt>
 File: img/power.PNG Graphic file (type png)
 <use img/power.PNG>
-Package luatex.def Info: img/power.PNG  used on input line 1567.
+Package luatex.def Info: img/power.PNG  used on input line 1571.
 (luatex.def)             Requested size: 380.02025pt x 68.65657pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1570
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1574
 
  []
 
 [83<./img/duration.PNG><./img/power.PNG>] [84]
-Overfull \hbox (20.68251pt too wide) in paragraph at lines 1609--1610
+Overfull \hbox (20.68251pt too wide) in paragraph at lines 1613--1614
 []\OT1/lmr/m/n/12 un at-tac-cante può poten-zial-mente re-cu-per-are un fram-m
 ento del \OT1/lmr/bx/n/12 keystream
  []
@@ -1315,10 +1313,10 @@ ento del \OT1/lmr/bx/n/12 keystream
 <img/keystream.PNG, id=1249, 343.2825pt x 201.00093pt>
 File: img/keystream.PNG Graphic file (type png)
 <use img/keystream.PNG>
-Package luatex.def Info: img/keystream.PNG  used on input line 1659.
+Package luatex.def Info: img/keystream.PNG  used on input line 1663.
 (luatex.def)             Requested size: 171.64082pt x 100.50021pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1656--1662
+Underfull \hbox (badness 10000) in paragraph at lines 1660--1666
 
  []
 
@@ -1336,40 +1334,40 @@ Missing character: There is no ’ (U+2019) in font rm-lmr12!
 <img/crc1.PNG, id=1264, 340.27126pt x 127.97812pt>
 File: img/crc1.PNG Graphic file (type png)
 <use img/crc1.PNG>
-Package luatex.def Info: img/crc1.PNG  used on input line 1725.
+Package luatex.def Info: img/crc1.PNG  used on input line 1729.
 (luatex.def)             Requested size: 170.13521pt x 63.98889pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1722--1728
+Underfull \hbox (badness 10000) in paragraph at lines 1726--1732
 
  []
 
 <img/crc2.PNG, id=1266, 500.62032pt x 127.97812pt>
 File: img/crc2.PNG Graphic file (type png)
 <use img/crc2.PNG>
-Package luatex.def Info: img/crc2.PNG  used on input line 1735.
+Package luatex.def Info: img/crc2.PNG  used on input line 1739.
 (luatex.def)             Requested size: 250.30954pt x 63.98889pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1732--1738
+Underfull \hbox (badness 10000) in paragraph at lines 1736--1742
 
  []
 
 [90<./img/crc1.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1739--1749
+Underfull \hbox (badness 10000) in paragraph at lines 1743--1753
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1771--1772
+Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
 
  []
 
 <img/auth.PNG, id=1273, 388.45125pt x 139.27031pt>
 File: img/auth.PNG Graphic file (type png)
 <use img/auth.PNG>
-Package luatex.def Info: img/auth.PNG  used on input line 1776.
+Package luatex.def Info: img/auth.PNG  used on input line 1780.
 (luatex.def)             Requested size: 194.22514pt x 69.63498pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1773--1779
+Underfull \hbox (badness 10000) in paragraph at lines 1777--1783
 
  []
 
@@ -1385,32 +1383,32 @@ Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 <./img/crc2.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 1780--1781
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1785
 
  []
 
 <img/dhcp.PNG, id=1281, 436.63126pt x 100.12407pt>
 File: img/dhcp.PNG Graphic file (type png)
 <use img/dhcp.PNG>
-Package luatex.def Info: img/dhcp.PNG  used on input line 1785.
+Package luatex.def Info: img/dhcp.PNG  used on input line 1789.
 (luatex.def)             Requested size: 218.3151pt x 50.0619pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1782--1788
+Underfull \hbox (badness 10000) in paragraph at lines 1786--1792
 
  []
 
 <img/auth2.PNG, id=1283, 462.97969pt x 161.85469pt>
 File: img/auth2.PNG Graphic file (type png)
 <use img/auth2.PNG>
-Package luatex.def Info: img/auth2.PNG  used on input line 1794.
+Package luatex.def Info: img/auth2.PNG  used on input line 1798.
 (luatex.def)             Requested size: 231.48927pt x 80.92714pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1797
+Underfull \hbox (badness 10000) in paragraph at lines 1795--1801
 
  []
 
 [92<./img/auth.PNG><./img/dhcp.PNG><./img/auth2.PNG>] [93]
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1853
+Underfull \hbox (badness 10000) in paragraph at lines 1856--1857
 
  []
 
@@ -1418,10 +1416,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1852--1853
 <img/topo.PNG, id=1301, 486.31688pt x 313.17pt>
 File: img/topo.PNG Graphic file (type png)
 <use img/topo.PNG>
-Package luatex.def Info: img/topo.PNG  used on input line 1857.
+Package luatex.def Info: img/topo.PNG  used on input line 1861.
 (luatex.def)             Requested size: 243.15784pt x 156.58461pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1854--1860
+Underfull \hbox (badness 10000) in paragraph at lines 1858--1864
 
  []
 
@@ -1431,25 +1429,31 @@ Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1928--1929
+Underfull \hbox (badness 10000) in paragraph at lines 1932--1933
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1999.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2003.
 [97
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1999.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2003.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1999.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1999.
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: B724FCB80A51A3588E7ABF2F0C6BF83A;7920.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2003.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2003.
 
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: B724FCB80A51A3588E7ABF2F0C6BF83A;7920
+(rerunfilecheck)             After:  997DDFB76C203F4FFD70351905AE1C51;7932.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1999.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2003.
 )
 
 Here is how much of LuaTeX's memory you used:
@@ -1457,7 +1461,7 @@ Here is how much of LuaTeX's memory you used:
  100000,221844 words of node,token memory allocated
  356 words of node memory still in use:
    2 hlist, 1 vlist, 1 rule, 2 glue, 48 glue_spec, 1 write nodes
-   avail lists: 2:26,3:199,4:22,5:323,6:2313,7:714,8:52,9:285,10:15,11:225
+   avail lists: 2:26,3:199,4:22,5:323,6:2429,7:696,8:52,9:285,10:15,11:225
  9809 multiletter control sequences out of 65536+600000
  48 fonts using 1996711 bytes
  28i,7n,28p,930b,463s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1474,7 +1478,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
 ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmsy10.pfb>
-Output written on document.pdf (97 pages, 2722805 bytes).
+Output written on document.pdf (97 pages, 2723323 bytes).
 
 PDF statistics: 1378 PDF objects out of 1440 (max. 8388607)
  1186 compressed objects within 12 object streams

@@ -1337,7 +1337,12 @@
 			Quando la banda a disposizione non è sufficiente o si aumenta la banda o si fa \textbf{traffic shaping}. Nel secondo caso si decide di rendere prioritari alcuni traffici piuttosto che altri. In questo modo si ha una \textbf{perdita di neutralità della rete di trasporto}. L perdita di neutralità viene spesso vista come un tentativo di censurare alcuni contenuti.\\
 			
 	\section{Wireless security}
+		\textit{In informatica e telecomunicazioni il termine wireless (dall'inglese senza fili) indica una comunicazione tra dispositivi elettronici che non fa uso di cavi. Generalmente il wireless utilizza onde radio a bassa potenza. }
 		\subsection{Panoramica}
+			
+			La \textbf{mancanza di limite geografico} implica che le informazioni possono essere \textit{sniffate} più facilmente. Inoltre si possono subire attacchi dall'esterno (richio per l'attaccante minimo).\\
+			Si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. La tecnologia wireless ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
+			
 			Modelli di \textbf{topologia di rete}:
 			\begin{itemize}
 				\item Modello infrastructure
@@ -1351,8 +1356,7 @@
 				\caption{Infrastructure vs ad-hoc\label{fig:49}}
 			\end{figure}\\
 			
-			La \textbf{mancanza di limite geografico} implica che le informazioni possono essere \textit{sniffate} più facilmente. Inoltre si possono subire attacchi dall'esterno (richio per l'attaccante minimo).\\
-			Si ricorda che un \textbf{hotspot} è un punto di accesso alla rete attraverso tecnologia wireless (802.11) in modalità infrastructure. La tecnologia wireless ha il \textbf{vantaggio} di abbattere i costi di gestione, poichè \textbf{non si deve cablare} tutti gli host della rete. Introducono tuttavia diverse \textbf{problematiche di gestione} come la \textbf{limitazione del raggio e la gestione degli accessi}.\\
+			
 			Descriviamo in breve \textbf{reti atipiche} rispetto alla norma.
 			\begin{itemize}
 				\item \textbf{Reti ad-hoc}:  sono reti \textbf{spontanee} e auto-organizzanti. Possono essere reti allestite per ritrovi temporanei, interventi in situazione di emergenza, reti tattiche e militari, ambienti con mancanza di infrastruttura. Si utilizzano per coprire il \textbf{problema dell'ultimo miglio} e per coprire aree molto estese. Per problema dell'ultimo miglio intendiamo il calo di risorse del canale che si ha in una rete nella parte finale di attacco all'utente, ovvero la rete di accesso.
@@ -1379,8 +1383,10 @@
 				caratteristiche molto simili a 802.11
 				Reti cellulari: GSM, GPRS, UMTS . . .
 		\subsection{802.11: Wifi}
-			\subsubsection{Introduzione}
-				Riguardo la storia della tecnologia wifi  guardare slide 13\\
+			\subsubsection{Storia e caratteristiche}
+					\textbf{La differenza sostanziale tra 802.11 ed il WiFi} è che\textbf{ il primo è un insieme di standard} creati dalla IEEE per implementare reti wireless locali e si occupa del livelli 1 e 2, mentre \textbf{il secondo è un trademark} creato dalla Wifi-Alliance che certifica se un determinato dispositivo è conforme agli standard 802.11. \\
+				Prima che gli standard 802.11 vengano rilasciati ufficialmente, i maggiori produttori, che formano un consorzio WiFi (detto WiFi Alliance), rilasciano una pre-release e certificazioni sui prodotti hardware. In particolare, il consorzio, per rimediare all’emergenza causata dalle insicurezze riscontrate in tutte le versioni di 802.11 precedenti alla i, anticipa nei propri prodotti una versione incompleta di 802.11i che chiama WPA (Wireless Protected Access). A questa segue WPA2, che corrisponde alla versione aderente a 802.11i. Attualmente esistono molti working group (j, h, f, . . . ) con lo scopo di arricchire il protocollo con nuove caratteristiche quali QoS, fast handoff etc. Negli standard vi è quindi sempre una parte resa volutamente implementation dependent, che ha lo scopo di lasciare parti dello standard libere, in modo che le aziende possano scegliere quali parti dello standard utilizzare
+				o personalizzare e quali no. Questa parte serve sostanzialmente per permettere la competizione tra aziende. Di seguito verrà introdotto il funzionamento di 802.11 nelle versioni precedenti alla i.\\
 				Di seguito si elencano le caratteristiche dello \textbf{strato fisico}:
 				\begin{itemize}
 					\item Frequenze: 2.4 - 5 GHz.
@@ -1388,9 +1394,7 @@
 					\item Range: fino a 50m in ambienti indoor, 300m  in ambienti outdoor senza linea di vista.
 					\item Permette la mobilità.
 				\end{itemize}
-				\textbf{La differenza sostanziale tra 802.11 ed il WiFi} è che\textbf{ il primo è un insieme di standard} creati dalla IEEE per implementare reti wireless locali e si occupa del livelli 1 e 2, mentre \textbf{il secondo è un trademark} creato dalla Wifi-Alliance che certifica se un determinato dispositivo è conforme agli standard 802.11. \\
-				Prima che gli standard 802.11 vengano rilasciati ufficialmente, i maggiori produttori, che formano un consorzio WiFi (detto WiFi Alliance), rilasciano una pre-release e certificazioni sui prodotti hardware. In particolare, il consorzio, per rimediare all’emergenza causata dalle insicurezze riscontrate in tutte le versioni di 802.11 precedenti alla i, anticipa nei propri prodotti una versione incompleta di 802.11i che chiama WPA (Wireless Protected Access). A questa segue WPA2, che corrisponde alla versione aderente a 802.11i. Attualmente esistono molti working group (j, h, f, . . . ) con lo scopo di arricchire il protocollo con nuove caratteristiche quali QoS, fast handoff etc. Negli standard vi è quindi sempre una parte resa volutamente implementation dependent, che ha lo scopo di lasciare parti dello standard libere, in modo che le aziende possano scegliere quali parti dello standard utilizzare
-				o personalizzare e quali no. Questa parte serve sostanzialmente per permettere la competizione tra aziende. Di seguito verrà introdotto il funzionamento di 802.11 nelle versioni precedenti alla i.\\
+			
 				
 				I tipi di traffico gestito sono i seguenti:
 				\begin{itemize}
