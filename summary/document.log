@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  30 DEC 2018 12:44
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.9)  3 JAN 2019 08:12
  restricted system commands enabled.
 **document.tex
 (./document.tex
@@ -1309,8 +1309,10 @@ Overfull \hbox (20.68251pt too wide) in paragraph at lines 1613--1614
 ento del \OT1/lmr/bx/n/12 keystream
  []
 
-[85] [86]
-<img/keystream.PNG, id=1249, 343.2825pt x 201.00093pt>
+[85] [86] [87
+Missing character: There is no ’ (U+2019) in font rm-lmr12!
+]
+<img/keystream.PNG, id=1253, 343.2825pt x 201.00093pt>
 File: img/keystream.PNG Graphic file (type png)
 <use img/keystream.PNG>
 Package luatex.def Info: img/keystream.PNG  used on input line 1663.
@@ -1320,9 +1322,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1660--1666
 
  []
 
-[87
-Missing character: There is no ’ (U+2019) in font rm-lmr12!
-] [88
+[88
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
 Missing character: There is no ’ (U+2019) in font rm-lmr12!
@@ -1387,7 +1387,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1784--1785
 
  []
 
-<img/dhcp.PNG, id=1281, 436.63126pt x 100.12407pt>
+<img/dhcp.PNG, id=1282, 436.63126pt x 100.12407pt>
 File: img/dhcp.PNG Graphic file (type png)
 <use img/dhcp.PNG>
 Package luatex.def Info: img/dhcp.PNG  used on input line 1789.
@@ -1397,7 +1397,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1786--1792
 
  []
 
-<img/auth2.PNG, id=1283, 462.97969pt x 161.85469pt>
+<img/auth2.PNG, id=1284, 462.97969pt x 161.85469pt>
 File: img/auth2.PNG Graphic file (type png)
 <use img/auth2.PNG>
 Package luatex.def Info: img/auth2.PNG  used on input line 1798.
@@ -1413,7 +1413,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1856--1857
  []
 
 [94]
-<img/topo.PNG, id=1301, 486.31688pt x 313.17pt>
+<img/topo.PNG, id=1303, 486.31688pt x 313.17pt>
 File: img/topo.PNG Graphic file (type png)
 <use img/topo.PNG>
 Package luatex.def Info: img/topo.PNG  used on input line 1861.
@@ -1448,8 +1448,8 @@ Package rerunfilecheck Warning: File `document.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `document.out':
-(rerunfilecheck)             Before: B724FCB80A51A3588E7ABF2F0C6BF83A;7920
-(rerunfilecheck)             After:  997DDFB76C203F4FFD70351905AE1C51;7932.
+(rerunfilecheck)             Before: 997DDFB76C203F4FFD70351905AE1C51;7932
+(rerunfilecheck)             After:  93AF7275E5F9267FEF9A6D94564AF869;8018.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1457,7 +1457,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2003.
 )
 
 Here is how much of LuaTeX's memory you used:
- 6585 strings out of 494480
+ 6586 strings out of 494480
  100000,221844 words of node,token memory allocated
  356 words of node memory still in use:
    2 hlist, 1 vlist, 1 rule, 2 glue, 48 glue_spec, 1 write nodes
@@ -1478,10 +1478,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
 ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmsy10.pfb>
-Output written on document.pdf (97 pages, 2723323 bytes).
+Output written on document.pdf (97 pages, 2723387 bytes).
 
-PDF statistics: 1378 PDF objects out of 1440 (max. 8388607)
- 1186 compressed objects within 12 object streams
- 323 named destinations out of 1000 (max. 131072)
+PDF statistics: 1379 PDF objects out of 1440 (max. 8388607)
+ 1187 compressed objects within 12 object streams
+ 324 named destinations out of 1000 (max. 131072)
  817 words of extra memory for PDF output out of 10000 (max. 100000000)
 

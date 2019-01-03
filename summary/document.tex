@@ -1638,7 +1638,7 @@
 					\item Spesso dopo un certo numero di disconnessioni un host cercherà di ripetere l'autenticazione su un canale diverso, facendo \textbf{channel hopping}. L'attaccante si può mettere in ascolto su un altro canale così è sicuro che la vittima si collegherà con lui.
 					\item I finti AP si chiamano \textbf{Rogue AP o Fake AP}.
 				\end{itemize}	
-				
+			\subsubsection{Dizionario dei Keystream}
 				\textbf{La non ripetizione di IV è fondamentale} per non rischiare di esporre il materiale cifrato, \textbf{riutilizzare un IV significa utilizzare due volte lo stesso keystream}. Come abbiamo visto il protocollo permette di accedere al contenuto in chiaro e successivamente (in pochi secondi) a quello cifrato, dunque se si cifrasse con lo stesso keystream si potrebbe risalire al contenuto di tutti questi pacchetti cifrati con lo stesso IV.\\
 				\textbf{Risulta possibile costruire un dizionario di tutti i keystream?}.
 				\begin{itemize}
